@@ -1,3 +1,5 @@
+GetRecordInfos:
+
 ('None',    (   ('Arp.Plc.Eclr/M1.B', 'Arp.Plc.Eclr/M1.A'), 
                 ('Arp.Plc.Eclr/B', 'Arp.Plc.Eclr/A'), 
                 ('Arp.Plc.Eclr/M2.B', 'Arp.Plc.Eclr/M2.A')
@@ -8,6 +10,7 @@
 
 
 
+ReadRecords:
 
 ('None',    (   (   {'Arp.Plc.Eclr/M1.B': (False, 1592820481699459), 'Arp.Plc.Eclr/M1.A': (False, 1592820481699459)},   
                 ), 

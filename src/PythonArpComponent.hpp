@@ -24,7 +24,7 @@
 //Macro for Doc generate
 #define Arp_WITH_DOC_STRINGS
 
-
+//switch of Service add-in
 #define ENABLE_DATAACCESSSERVICE
 #define ENABLE_SUBSCRIPTIONSERVICE
 
