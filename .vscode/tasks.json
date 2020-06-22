@@ -1,0 +1,85 @@
+{
+   "version": "2.0.0",
+   "tasks": [
+      {
+         "label": "Build(Release)",
+         "type": "shell",
+         "command": "${workspaceFolder}/tools/scripts/build",
+         "problemMatcher": [],
+         "group": {
+            "kind": "build",
+            "isDefault": true
+         }
+      },
+      {
+         "label": "Debug",
+         "type": "shell",
+         "command": "${workspaceFolder}/tools/scripts/debug",
+         "problemMatcher": []
+      },
+      {
+         "label": "PLCnext  -> Login",
+         "type": "shell",
+         "command": "${workspaceFolder}/tools/scripts/PLC_Control",
+         "args": [
+            "login"
+         ],
+         "problemMatcher": []
+      },
+      {
+         "label": "PLCnext  -> START",
+         "type": "shell",
+         "command": "${workspaceFolder}/tools/scripts/PLC_Control",
+         "args": [
+            "start"
+         ],
+         "problemMatcher": []
+      },
+      {
+         "label": "PLCnext  -> STOP",
+         "type": "shell",
+         "command": "${workspaceFolder}/tools/scripts/PLC_Control",
+         "args": [
+            "stop"
+         ],
+         "problemMatcher": []
+      },
+      {
+         "label": "PLCnext  -> REBOOT",
+         "type": "shell",
+         "command": "${workspaceFolder}/tools/scripts/PLC_Control",
+         "args": [
+            "reboot"
+         ],
+         "problemMatcher": []
+      },
+      {
+         "label": "PLCnext  -> View SysLog",
+         "type": "shell",
+         "command": "${workspaceFolder}/tools/scripts/PLC_Control",
+         "args": [
+            "syslog"
+         ],
+         "problemMatcher": []
+      },
+      {
+         "label": "PLCnext  -> View AppLog",
+         "type": "shell",
+         "command": "${workspaceFolder}/tools/scripts/applog",
+         "problemMatcher": []
+      },
+      {
+         "label": "Download(Release)",
+         "type": "shell",
+         "command": "${workspaceFolder}/tools/scripts/download",
+         "problemMatcher": []
+      },
+      {
+         "label": "Kill GDBserver",
+         "type": "shell",
+         "command": "${workspaceFolder}/tools/scripts/killgdb",
+         "problemMatcher": []
+      }
+      
+   ]
+}
