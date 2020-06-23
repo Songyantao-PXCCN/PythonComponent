@@ -14,5 +14,4 @@ namespace PythonArp::PySubscriptionService
     int AddObject(PyObject* builtinsObject);
 
 
-
 }

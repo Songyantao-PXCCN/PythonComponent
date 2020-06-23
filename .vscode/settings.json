@@ -1,6 +1,12 @@
 {
-    "C_Cpp.errorSquiggles": "Disabled",
-    "C_Cpp.intelliSenseEngineFallback": "Enabled",
     
     "cmake.configureOnOpen": false,
+    "C_Cpp.experimentalFeatures": "Enabled",
+    "C_Cpp.errorSquiggles": "EnabledIfIncludesResolve",
+    "C_Cpp.intelliSenseEngineFallback": "Enabled",
+    "C_Cpp.default.intelliSenseMode": "gcc-arm",
+    "files.associations": {
+        "functional": "cpp",
+        "xstddef": "cpp"
+    },
 }

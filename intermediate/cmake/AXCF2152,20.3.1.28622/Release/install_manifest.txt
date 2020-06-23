@@ -1,1 +1,1 @@
-D:/test/PythonArp/bin/AXCF2152_20.3.1.28622/Release/lib/libPythonArp.so
+/mnt/d/test/PythonArp/bin/AXCF2152_20.3.1.28622/Release/lib/libPythonArp.so

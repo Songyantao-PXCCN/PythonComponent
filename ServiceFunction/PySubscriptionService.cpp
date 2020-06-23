@@ -15,7 +15,6 @@ namespace PythonArp::PySubscriptionService
 static char Subcription__ClassName[] = "SubscriptionService";
 
 
-
 /* -------------------------------------------------------------------------- */
 /*                              Subscription_obj                              */
 /* -------------------------------------------------------------------------- */

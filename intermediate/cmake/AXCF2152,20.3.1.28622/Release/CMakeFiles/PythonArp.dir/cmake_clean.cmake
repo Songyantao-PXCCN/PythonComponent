@@ -11,10 +11,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/PythonArp.dir/util/arg.cpp.o"
   "libPythonArp.pdb"
   "libPythonArp.so"
-  "libPythonArp.so.manifest"
-  "libPythonArp.pdb"
-  "CMakeFiles/CMakeRelink.dir/libPythonArp.so"
-  "CMakeFiles/CMakeRelink.dir/libPythonArp.so.manifest"
 )
 
 # Per-language clean rules from dependency scanning.
