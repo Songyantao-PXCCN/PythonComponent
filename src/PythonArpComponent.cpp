@@ -96,9 +96,9 @@ namespace PythonArp
         // never remove next line
         ProgramComponentBase::ResetConfig();
         // implement this inverse to SetupConfig() and LoadConfig()
-        sleep(1);
         if(!this->isPyStarter)
             return;
+        sleep(1);
         PyGILState_Ensure();//before calling Py_Finalize(),must gain GIL first.
         if (Py_IsInitialized())
         {
