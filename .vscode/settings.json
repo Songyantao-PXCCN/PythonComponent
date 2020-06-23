@@ -72,5 +72,7 @@
     "python.linting.pylintEnabled": false,
     "python.linting.pydocstyleEnabled": false,
     "python.linting.enabled": true,
-    "python.linting.prospectorEnabled": true
+    "python.linting.prospectorEnabled": true,
+    "python.pythonPath": "C:\\ProgramData\\Anaconda3\\python.exe"
+
 }

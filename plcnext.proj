@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <ProjectSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.phoenixcontact.com/schema/cliproject">
   <Target>AXCF2152,2020.3.1 (20.3.1.28622)</Target>
-  <Target>AXCF2152,2020.0 LTS (20.0.0.24752)</Target>
+  <!-- <Target>AXCF2152,2020.0 LTS (20.0.0.24752)</Target> -->
   <Id>887f917c-428f-4703-adf4-954be03b86ac</Id>
   <Version>1.1</Version>
 </ProjectSettings>

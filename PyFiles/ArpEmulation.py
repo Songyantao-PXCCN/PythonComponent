@@ -32,11 +32,11 @@ class DB:
         self.printVal = pringNewValue
 
     def add(self, varName: str, varValue, figureType: int = None):
-        item = GDS_DB.variableItem(varName, varValue, figureType,self.printVal)
+        item = GDS_DB.variableItem(varName, varValue, figureType, self.printVal)
         self.DB[varName] = item
 
     class variableItem:
-        def __init__(self, varName, varValue, figureType,printVal):
+        def __init__(self, varName, varValue, figureType, printVal):
             self.varName = varName
             self.varValue = varValue
             self._print = printVal
@@ -146,7 +146,7 @@ def GDS_Read(variables, prefix: str = None,
         buf_Type = dict()
         for var in varNames:
             curRet = GDS_DB.DB.get(var, None)
-            if curRet == None:
+            if curRet is None:
                 buf_Result[var] = None
                 buf_FaultReason[var] = "NotExists"
                 buf_Type[var] = "Void"
@@ -160,7 +160,7 @@ def GDS_Read(variables, prefix: str = None,
         buf_Type = list()
         for var in varNames:
             curRet = GDS_DB.DB.get(var, None)
-            if curRet == None:
+            if curRet is None:
                 buf_Result.append(None)
                 buf_FaultReason.append("NotExists")
                 buf_Type.append("Void")
@@ -208,28 +208,28 @@ def GDS_Write(variables: dict, prefix: str = None, forceType: dict = None) -> di
     if forceType and (type(forceType) != dict):
         raise TypeError("forceType should be dict")
 
-    vars = dict()
+    _vars = dict()
     _forceType = dict()
 
     if prefix:
         for _key in variables:
-            vars[prefix + _key] = variables[_key]
-        if forceType == None:
+            _vars[prefix + _key] = variables[_key]
+        if forceType is None:
             _forceType = None
         else:
             for __key in forceType:
                 _forceType[prefix + __key] = forceType[__key]
     else:
-        vars = variables
+        _vars = variables
         _forceType = forceType
 
     result = dict()
-    for key in vars:
+    for key in _vars:
         DB_val = GDS_DB.DB.get(key, None)
-        if DB_val == None:
+        if DB_val is None:
             result[key] = "NotExists"
         else:
-            valueSet = vars[key]
+            valueSet = _vars[key]
             if type(valueSet) != type(DB_val.varValue):
                 result[key] = "TypeMismatch"
             else:
@@ -241,7 +241,7 @@ def GDS_Write(variables: dict, prefix: str = None, forceType: dict = None) -> di
                     DB_val.refreshValue(valueSet)
                 else:
                     if type(valueSet) == float:
-                        if _forceType == None:
+                        if _forceType is None:
                             _realTYpe = GDS_TYPE_FLOAT32
                         else:
                             _realTYpe = _forceType.get(key, GDS_TYPE_FLOAT32)
@@ -251,7 +251,7 @@ def GDS_Write(variables: dict, prefix: str = None, forceType: dict = None) -> di
                         else:
                             result[key] = "TypeMismatch"
                     if type(valueSet) == int:
-                        if _forceType == None:
+                        if _forceType is None:
                             _intTYpe = GDS_TYPE_INT16
                         else:
                             _intTYpe = _forceType.get(key, GDS_TYPE_INT16)
