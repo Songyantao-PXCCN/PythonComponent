@@ -254,25 +254,25 @@ namespace PythonArp::PyDataAccessService
             return NULL;
         }
 
-        std::vector<String> varNames_original;
+        std::vector<String> varNames;
         //parse varNames
         do
         {
             if (PyUnicode_Check(PyO_variables))
             {
 
-                varNames_original.push_back(PyUnicode_AsUTF8(PyO_variables));
+                varNames.push_back(PyUnicode_AsUTF8(PyO_variables));
                 break;
             }
             else if (PyTuple_Check(PyO_variables) or PyList_Check(PyO_variables))
             {
-                varNames_original.reserve(PyObject_Size(PyO_variables));
+                varNames.reserve(PyObject_Size(PyO_variables));
                 t_seq = PyObject_GetIter(PyO_variables);
                 while ((t_item = PyIter_Next(t_seq)))
                 {
                     if (PyUnicode_Check(t_item))
                     {
-                        varNames_original.push_back(PyUnicode_AsUTF8(t_item));
+                        varNames.push_back(PyUnicode_AsUTF8(t_item));
                         Py_XDECREF(t_item);
                     }
                     else
@@ -304,11 +304,6 @@ namespace PythonArp::PyDataAccessService
                     vn = s_prefix + vn;
             } while (0);
         }
-
-        
-ssssssssssssssss
-
-
 
         auto result = readVariables(varNames);
         int size = result.size();
