@@ -15,6 +15,7 @@ namespace PythonArp::PySubscriptionService
 static char Subcription__ClassName[] = "SubscriptionService";
 
 
+
 /* -------------------------------------------------------------------------- */
 /*                              Subscription_obj                              */
 /* -------------------------------------------------------------------------- */
@@ -168,7 +169,7 @@ static PyObject* Subcription_CreateSubscription (Subscription_obj *self,PyObject
         int recordCount = 10;
         int kind = 0;
 
-        if (!util::argParse::xPyArg_ParseTupleAndKeywords(args, kw, "i|i",(char **) kwList, &kind, &recordCount))
+        if (!PyArg_ParseTupleAndKeywords(args, kw, "i|i",(char **) kwList, &kind, &recordCount))
         {
             return NULL;
         }
@@ -301,9 +302,9 @@ Returns "None" on success.
 static PyObject* Subcription_AddVariable (Subscription_obj *self,PyObject* args, PyObject* kw)
 {
     static const char *kwList[] = {"variables", "prefix", NULL};
-    PyObject *t_seq, *t_item, *PyO_variables;
+    PyObject *PyO_variables;
     const char *prefix = NULL;
-    if (!util::argParse::xPyArg_ParseTupleAndKeywords(args, kw, "O|s",(char **) kwList, &PyO_variables, &prefix))
+    if (!PyArg_ParseTupleAndKeywords(args, kw, "O|s",(char **) kwList, &PyO_variables, &prefix))
     {
         return NULL;
     }
@@ -313,58 +314,16 @@ static PyObject* Subcription_AddVariable (Subscription_obj *self,PyObject* args,
         PyErr_SetString(PyExc_RuntimeError,"No subcription created yet !");
         return NULL;
     }
+    
 
-    std::list<String> varNames;
-    PyObject* ret = PyDict_New();
-    //parse varNames
-    do
+    std::vector<String> varNames;
+    int offset=0;
+    if(PythonArp::util::argParse::variablesParse(PyO_variables,prefix,varNames,offset))
     {
-        if (PyUnicode_Check(PyO_variables))
-        {
-
-            varNames.push_back(PyUnicode_AsUTF8(PyO_variables));
-            break;
-        }
-        else if (PyTuple_Check(PyO_variables) or PyList_Check(PyO_variables))
-        {
-            t_seq = PyObject_GetIter(PyO_variables);
-            while ((t_item = PyIter_Next(t_seq)))
-            {
-                if (PyUnicode_Check(t_item))
-                {
-                    varNames.push_back(PyUnicode_AsUTF8(t_item));
-                    Py_XDECREF(t_item);
-                }
-                else
-                {
-                    Py_XDECREF(t_item);
-                    Py_XDECREF(t_seq);
-                    PyErr_SetString(PyExc_TypeError, "all items must be str");
-                    return NULL;
-                }
-            }
-            Py_XDECREF(t_seq);
-            break;
-        }
-        else
-        {
-            PyErr_SetString(PyExc_TypeError, "Variables should be tuple, List or Str !");
-            return NULL;
-        }
-    } while (0);
-    //add prefix
-    if (prefix != NULL)
-    {
-        do
-        {
-            String s_prefix = prefix;
-            if (s_prefix.IsEmpty())
-                break;
-            for (auto &vn : varNames)
-                vn = s_prefix + vn;
-        } while (0);
+        return NULL;
     }
 
+    PyObject* ret = PyDict_New();
     self->p_ISubscriptionService->AddVariables(self->subscription_id,ISubscriptionService::AddVariablesVariableNamesDelegate::create([&](IRscWriteEnumerator<RscString<512>>& WriteEnumerator)
         {
             WriteEnumerator.BeginWrite(varNames.size());
@@ -374,7 +333,7 @@ static PyObject* Subcription_AddVariable (Subscription_obj *self,PyObject* args,
         {
             size_t count = ReadEnumerator.BeginRead();
             
-            std::list<String>::const_iterator iter_VarName = varNames.begin();
+            std::vector<String>::const_iterator iter_VarName = varNames.begin();
             for(size_t i=0;i <count;i++,iter_VarName++)
             {
                 DataAccessError current;
@@ -386,11 +345,12 @@ static PyObject* Subcription_AddVariable (Subscription_obj *self,PyObject* args,
                 //}
 
                 PyObject *tmp = PyUnicode_FromString(Enum<DataAccessError>(current).ToString().CStr());
-                PyDict_SetItemString(ret,iter_VarName->CStr(),tmp);
+                PyDict_SetItemString(ret,iter_VarName->CStr()+offset,tmp);
                 Py_XDECREF(tmp);
             }
             ReadEnumerator.EndRead();
         }));
+
     return ret;
 }
 
@@ -414,9 +374,9 @@ Returns "None" on success.
 static PyObject* Subcription_RemoveVariable (Subscription_obj *self,PyObject* args, PyObject* kw)
 {
     static const char *kwList[] = {"variables", "prefix", NULL};
-    PyObject *t_seq, *t_item, *PyO_variables;
+    PyObject *PyO_variables;
     const char *prefix = NULL;
-    if (!util::argParse::xPyArg_ParseTupleAndKeywords(args, kw, "O|s",(char **) kwList, &PyO_variables, &prefix))
+    if (!PyArg_ParseTupleAndKeywords(args, kw, "O|s",(char **) kwList, &PyO_variables, &prefix))
     {
         return NULL;
     }
@@ -425,58 +385,19 @@ static PyObject* Subcription_RemoveVariable (Subscription_obj *self,PyObject* ar
         PyErr_SetString(PyExc_RuntimeError,"No subcription created yet !");
         return NULL;
     }
-    std::list<String> varNames;
     std::list<DataAccessError> dataAccessErrors;
-    PyObject* ret = PyDict_New();
-    //parse varNames
-    do
+    
+    
+
+    std::vector<String> varNames;
+    int offset = 0;
+    if(PythonArp::util::argParse::variablesParse(PyO_variables,prefix,varNames,offset))
     {
-        if (PyUnicode_Check(PyO_variables))
-        {
-            varNames.push_back(PyUnicode_AsUTF8(PyO_variables));
-            break;
-        }
-        else if (PyTuple_Check(PyO_variables) or PyList_Check(PyO_variables))
-        {
-            t_seq = PyObject_GetIter(PyO_variables);
-            while ((t_item = PyIter_Next(t_seq)))
-            {
-                if (PyUnicode_Check(t_item))
-                {
-                    varNames.push_back(PyUnicode_AsUTF8(t_item));
-                    Py_XDECREF(t_item);
-                }
-                else
-                {
-                    Py_XDECREF(t_item);
-                    Py_XDECREF(t_seq);
-                    PyErr_SetString(PyExc_TypeError, "all items must be str");
-                    return NULL;
-                }
-            }
-            Py_XDECREF(t_seq);
-            break;
-        }
-        else
-        {
-            PyErr_SetString(PyExc_TypeError, "Variables should be tuple, List or Str !");
-            return NULL;
-        }
-    } while (0);
-    //add prefix
-    if (prefix != NULL)
-    {
-        do
-        {
-            String s_prefix = prefix;
-            if (s_prefix.IsEmpty())
-                break;
-            for (auto &vn : varNames)
-                vn = s_prefix + vn;
-        } while (0);
+        return NULL;
     }
 
-    std::list<String>::const_iterator iter_VarName = varNames.begin();
+    PyObject* ret = PyDict_New();
+    std::vector<String>::const_iterator iter_VarName = varNames.begin();
     for (auto &var:varNames)
     {
         DataAccessError tmpError= self->p_ISubscriptionService->RemoveVariable(self->subscription_id,var);
@@ -493,7 +414,7 @@ static PyObject* Subcription_RemoveVariable (Subscription_obj *self,PyObject* ar
         }
 
         PyObject *tmp = PyUnicode_FromString(Enum<DataAccessError>(tmpError).ToString().CStr());
-        PyDict_SetItemString(ret,iter_VarName->CStr(),tmp);
+        PyDict_SetItemString(ret,iter_VarName->CStr()+offset,tmp);
         Py_XDECREF(tmp);
         iter_VarName++;
     }

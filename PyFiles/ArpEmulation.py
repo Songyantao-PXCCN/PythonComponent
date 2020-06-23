@@ -79,17 +79,7 @@ class DB:
 
 GDS_DB = DB()
 # GDS_DB = DB(True) # with DataChangeLog
-'''
-Variables that PLC should have with it's init value
-when the variable is figureType,better to provide explicit type of it.
-By default,float is set to 'GDS_TYPE_FLOAT32' , int is set to 'GDS_TYPE_INT16'
-'''
-GDS_DB.add("Arp.Plc.Eclr/BOOL001", True)
-GDS_DB.add("Arp.Plc.Eclr/REAL001", 12.3)  # by default is GDS_TYPE_FLOAT32
-GDS_DB.add("Arp.Plc.Eclr/LREAL001", 12345.67, figureType=GDS_TYPE_FLOAT64)
-GDS_DB.add("Arp.Plc.Eclr/INT001", 12)  # by default is GDS_TYPE_INT16
-GDS_DB.add("Arp.Plc.Eclr/DINT001", 123456, figureType=GDS_TYPE_INT32)
-GDS_DB.add("Arp.Plc.Eclr/STRING001", "hello")
+
 
 
 def GDS_Read(variables, prefix: str = None,
@@ -139,6 +129,8 @@ def GDS_Read(variables, prefix: str = None,
             varNames = [variables]
         else:
             varNames = variables
+    
+    _offset = 0 if prefix is None else len(prefix)
 
     if _RETURN_DICT:
         buf_Result = dict()
@@ -147,13 +139,13 @@ def GDS_Read(variables, prefix: str = None,
         for var in varNames:
             curRet = GDS_DB.DB.get(var, None)
             if curRet is None:
-                buf_Result[var] = None
-                buf_FaultReason[var] = "NotExists"
-                buf_Type[var] = "Void"
+                buf_Result[var[_offset:]] = None
+                buf_FaultReason[var[_offset:]] = "NotExists"
+                buf_Type[var[_offset:]] = "Void"
             else:
-                buf_Result[var] = curRet.varValue
-                buf_FaultReason[var] = "None"
-                buf_Type[var] = curRet.varType[0]
+                buf_Result[var[_offset:]] = curRet.varValue
+                buf_FaultReason[var[_offset:]] = "None"
+                buf_Type[var[_offset:]] = curRet.varType[0]
     else:
         buf_Result = list()
         buf_FaultReason = list()
@@ -201,6 +193,7 @@ def GDS_Write(variables: dict, prefix: str = None, forceType: dict = None) -> di
                                    By default,float is set to 'GDS_TYPE_FLOAT32' , int is set to 'GDS_TYPE_INT16'
     :return:dict{variableName : Fault reason}
     '''
+
     if type(variables) != dict:
         raise TypeError("variables should be dict")
     if prefix and type(prefix) != str:
@@ -222,22 +215,22 @@ def GDS_Write(variables: dict, prefix: str = None, forceType: dict = None) -> di
     else:
         _vars = variables
         _forceType = forceType
-
+    _offset = 0 if prefix is None else len(prefix)
     result = dict()
     for key in _vars:
         DB_val = GDS_DB.DB.get(key, None)
         if DB_val is None:
-            result[key] = "NotExists"
+            result[key[_offset:]] = "NotExists"
         else:
             valueSet = _vars[key]
             if type(valueSet) != type(DB_val.varValue):
-                result[key] = "TypeMismatch"
+                result[key[_offset:]] = "TypeMismatch"
             else:
                 if type(valueSet) == bool:
-                    result[key] = "None"
+                    result[key[_offset:]] = "None"
                     DB_val.refreshValue(valueSet)
                 elif type(valueSet) == str:
-                    result[key] = "None"
+                    result[key[_offset:]] = "None"
                     DB_val.refreshValue(valueSet)
                 else:
                     if type(valueSet) == float:
@@ -247,9 +240,9 @@ def GDS_Write(variables: dict, prefix: str = None, forceType: dict = None) -> di
                             _realTYpe = _forceType.get(key, GDS_TYPE_FLOAT32)
                         if DB_val.varType[1] == _realTYpe:
                             DB_val.refreshValue(valueSet)
-                            result[key] = "None"
+                            result[key[_offset:]] = "None"
                         else:
-                            result[key] = "TypeMismatch"
+                            result[key[_offset:]] = "TypeMismatch"
                     if type(valueSet) == int:
                         if _forceType is None:
                             _intTYpe = GDS_TYPE_INT16
@@ -257,10 +250,27 @@ def GDS_Write(variables: dict, prefix: str = None, forceType: dict = None) -> di
                             _intTYpe = _forceType.get(key, GDS_TYPE_INT16)
                         if DB_val.varType[1] == _intTYpe:
                             DB_val.refreshValue(valueSet)
-                            result[key] = "None"
+                            result[key[_offset:]] = "None"
                         else:
-                            result[key] = "TypeMismatch"
+                            result[key[_offset:]] = "TypeMismatch"
     return result
+
+
+
+
+
+
+'''
+Variables that PLC should have with its' init value
+when the variable is a figure type, better to provide explicit type of it.
+By default,float is set to 'GDS_TYPE_FLOAT32' , int is set to 'GDS_TYPE_INT16'
+'''
+GDS_DB.add("Arp.Plc.Eclr/BOOL001", True)
+GDS_DB.add("Arp.Plc.Eclr/REAL001", 12.3)  # by default is GDS_TYPE_FLOAT32
+GDS_DB.add("Arp.Plc.Eclr/LREAL001", 12345.67, figureType=GDS_TYPE_FLOAT64)
+GDS_DB.add("Arp.Plc.Eclr/INT001", 12)  # by default is GDS_TYPE_INT16
+GDS_DB.add("Arp.Plc.Eclr/DINT001", 123456, figureType=GDS_TYPE_INT32)
+GDS_DB.add("Arp.Plc.Eclr/STRING001", "hello")
 
 
 if __name__ == "__main__":
@@ -290,7 +300,11 @@ if __name__ == "__main__":
     print(GDS_Write({"Arp.Plc.Eclr/STRING001": True}))
     print(GDS_Write({"Arp.Plc.Eclr/DINT001": 1000}))
     # right way to write "Arp.Plc.Eclr/DINT001"
+    # print(GDS_Write({"Arp.Plc.Eclr/DINT001": 1000}, forceType={"Arp.Plc.Eclr/DINT001": GDS_TYPE_INT32}))
+    print(GDS_Write({"DINT001": 1000}, forceType={"DINT001": GDS_TYPE_INT32},prefix="Arp.Plc.Eclr/"))
+    #or:
     print(GDS_Write({"Arp.Plc.Eclr/DINT001": 1000}, forceType={"Arp.Plc.Eclr/DINT001": GDS_TYPE_INT32}))
+
     # --------------------------
     for i in range(5):
         ret = GDS_Read("Arp.Plc.Eclr/STRING001", returnType=GDS_RETURN_VALUES)

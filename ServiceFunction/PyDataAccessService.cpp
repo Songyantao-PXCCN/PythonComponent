@@ -24,34 +24,35 @@
 
 namespace PythonArp::PyDataAccessService
 {
-    //DEPARTED in future (these two function can not operate array and struct )
-    std::list<ReadItem> readVariables(const std::vector<String> &varNames)
-    {
-        std::list<ReadItem> ret;
+    // //DEPARTED in future (these two function can not operate array and struct )
+    // std::list<ReadItem> readVariables(const std::vector<String> &varNames)
+    // {
+    //     std::list<ReadItem> ret;
 
-        PythonArpComponent::instancePointer->p_IDataAccessService->Read(
-            IDataAccessService::ReadPortNamesDelegate::create(
-                [&](IRscWriteEnumerator<RscString<512>> &WriteEnumerator) {
-                    WriteEnumerator.BeginWrite(varNames.size());
-                    for (auto &varname : varNames)
-                        WriteEnumerator.WriteNext(varname);
-                    WriteEnumerator.EndWrite();
-                }),
-            IDataAccessService::ReadResultDelegate::create(
-                [&](IRscReadEnumerator<ReadItem> &ReadEnumerator) {
-                    ret.clear();
-                    size_t valueCount = ReadEnumerator.BeginRead();
-                    ReadItem current;
-                    for (size_t i = 0; i < valueCount; i++)
-                    {
-                        ReadEnumerator.ReadNext(current);
-                        ret.push_back(current);
-                    }
-                    ReadEnumerator.EndRead();
-                }));
+    //     PythonArpComponent::instancePointer->p_IDataAccessService->Read(
+    //         IDataAccessService::ReadPortNamesDelegate::create(
+    //             [&](IRscWriteEnumerator<RscString<512>> &WriteEnumerator) {
+    //                 WriteEnumerator.BeginWrite(varNames.size());
+    //                 for (auto &varname : varNames)
+    //                     WriteEnumerator.WriteNext(varname);
+    //                 WriteEnumerator.EndWrite();
+    //             }),
+    //         IDataAccessService::ReadResultDelegate::create(
+    //             [&](IRscReadEnumerator<ReadItem> &ReadEnumerator) {
+    //                 ret.clear();
+    //                 size_t valueCount = ReadEnumerator.BeginRead();
+    //                 ReadItem current;
+    //                 for (size_t i = 0; i < valueCount; i++)
+    //                 {
+    //                     ReadEnumerator.ReadNext(current);
+    //                     ret.push_back(current);
+    //                 }
+    //                 ReadEnumerator.EndRead();
+    //             }));
 
-        return ret;
-    }
+    //     return ret;
+    // }
+
     std::list<DataAccessError> writeVariables(const std::vector<WriteItem> &WriteVariables)
     {
         std::list<DataAccessError> ret;
@@ -225,16 +226,220 @@ namespace PythonArp::PyDataAccessService
         }
     }
 
-/* ------------------------- DataAccessService->Read ------------------------ */
+// /* ------------------------- DataAccessService->Read ------------------------ */
+//     #define _DATAACCESSSERVICE_READ_METHODDEF \
+//     {"GDS_Read", (PyCFunction)Wrap_DataAccessService_Read, METH_VARARGS | METH_KEYWORDS, DataAccessService_Read__doc__},
+//     ArpPyDoc_STRVAR(DataAccessService_Read__doc__,
+//     "Wrap of DataAccessService->Read,this function can read primitive type only");
+//     static PyObject *Wrap_DataAccessService_Read(PyObject *, PyObject *args, PyObject *kwargs)
+//     {
+//         static const char *kwList[] = {"variables", "prefix", "returnType", NULL};
+//         int returnType = 7;
+//         PyObject  *PyO_variables;
+//         const char *prefix = NULL;
+
+//         if (!PyArg_ParseTupleAndKeywords(args, kwargs, "O|si",(char **) kwList, &PyO_variables, &prefix, &returnType))
+//         {
+//             return NULL;
+//         }
+
+
+//         bool _RETURN_VALUES = returnType & GDS_RETURN_VALUES;
+//         bool _RETURN_FAULTREASON = returnType & GDS_RETURN_FAULTREASON;
+//         bool _RETURN_DATATYPE = returnType & GDS_RETURN_DATATYPE;
+//         bool _RETURN_DICT = returnType & GDS_RETURN_DICT;
+
+//         if (!_RETURN_VALUES and !_RETURN_FAULTREASON and !_RETURN_DATATYPE)
+//         {
+//             PyErr_SetString(PyExc_TypeError, "Wrong returnType , Nothing can be return");
+//             return NULL;
+//         }
+
+
+//         std::vector<String> varNames;
+//         if(PythonArp::util::argParse::variablesParse(PyO_variables,prefix,varNames))
+//         {
+//             return NULL;
+//         }
+
+
+
+//         auto result = readVariables(varNames);
+//         int size = result.size();
+
+//         PyObject *retValues;
+//         PyObject *retFaultReason;
+//         PyObject *retDataType;
+
+
+//         if (_RETURN_DICT)
+//         {
+//             if (_RETURN_VALUES)
+//                 retValues = PyDict_New();
+//             if (_RETURN_FAULTREASON)
+//                 retFaultReason = PyDict_New();
+//             if (_RETURN_DATATYPE)
+//                 retDataType = PyDict_New();
+//         }
+//         else
+//         {
+//             if (_RETURN_VALUES)
+//                 retValues = PyTuple_New(size);
+//             if (_RETURN_FAULTREASON)
+//                 retFaultReason = PyTuple_New(size);
+//             if (_RETURN_DATATYPE)
+//                 retDataType = PyTuple_New(size);
+//         }
+
+//         int index = 0;
+
+//         for (auto &currentReadItem : result)
+//         {
+//             if (_RETURN_DATATYPE)
+//             {   
+//                 PyObject *tmp = PyUnicode_FromString(Enum<RscType>(currentReadItem.Value.GetType()).ToString().CStr());
+//                 if (_RETURN_DICT)
+//                 {
+//                     PyDict_SetItemString(retDataType, varNames[index].CStr(), tmp);
+//                     Py_XDECREF(tmp);
+//                 }
+//                 else
+//                     PyTuple_SetItem(retDataType, index, tmp);
+//                 //Py_XDECREF(tmp);
+//             }
+//             if (_RETURN_FAULTREASON)
+//             {
+//                 PyObject *tmp = PyUnicode_FromString(Enum<DataAccessError>(currentReadItem.Error).ToString().CStr());
+//                 if (_RETURN_DICT)
+//                 {
+//                     PyDict_SetItemString(retFaultReason, varNames[index].CStr(), tmp);
+//                     Py_XDECREF(tmp);
+//                 }
+//                 else
+//                     PyTuple_SetItem(retFaultReason, index, tmp);
+//                 //Py_XDECREF(tmp);
+//             }
+
+//             if (_RETURN_VALUES)
+//             {
+//                 PyObject *O_value = NULL;
+//                 if (currentReadItem.Error == DataAccessError::None)
+//                 {
+//                     //(type >= RscType::Bool && type <= RscType::Real64) || (type >= RscType::IecTime && type <= RscType::IecTimeOfDay64);
+
+//                     switch (currentReadItem.Value.GetValueType())
+//                     {
+//                     case RscType::Void: //maybe never reached in case of 'DataAccessError::None' .
+//                         O_value = NULL;
+//                         break;
+//                     case RscType::Bool:
+//                         O_value = PyBool_FromLong(currentReadItem.Value.GetValue<bool>());
+//                         break;
+//                     case RscType::Int8:
+//                         O_value = PyLong_FromLong(currentReadItem.Value.GetValue<Arp::int8>());
+//                         break;
+//                     case RscType::Int16:
+//                         O_value = PyLong_FromLong(currentReadItem.Value.GetValue<Arp::int16>());
+//                         break;
+//                     case RscType::Int32:
+//                         O_value = PyLong_FromLong(currentReadItem.Value.GetValue<Arp::int32>());
+//                         break;
+//                     case RscType::Int64:
+//                         O_value = PyLong_FromLongLong(currentReadItem.Value.GetValue<Arp::int64>());
+//                         break;
+//                     case RscType::Uint8:
+//                         O_value = PyLong_FromUnsignedLong(currentReadItem.Value.GetValue<Arp::uint8>());
+//                         break;
+//                     case RscType::Uint16:
+//                         O_value = PyLong_FromUnsignedLong(currentReadItem.Value.GetValue<Arp::uint16>());
+//                         break;
+//                     case RscType::Uint32:
+//                         O_value = PyLong_FromUnsignedLong(currentReadItem.Value.GetValue<Arp::uint32>());
+//                         break;
+//                     case RscType::Uint64:
+//                         O_value = PyLong_FromUnsignedLongLong(currentReadItem.Value.GetValue<Arp::uint64>());
+//                         break;
+//                     case RscType::Real32:
+//                         O_value = PyFloat_FromDouble(currentReadItem.Value.GetValue<Arp::float32>());
+//                         break;
+//                     case RscType::Real64:
+//                         O_value = PyFloat_FromDouble(currentReadItem.Value.GetValue<Arp::float64>());
+//                         break;
+//                     case RscType::String:
+//                         O_value = PyUnicode_FromString(currentReadItem.Value.GetChars());
+//                         break;
+
+//                     //todo  Array & Struct
+//                     default:
+//                         O_value = NULL;
+//                         break;
+//                     }
+//                 }
+//                 else
+//                 {
+//                     O_value = NULL;
+//                 }
+
+//                 if (_RETURN_DICT)
+//                 {
+//                     if (O_value)
+//                     {
+//                         PyDict_SetItemString(retValues, varNames[index].CStr(),O_value);
+//                         Py_XDECREF(O_value);
+//                     }
+//                     else
+//                     {
+//                         PyDict_SetItemString(retValues, varNames[index].CStr(),Py_None);
+//                     }
+//                 }
+//                 else
+//                 {
+//                     if (O_value)
+//                     {
+//                         PyTuple_SetItem(retValues, index,O_value);
+//                     }else
+//                     {
+//                         Py_INCREF(Py_None);
+//                         PyTuple_SetItem(retValues, index, Py_None);
+//                     }
+//                 }
+//             }
+//             index++;
+//         }
+
+//         if (_RETURN_VALUES and _RETURN_FAULTREASON and _RETURN_DATATYPE)
+//             return Py_BuildValue("NNN",retValues,retFaultReason,retDataType);
+//         else if (_RETURN_VALUES and !_RETURN_FAULTREASON and ! _RETURN_DATATYPE)
+//             return retValues;
+//         else if (!_RETURN_VALUES and _RETURN_FAULTREASON and !_RETURN_DATATYPE)
+//             return retFaultReason;
+//         else if (!_RETURN_VALUES and !_RETURN_FAULTREASON and _RETURN_DATATYPE)
+//             return retDataType;
+//         else if (_RETURN_VALUES and _RETURN_FAULTREASON and !_RETURN_DATATYPE)
+//             return Py_BuildValue("NN",retValues,retFaultReason);
+//         else if (_RETURN_VALUES and !_RETURN_FAULTREASON and _RETURN_DATATYPE)
+//             return Py_BuildValue("NN",retValues,retDataType);
+//         else if (!_RETURN_VALUES and _RETURN_FAULTREASON and _RETURN_DATATYPE)
+//             return Py_BuildValue("NN",retFaultReason,retDataType);
+//         else
+//             return NULL;
+        
+//     }
+    
+
+
+/* ----------------- DataAccessService->Read(array & struct) ---------------- */
+    //this function can read any kind of RscVariant , but more test is needed
+    //key-word arguments crash in this function need to be fixed
     #define _DATAACCESSSERVICE_READ_METHODDEF \
-    {"GDS_Read", (PyCFunction)Wrap_DataAccessService_Read, METH_VARARGS | METH_KEYWORDS, DataAccessService_Read__doc__},
-    ArpPyDoc_STRVAR(DataAccessService_Read__doc__,
-    "Wrap of DataAccessService->Read,this function can read primitive type only");
-    static PyObject *Wrap_DataAccessService_Read(PyObject *, PyObject *args, PyObject *kwargs)
+    {"GDS_Read", (PyCFunction)Wrap_DataAccessService_Readc, METH_VARARGS | METH_KEYWORDS, DataAccessService_Readc__doc__},
+    ArpPyDoc_STRVAR(DataAccessService_Readc__doc__,
+    "Warp of DataAccessService->Read,this function can read any kind of RscVariant");
+    static PyObject *Wrap_DataAccessService_Readc(PyObject *, PyObject *args, PyObject *kwargs)
     {
         static const char *kwList[] = {"variables", "prefix", "returnType", NULL};
-        unsigned short returnType = 7;
-        PyObject *t_seq, *t_item, *PyO_variables;
+        int returnType = 7;
+        PyObject *PyO_variables;
         const char *prefix = NULL;
 
         if (!PyArg_ParseTupleAndKeywords(args, kwargs, "O|si",(char **) kwList, &PyO_variables, &prefix, &returnType))
@@ -242,254 +447,10 @@ namespace PythonArp::PyDataAccessService
             return NULL;
         }
 
-        bool _RETURN_VALUES = returnType & GDS_RETURN_VALUES;
-        bool _RETURN_FAULTREASON = returnType & GDS_RETURN_FAULTREASON;
-        bool _RETURN_DATATYPE = returnType & GDS_RETURN_DATATYPE;
-        bool _RETURN_DICT = returnType & GDS_RETURN_DICT;
-
-        if (!_RETURN_VALUES and !_RETURN_FAULTREASON and !_RETURN_DATATYPE)
+        if (!PyList_Check(PyO_variables))
         {
-            PyErr_SetString(PyExc_TypeError, "Wrong returnType , Nothing can be return");
-            return NULL;
+            Py_RETURN_NONE;
         }
-
-        std::vector<String> varNames;
-        //parse varNames
-        do
-        {
-            if (PyUnicode_Check(PyO_variables))
-            {
-
-                varNames.push_back(PyUnicode_AsUTF8(PyO_variables));
-                break;
-            }
-            else if (PyTuple_Check(PyO_variables) or PyList_Check(PyO_variables))
-            {
-                varNames.reserve(PyObject_Size(PyO_variables));
-                t_seq = PyObject_GetIter(PyO_variables);
-                while ((t_item = PyIter_Next(t_seq)))
-                {
-                    if (PyUnicode_Check(t_item))
-                    {
-                        varNames.push_back(PyUnicode_AsUTF8(t_item));
-                        Py_XDECREF(t_item);
-                    }
-                    else
-                    {
-                        Py_XDECREF(t_item);
-                        Py_XDECREF(t_seq);
-                        PyErr_SetString(PyExc_TypeError, "all items must be str");
-                        return NULL;
-                    }
-                }
-                Py_XDECREF(t_seq);
-                break;
-            }
-            else
-            {
-                PyErr_SetString(PyExc_TypeError, "Variables should be tuple, List or Str !");
-                return NULL;
-            }
-        } while (0);
-        //add prefix
-        if (prefix != NULL)
-        {
-            do
-            {
-                String s_prefix = prefix;
-                if (s_prefix.IsEmpty())
-                    break;
-                for (auto &vn : varNames)
-                    vn = s_prefix + vn;
-            } while (0);
-        }
-
-        auto result = readVariables(varNames);
-        int size = result.size();
-
-        PyObject *retValues;
-        PyObject *retFaultReason;
-        PyObject *retDataType;
-
-
-        if (_RETURN_DICT)
-        {
-            if (_RETURN_VALUES)
-                retValues = PyDict_New();
-            if (_RETURN_FAULTREASON)
-                retFaultReason = PyDict_New();
-            if (_RETURN_DATATYPE)
-                retDataType = PyDict_New();
-        }
-        else
-        {
-            if (_RETURN_VALUES)
-                retValues = PyTuple_New(size);
-            if (_RETURN_FAULTREASON)
-                retFaultReason = PyTuple_New(size);
-            if (_RETURN_DATATYPE)
-                retDataType = PyTuple_New(size);
-        }
-
-        int index = 0;
-
-        for (auto &currentReadItem : result)
-        {
-            if (_RETURN_DATATYPE)
-            {   
-                PyObject *tmp = PyUnicode_FromString(Enum<RscType>(currentReadItem.Value.GetType()).ToString().CStr());
-                if (_RETURN_DICT)
-                {
-                    PyDict_SetItemString(retDataType, varNames[index].CStr(), tmp);
-                    Py_XDECREF(tmp);
-                }
-                else
-                    PyTuple_SetItem(retDataType, index, tmp);
-                //Py_XDECREF(tmp);
-            }
-            if (_RETURN_FAULTREASON)
-            {
-                PyObject *tmp = PyUnicode_FromString(Enum<DataAccessError>(currentReadItem.Error).ToString().CStr());
-                if (_RETURN_DICT)
-                {
-                    PyDict_SetItemString(retFaultReason, varNames[index].CStr(), tmp);
-                    Py_XDECREF(tmp);
-                }
-                else
-                    PyTuple_SetItem(retFaultReason, index, tmp);
-                //Py_XDECREF(tmp);
-            }
-
-            if (_RETURN_VALUES)
-            {
-                PyObject *O_value = NULL;
-                if (currentReadItem.Error == DataAccessError::None)
-                {
-                    //(type >= RscType::Bool && type <= RscType::Real64) || (type >= RscType::IecTime && type <= RscType::IecTimeOfDay64);
-
-                    switch (currentReadItem.Value.GetValueType())
-                    {
-                    case RscType::Void: //maybe never reached in case of 'DataAccessError::None' .
-                        O_value = NULL;
-                        break;
-                    case RscType::Bool:
-                        O_value = PyBool_FromLong(currentReadItem.Value.GetValue<bool>());
-                        break;
-                    case RscType::Int8:
-                        O_value = PyLong_FromLong(currentReadItem.Value.GetValue<Arp::int8>());
-                        break;
-                    case RscType::Int16:
-                        O_value = PyLong_FromLong(currentReadItem.Value.GetValue<Arp::int16>());
-                        break;
-                    case RscType::Int32:
-                        O_value = PyLong_FromLong(currentReadItem.Value.GetValue<Arp::int32>());
-                        break;
-                    case RscType::Int64:
-                        O_value = PyLong_FromLongLong(currentReadItem.Value.GetValue<Arp::int64>());
-                        break;
-                    case RscType::Uint8:
-                        O_value = PyLong_FromUnsignedLong(currentReadItem.Value.GetValue<Arp::uint8>());
-                        break;
-                    case RscType::Uint16:
-                        O_value = PyLong_FromUnsignedLong(currentReadItem.Value.GetValue<Arp::uint16>());
-                        break;
-                    case RscType::Uint32:
-                        O_value = PyLong_FromUnsignedLong(currentReadItem.Value.GetValue<Arp::uint32>());
-                        break;
-                    case RscType::Uint64:
-                        O_value = PyLong_FromUnsignedLongLong(currentReadItem.Value.GetValue<Arp::uint64>());
-                        break;
-                    case RscType::Real32:
-                        O_value = PyFloat_FromDouble(currentReadItem.Value.GetValue<Arp::float32>());
-                        break;
-                    case RscType::Real64:
-                        O_value = PyFloat_FromDouble(currentReadItem.Value.GetValue<Arp::float64>());
-                        break;
-                    case RscType::String:
-                        O_value = PyUnicode_FromString(currentReadItem.Value.GetChars());
-                        break;
-
-                    //todo  Array & Struct
-                    default:
-                        O_value = NULL;
-                        break;
-                    }
-                }
-                else
-                {
-                    O_value = NULL;
-                }
-
-                if (_RETURN_DICT)
-                {
-                    if (O_value)
-                    {
-                        PyDict_SetItemString(retValues, varNames[index].CStr(),O_value);
-                        Py_XDECREF(O_value);
-                    }
-                    else
-                    {
-                        PyDict_SetItemString(retValues, varNames[index].CStr(),Py_None);
-                    }
-                }
-                else
-                {
-                    if (O_value)
-                    {
-                        PyTuple_SetItem(retValues, index,O_value);
-                    }else
-                    {
-                        Py_INCREF(Py_None);
-                        PyTuple_SetItem(retValues, index, Py_None);
-                    }
-                }
-            }
-            index++;
-        }
-
-        if (_RETURN_VALUES and _RETURN_FAULTREASON and _RETURN_DATATYPE)
-            return Py_BuildValue("NNN",retValues,retFaultReason,retDataType);
-        else if (_RETURN_VALUES and !_RETURN_FAULTREASON and ! _RETURN_DATATYPE)
-            return retValues;
-        else if (!_RETURN_VALUES and _RETURN_FAULTREASON and !_RETURN_DATATYPE)
-            return retFaultReason;
-        else if (!_RETURN_VALUES and !_RETURN_FAULTREASON and _RETURN_DATATYPE)
-            return retDataType;
-        else if (_RETURN_VALUES and _RETURN_FAULTREASON and !_RETURN_DATATYPE)
-            return Py_BuildValue("NN",retValues,retFaultReason);
-        else if (_RETURN_VALUES and !_RETURN_FAULTREASON and _RETURN_DATATYPE)
-            return Py_BuildValue("NN",retValues,retDataType);
-        else if (!_RETURN_VALUES and _RETURN_FAULTREASON and _RETURN_DATATYPE)
-            return Py_BuildValue("NN",retFaultReason,retDataType);
-        else
-            return NULL;
-        
-    }
-    
-
-
-/* ----------------- DataAccessService->Read(array & struct) ---------------- */
-    //todo BUG!
-    //this function can read any kind of RscVariant , but more test is needed
-    //key-word arguments crash in this function need to be fixed
-    #define _DATAACCESSSERVICE_READC_METHODDEF \
-    {"GDS_Read_Complex", (PyCFunction)Wrap_DataAccessService_Readc, METH_VARARGS | METH_KEYWORDS, DataAccessService_Readc__doc__},
-    ArpPyDoc_STRVAR(DataAccessService_Readc__doc__,
-    "Warp of DataAccessService->Read,this function can read any kind of RscVariant");
-    static PyObject *Wrap_DataAccessService_Readc(PyObject *, PyObject *args, PyObject *kwargs)
-    {
-        static const char *kwList[] = {"variables", "prefix", "returnType", NULL};
-        unsigned short returnType = 7;
-        PyObject *t_seq, *t_item, *PyO_variables;
-        const char *prefix = NULL;
-
-        if (!util::argParse::xPyArg_ParseTupleAndKeywords(args, kwargs, "O|si",(char **) kwList, &PyO_variables, &prefix, &returnType))
-        {
-            return NULL;
-        }
-
-        Arp::System::Commons::Diagnostics::Logging::Log::Info("------Out------");
-        Arp::System::Commons::Diagnostics::Logging::Log::Info("Outer_PyList_Check(*p) ->{}",PyList_Check(PyO_variables)?"True":"False");
 
         bool _RETURN_VALUES = returnType & GDS_RETURN_VALUES;
         bool _RETURN_FAULTREASON = returnType & GDS_RETURN_FAULTREASON;
@@ -503,54 +464,16 @@ namespace PythonArp::PyDataAccessService
         }
 
         std::vector<String> varNames;
-        //parse varNames
-        do
+        int offset =0;
+        if(PythonArp::util::argParse::variablesParse(PyO_variables,prefix,varNames,offset))
         {
-            if (PyUnicode_Check(PyO_variables))
-            {
+            return NULL;
+        }
 
-                varNames.push_back(PyUnicode_AsUTF8(PyO_variables));
-                break;
-            }
-            else if (PyTuple_Check(PyO_variables) or PyList_Check(PyO_variables))
-            {
-                varNames.reserve(PyObject_Size(PyO_variables));
-                t_seq = PyObject_GetIter(PyO_variables);
-                while ((t_item = PyIter_Next(t_seq)))
-                {
-                    if (PyUnicode_Check(t_item))
-                    {
-                        varNames.push_back(PyUnicode_AsUTF8(t_item));
-                        Py_XDECREF(t_item);
-                    }
-                    else
-                    {
-                        Py_XDECREF(t_item);
-                        Py_XDECREF(t_seq);
-                        PyErr_SetString(PyExc_TypeError, "all items must be str");
-                        return NULL;
-                    }
-                }
-                Py_XDECREF(t_seq);
-                break;
-            }
-            else
-            {
-                PyErr_SetString(PyExc_TypeError, "Variables should be tuple, List or Str !");
-                return NULL;
-            }
-        } while (0);
-        //add prefix
-        if (prefix != NULL)
+        int nameOffset =0;
+        if(prefix)
         {
-            do
-            {
-                String s_prefix = prefix;
-                if (s_prefix.IsEmpty())
-                    break;
-                for (auto &vn : varNames)
-                    vn = s_prefix + vn;
-            } while (0);
+            nameOffset = strlen(prefix);
         }
 
         PyObject *retValues;
@@ -597,7 +520,7 @@ namespace PythonArp::PyDataAccessService
                             PyObject *tmp = PyUnicode_FromString(Enum<RscType>(current.Value.GetType()).ToString().CStr());
                             if (_RETURN_DICT)
                             {
-                                PyDict_SetItemString(retDataType, varNames[i].CStr(), tmp);
+                                PyDict_SetItemString(retDataType, varNames[i].CStr()+offset, tmp);
                                 Py_XDECREF(tmp);
                             }
                             else
@@ -608,7 +531,7 @@ namespace PythonArp::PyDataAccessService
                             PyObject *tmp = PyUnicode_FromString(Enum<DataAccessError>(current.Error).ToString().CStr());
                             if (_RETURN_DICT)
                             {
-                                PyDict_SetItemString(retFaultReason, varNames[i].CStr(), tmp);
+                                PyDict_SetItemString(retFaultReason, varNames[i].CStr()+offset, tmp);
                                 Py_XDECREF(tmp);
                             }
                             else
@@ -629,7 +552,7 @@ namespace PythonArp::PyDataAccessService
 
                             if(_RETURN_DICT)
                             {
-                                PyDict_SetItemString(retValues, varNames[i].CStr(),O_value);
+                                PyDict_SetItemString(retValues, varNames[i].CStr()+offset,O_value);
                                 Py_XDECREF(O_value);
                             }
                             else 
@@ -820,8 +743,9 @@ namespace PythonArp::PyDataAccessService
             //Py_XDECREF(O_varName);
         }
         Py_XDECREF(varNames);
+        int offset =0;
         if (prefix != NULL)
-        {
+        {   offset = strlen(prefix);
             do
             {
                 String s_prefix = prefix;
@@ -841,7 +765,7 @@ namespace PythonArp::PyDataAccessService
         for (auto &error : result)
         {   
             PyObject *va = PyUnicode_FromString(Enum<DataAccessError>(error).ToString().CStr());
-            PyDict_SetItemString(retResult, paramWriteItems[index].PortName.CStr(), va);
+            PyDict_SetItemString(retResult, paramWriteItems[index].PortName.CStr()+offset, va);
             Py_XDECREF(va);
             index++;
         }
@@ -856,7 +780,6 @@ namespace PythonArp::PyDataAccessService
 /* -------------------------------------------------------------------------- */
     static PyMethodDef DataAccess_methods[] = {
         _DATAACCESSSERVICE_READ_METHODDEF
-        _DATAACCESSSERVICE_READC_METHODDEF
         _DATAACCESSSERVICE_WRITE_METHODDEF
         {NULL, NULL, 0, NULL}};
 
