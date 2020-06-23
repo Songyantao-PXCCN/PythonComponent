@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Launch",
+            "name": "gdb_linux",
             "type": "cppdbg",
             "request": "launch",
             "miDebuggerServerAddress": "192.168.1.10:2345",
@@ -24,6 +24,27 @@
                 }
             ],
             "miDebuggerPath": "/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-gdb"
+        },
+        {
+            "name": "gdb_windows",
+            "type": "cppdbg",
+            "request": "launch",
+            "miDebuggerServerAddress": "192.168.1.10:2345",
+            "program": "D:\\sdk\\AXCF2152\\2020.3\\sysroots\\cortexa9t2hf-neon-pxc-linux-gnueabi\\usr\\binArp.System.Application",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "miDebuggerPath": "D:\\sdk\\AXCF2152\\2020.3\\sysroots\\x86_64-pokysdk-mingw32\\usr\\bin\\arm-pxc-linux-gnueabi\\arm-pxc-linux-gnueabi-gdb.exe"
         }
     ]
 }

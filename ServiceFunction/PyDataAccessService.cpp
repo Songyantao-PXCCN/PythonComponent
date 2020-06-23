@@ -23,6 +23,7 @@
 #define GDS_TYPE_FLOAT64 10
 
 
+
 namespace PythonArp::PyDataAccessService
 {
     //DEPARTED in future (these two function can not operate array and struct )

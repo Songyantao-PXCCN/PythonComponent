@@ -1,42 +1,42 @@
 Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-Compiler: /opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-gcc 
+Compiler: D:/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-gcc.exe 
 Build flags: ;;-mthumb;-mfpu=neon;-mfloat-abi=hard;-mcpu=cortex-a9
 Id flags:  
 
 The output was:
 1
-/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld: cannot find Scrt1.o: No such file or directory
-/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld: cannot find crti.o: No such file or directory
-/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld: cannot find crtbeginS.o: No such file or directory
-/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld: cannot find -lgcc
-/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld: cannot find -lgcc_s
-/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld: cannot find -lc
-/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld: cannot find -lgcc
-/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld: cannot find -lgcc_s
-/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld: cannot find crtendS.o: No such file or directory
-/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld: cannot find crtn.o: No such file or directory
-collect2: error: ld returned 1 exit status
+d:/sdk/axcf2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/../../libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld.exe: cannot find Scrt1.o: No such file or directory
+d:/sdk/axcf2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/../../libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld.exe: cannot find crti.o: No such file or directory
+d:/sdk/axcf2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/../../libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld.exe: cannot find crtbeginS.o: No such file or directory
+d:/sdk/axcf2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/../../libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld.exe: cannot find -lgcc
+d:/sdk/axcf2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/../../libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld.exe: cannot find -lgcc_s
+d:/sdk/axcf2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/../../libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld.exe: cannot find -lc
+d:/sdk/axcf2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/../../libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld.exe: cannot find -lgcc
+d:/sdk/axcf2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/../../libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld.exe: cannot find -lgcc_s
+d:/sdk/axcf2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/../../libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld.exe: cannot find crtendS.o: No such file or directory
+d:/sdk/axcf2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/../../libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld.exe: cannot find crtn.o: No such file or directory
+collect2.exe: error: ld returned 1 exit status
 
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
-Compiler: /opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-g++ 
+Compiler: D:/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-g++.exe 
 Build flags: ;;-mthumb;-mfpu=neon;-mfloat-abi=hard;-mcpu=cortex-a9
 Id flags:  
 
 The output was:
 1
-/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld: cannot find Scrt1.o: No such file or directory
-/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld: cannot find crti.o: No such file or directory
-/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld: cannot find crtbeginS.o: No such file or directory
-/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld: cannot find -lstdc++
-/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld: cannot find -lm
-/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld: cannot find -lgcc_s
-/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld: cannot find -lgcc
-/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld: cannot find -lc
-/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld: cannot find -lgcc_s
-/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld: cannot find -lgcc
-/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld: cannot find crtendS.o: No such file or directory
-/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld: cannot find crtn.o: No such file or directory
-collect2: error: ld returned 1 exit status
+d:/sdk/axcf2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/../../libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld.exe: cannot find Scrt1.o: No such file or directory
+d:/sdk/axcf2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/../../libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld.exe: cannot find crti.o: No such file or directory
+d:/sdk/axcf2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/../../libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld.exe: cannot find crtbeginS.o: No such file or directory
+d:/sdk/axcf2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/../../libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld.exe: cannot find -lstdc++
+d:/sdk/axcf2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/../../libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld.exe: cannot find -lm
+d:/sdk/axcf2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/../../libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld.exe: cannot find -lgcc_s
+d:/sdk/axcf2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/../../libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld.exe: cannot find -lgcc
+d:/sdk/axcf2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/../../libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld.exe: cannot find -lc
+d:/sdk/axcf2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/../../libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld.exe: cannot find -lgcc_s
+d:/sdk/axcf2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/../../libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld.exe: cannot find -lgcc
+d:/sdk/axcf2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/../../libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld.exe: cannot find crtendS.o: No such file or directory
+d:/sdk/axcf2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/../../libexec/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0/real-ld.exe: cannot find crtn.o: No such file or directory
+collect2.exe: error: ld returned 1 exit status
 
 

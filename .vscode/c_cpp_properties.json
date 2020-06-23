@@ -10,6 +10,18 @@
             "compilerPath": "/usr/bin/gcc",
             "cStandard": "c11",
             "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-x64"
+        },
+        {
+            "name": "Windows",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "D:\\sdk\\AXCF2152\\2020.3\\sysroots\\cortexa9t2hf-neon-pxc-linux-gnueabi\\usr\\include\\**"
+            ],
+            "defines": [],
+            "compilerPath": "D:\\sdk\\AXCF2152\\2020.3\\sysroots\\x86_64-pokysdk-mingw32\\usr\\bin\\arm-pxc-linux-gnueabi\\arm-pxc-linux-gnueabi-gcc.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
             "intelliSenseMode": "gcc-arm"
         }
     ],

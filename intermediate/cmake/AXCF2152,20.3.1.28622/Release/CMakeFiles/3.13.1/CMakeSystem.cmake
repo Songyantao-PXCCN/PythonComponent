@@ -1,9 +1,9 @@
-set(CMAKE_HOST_SYSTEM "Linux-4.4.0-18362-Microsoft")
-set(CMAKE_HOST_SYSTEM_NAME "Linux")
-set(CMAKE_HOST_SYSTEM_VERSION "4.4.0-18362-Microsoft")
-set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64")
+set(CMAKE_HOST_SYSTEM "Windows-10.0.17763")
+set(CMAKE_HOST_SYSTEM_NAME "Windows")
+set(CMAKE_HOST_SYSTEM_VERSION "10.0.17763")
+set(CMAKE_HOST_SYSTEM_PROCESSOR "AMD64")
 
-include("/opt/sdk/AXCF2152/2020.3/toolchain.cmake")
+include("D:/sdk/AXCF2152/2020.3/toolchain.cmake")
 
 set(CMAKE_SYSTEM "Linux")
 set(CMAKE_SYSTEM_NAME "Linux")

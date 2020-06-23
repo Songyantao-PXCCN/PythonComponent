@@ -1,4 +1,4 @@
-set(CMAKE_CXX_COMPILER "/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-g++")
+set(CMAKE_CXX_COMPILER "D:/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-g++.exe")
 set(CMAKE_CXX_COMPILER_ARG1 "")
 set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_COMPILER_VERSION "8.3.0")
@@ -18,11 +18,11 @@ set(CMAKE_CXX_SIMULATE_VERSION "")
 
 
 
-set(CMAKE_AR "/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-ar")
-set(CMAKE_CXX_COMPILER_AR "/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-gcc-ar")
-set(CMAKE_RANLIB "/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-ranlib")
-set(CMAKE_CXX_COMPILER_RANLIB "/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-gcc-ranlib")
-set(CMAKE_LINKER "/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-ld")
+set(CMAKE_AR "D:/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-ar.exe")
+set(CMAKE_CXX_COMPILER_AR "D:/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-gcc-ar.exe")
+set(CMAKE_RANLIB "D:/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-ranlib.exe")
+set(CMAKE_CXX_COMPILER_RANLIB "D:/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-gcc-ranlib.exe")
+set(CMAKE_LINKER "D:/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-ld.exe")
 set(CMAKE_COMPILER_IS_GNUCXX 1)
 set(CMAKE_CXX_COMPILER_LOADED 1)
 set(CMAKE_CXX_COMPILER_WORKS TRUE)
@@ -72,5 +72,5 @@ endif()
 
 
 set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "stdc++;m;gcc_s;gcc;c;gcc_s;gcc")
-set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/lib/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0;/opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/lib;/opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/lib/arm-pxc-linux-gnueabi/8.3.0;/opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/lib")
+set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "D:/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/lib/arm-pxc-linux-gnueabi/gcc/arm-pxc-linux-gnueabi/8.3.0;D:/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-mingw32/usr/lib/arm-pxc-linux-gnueabi/gcc;D:/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/lib;D:/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/lib/arm-pxc-linux-gnueabi/8.3.0;D:/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/lib")
 set(CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

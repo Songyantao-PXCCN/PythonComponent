@@ -39,63 +39,51 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /mnt/d/WSL/extract/cmake/bin/cmake
+CMAKE_COMMAND = "C:/Program Files/PHOENIX CONTACT/PLCnCLI 2020.0 LTS/cmake/bin/cmake.exe"
 
 # The command to remove a file.
-RM = /mnt/d/WSL/extract/cmake/bin/cmake -E remove -f
+RM = "C:/Program Files/PHOENIX CONTACT/PLCnCLI 2020.0 LTS/cmake/bin/cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp
+CMAKE_SOURCE_DIR = D:/test/PythonArp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release
+CMAKE_BINARY_DIR = D:/test/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release
 
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/mnt/d/WSL/extract/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/mnt/d/WSL/extract/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/mnt/d/WSL/extract/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/mnt/d/WSL/extract/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/mnt/d/WSL/extract/cmake/bin/cmake -P cmake_install.cmake
+	"C:/Program Files/PHOENIX CONTACT/PLCnCLI 2020.0 LTS/cmake/bin/cmake.exe" -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/mnt/d/WSL/extract/cmake/bin/cmake -P cmake_install.cmake
+	"C:/Program Files/PHOENIX CONTACT/PLCnCLI 2020.0 LTS/cmake/bin/cmake.exe" -P cmake_install.cmake
 .PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	"C:/Program Files/PHOENIX CONTACT/PLCnCLI 2020.0 LTS/cmake/bin/cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	"C:/Program Files/PHOENIX CONTACT/PLCnCLI 2020.0 LTS/cmake/bin/cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
 
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/mnt/d/WSL/extract/cmake/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:/Program Files/PHOENIX CONTACT/PLCnCLI 2020.0 LTS/cmake/bin/cmake-gui.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -106,7 +94,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/mnt/d/WSL/extract/cmake/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:/Program Files/PHOENIX CONTACT/PLCnCLI 2020.0 LTS/cmake/bin/cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -124,11 +112,23 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	"C:/Program Files/PHOENIX CONTACT/PLCnCLI 2020.0 LTS/cmake/bin/cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	"C:/Program Files/PHOENIX CONTACT/PLCnCLI 2020.0 LTS/cmake/bin/cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start D:/test/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles D:/test/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:/test/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -153,7 +153,7 @@ preinstall/fast:
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -P /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles/VerifyGlobs.cmake
+	$(CMAKE_COMMAND) -P D:/test/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
@@ -169,6 +169,11 @@ PythonArp: cmake_check_build_system
 PythonArp/fast:
 	$(MAKE) -f CMakeFiles/PythonArp.dir/build.make CMakeFiles/PythonArp.dir/build
 .PHONY : PythonArp/fast
+
+# Manual pre-install relink rule for target.
+PythonArp/preinstall:
+	$(MAKE) -f CMakeFiles/PythonArp.dir/build.make CMakeFiles/PythonArp.dir/preinstall
+.PHONY : PythonArp/preinstall
 
 ServiceFunction/PyDataAccessService.o: ServiceFunction/PyDataAccessService.cpp.o
 
@@ -446,13 +451,13 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
-	@echo "... install/local"
-	@echo "... PythonArp"
 	@echo "... install"
+	@echo "... install/local"
 	@echo "... edit_cache"
+	@echo "... PythonArp"
 	@echo "... rebuild_cache"
 	@echo "... list_install_components"
+	@echo "... install/strip"
 	@echo "... ServiceFunction/PyDataAccessService.o"
 	@echo "... ServiceFunction/PyDataAccessService.i"
 	@echo "... ServiceFunction/PyDataAccessService.s"
@@ -494,7 +499,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -P /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles/VerifyGlobs.cmake
+	$(CMAKE_COMMAND) -P D:/test/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
