@@ -14,9 +14,9 @@ Python program be embed in Task (Trigged by ESM) ,and also can be a background t
 
 These Funtion are supported for now :
 
-+ stdout ( print() )
++ stdout ( print() ) write to '~/logs/Output.log' (INFO)
 
-+ stderr  (Exception)
++ stderr  ( exception ) write to '~/logs/Output.log' (ERROR)
 
 + PLC event 
 
@@ -46,6 +46,13 @@ Roadmap:
 
 ...
 
+Set the program instance name the same with Python script's name (under `/opt/plcnext` )
+
+For example :
+
+The Python script's path is `/opt/plcnext/PLCnextPyTest.py`
+
+then the instance's name of '`Prog_NoPort`' should be '`PLCnextPyTest` in 'Tasks and Events' of Engineer.
 
 
 ## DataAccessService
@@ -82,8 +89,10 @@ Class SubscriptionService()
 	def GetRecordInfos()
 	def ReadRecords(count)
 ```
+## CAUTION
+1. Never use `exit()` in Python script! otherwise PLCnext will crash and then reboot .
 
-
-
+## Known issue
+1. Memory Leak
 
 
