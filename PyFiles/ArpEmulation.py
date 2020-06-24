@@ -266,11 +266,13 @@ when the variable is a figure type, better to provide explicit type of it.
 By default,float is set to 'GDS_TYPE_FLOAT32' , int is set to 'GDS_TYPE_INT16'
 '''
 GDS_DB.add("Arp.Plc.Eclr/BOOL001", True)
+GDS_DB.add("Arp.Plc.Eclr/BOOL002", True)
 GDS_DB.add("Arp.Plc.Eclr/REAL001", 12.3)  # by default is GDS_TYPE_FLOAT32
 GDS_DB.add("Arp.Plc.Eclr/LREAL001", 12345.67, figureType=GDS_TYPE_FLOAT64)
 GDS_DB.add("Arp.Plc.Eclr/INT001", 12)  # by default is GDS_TYPE_INT16
 GDS_DB.add("Arp.Plc.Eclr/DINT001", 123456, figureType=GDS_TYPE_INT32)
 GDS_DB.add("Arp.Plc.Eclr/STRING001", "hello")
+
 
 
 if __name__ == "__main__":

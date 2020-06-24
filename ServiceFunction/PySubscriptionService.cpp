@@ -794,7 +794,6 @@ static PyObject* Subcription_ReadRecords (Subscription_obj *self,PyObject* args)
             case RscType::Array:
             {
                 RscArrayReader currentTaskRecordReader{currentTask};  
-                
                 size_t currentTaskRecordsCounts = currentTaskRecordReader.GetSize();
                 PyObject *currentTaskRecordsTuple = PyTuple_New(currentTaskRecordsCounts);
                 for (uint TaskRecord_index=0;TaskRecord_index<currentTaskRecordsCounts;TaskRecord_index++)
@@ -806,9 +805,7 @@ static PyObject* Subcription_ReadRecords (Subscription_obj *self,PyObject* args)
                         {
                             RscArrayReader currentCycleReader{currentCycle};
                             std::list<VariableInfo>::const_iterator iter_info = iter_taskInfo->begin();
-
                             PyObject * currentCycleDict = PyDict_New();
-
                             for (uint data_index=0;data_index<currentCycleReader.GetSize();data_index++,iter_info++)
                             {
                                 currentCycleReader.ReadNext(currentData);
@@ -833,7 +830,6 @@ static PyObject* Subcription_ReadRecords (Subscription_obj *self,PyObject* args)
                         break;
                     default:
                         Log::Error("Unhanded cycle Type :{}",currentCycle.GetType());
-
                         Py_INCREF(Py_None);
                         PyTuple_SetItem(currentTaskRecordsTuple,TaskRecord_index,Py_None);
                         break;
@@ -846,7 +842,6 @@ static PyObject* Subcription_ReadRecords (Subscription_obj *self,PyObject* args)
             default:
             {
                 Log::Error("Unhanded task Type :{}",currentTask.GetType());
-
                 Py_INCREF(Py_None);
                 PyTuple_SetItem(tasksTuple,task_index,Py_None);
                 break;
