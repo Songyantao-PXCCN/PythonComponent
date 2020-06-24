@@ -54,7 +54,7 @@ inline void Prog_2i_1i::CallPyExecute()
     if (this->PYO_Execute == NULL)
         return;
     __ARP_START_PYTHON__
-    PyObject * ret = PyObject_CallFunction(this->PYO_Execute,"ii",iINT16_1_toPy,iINT16_2_toPy);
+    PyObject * ret = PyObject_CallFunction(this->PYO_Execute,"hh",iINT16_1_toPy,iINT16_2_toPy);
     if (PyErr_Occurred())
     {
         PyErr_Print();

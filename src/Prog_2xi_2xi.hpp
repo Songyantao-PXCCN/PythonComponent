@@ -79,7 +79,7 @@ inline void Prog_2xi_2xi::CallPyExecute()
     {
         if(PyTuple_Check(ret))
         {
-            PyArg_ParseTuple(ret,"ppi",&this->xBool_1_fromPy,&this->xBool_2_fromPy,&this->iInt16_1_fromPy);
+            PyArg_ParseTuple(ret,"pph",&this->xBool_1_fromPy,&this->xBool_2_fromPy,&this->iInt16_1_fromPy);
         }
         Py_XDECREF(ret);
     }
