@@ -6,5 +6,5 @@ CXX_FLAGS =   -mthumb -mfpu=neon -mfloat-abi=hard -mcpu=cortex-a9 -O3 -DNDEBUG -
 
 CXX_DEFINES = -DARP_DEVICE_AXCF2152 -DPythonArp_EXPORTS
 
-CXX_INCLUDES = -I/mnt/d/test/PythonArp/intermediate/code -I/mnt/d/test/PythonArp/src -I/mnt/d/test/PythonArp -I/mnt/d/test/PythonArp/ServiceFunction -I/opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext -isystem /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/python3.7m 
+CXX_INCLUDES = -I/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/code -I/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/src -I/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp -I/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction -I/opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext -isystem /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/python3.7m 
 

@@ -1,4 +1,5 @@
 ﻿#include "PythonArpComponentProgramProvider.hpp"
+#include "Prog_1s_1s.hpp"
 #include "Prog_2i_1i.hpp"
 #include "Prog_2xi_2xi.hpp"
 #include "Prog_2x_1x.hpp"
@@ -9,6 +10,10 @@ namespace PythonArp
 
 IProgram::Ptr PythonArpComponentProgramProvider::CreateProgramInternal(const String& programName, const String& programType)
 {
+    if (programType == "Prog_1s_1s")
+    { 
+        return std::make_shared<::PythonArp::Prog_1s_1s>(this->pythonArpComponent, programName);
+    }
     if (programType == "Prog_2i_1i")
     { 
         return std::make_shared<::PythonArp::Prog_2i_1i>(this->pythonArpComponent, programName);
