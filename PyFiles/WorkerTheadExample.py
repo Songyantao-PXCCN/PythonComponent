@@ -44,7 +44,7 @@ class WorkerThread(threading.Thread):
 
 def threadFunction():
     print("Print from WorkerThread")
-    raise RuntimeError("")
+    # raise RuntimeError("Exception Test")
 
 
 def Initialize():
@@ -68,7 +68,7 @@ def Start():
     '''
     PLC处于运行状态时将触发本函数
     '''
-    GlobalValues.wktd = WorkerThread(0.5,threadFunction)
+    GlobalValues.wktd = WorkerThread(2,threadFunction)
 
 
 def Stop():
