@@ -447,11 +447,6 @@ namespace PythonArp::PyDataAccessService
             return NULL;
         }
 
-        if (!PyList_Check(PyO_variables))
-        {
-            Py_RETURN_NONE;
-        }
-
         bool _RETURN_VALUES = returnType & GDS_RETURN_VALUES;
         bool _RETURN_FAULTREASON = returnType & GDS_RETURN_FAULTREASON;
         bool _RETURN_DATATYPE = returnType & GDS_RETURN_DATATYPE;
@@ -793,6 +788,8 @@ namespace PythonArp::PyDataAccessService
         ret = PyModule_AddIntMacro(builtinsObject,GDS_RETURN_VALUES);
         if (ret !=0) goto _ERROR;
         ret = PyModule_AddIntMacro(builtinsObject,GDS_RETURN_DATATYPE);
+        if (ret !=0) goto _ERROR;
+        ret = PyModule_AddIntMacro(builtinsObject,GDS_RETURN_FAULTREASON);
         if (ret !=0) goto _ERROR;
         ret = PyModule_AddIntMacro(builtinsObject,GDS_RETURN_DICT);
         if (ret !=0) goto _ERROR;

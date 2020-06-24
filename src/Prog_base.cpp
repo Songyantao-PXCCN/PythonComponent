@@ -43,6 +43,10 @@ void Prog_base::PythonArpProgramConstruction()
             this->PYO_Start = PyObject_GetAttrString(PYO_Module, "Start");
             this->PYO_Stop = PyObject_GetAttrString(PYO_Module, "Stop");
             this->PYO_Execute = PyObject_GetAttrString(PYO_Module, "Execute");
+            if (PyErr_Occurred())
+            {
+                PyErr_Clear();
+            }
         }
     __ARP_STOP_PYTHON__
     if (PYO_Module !=NULL)

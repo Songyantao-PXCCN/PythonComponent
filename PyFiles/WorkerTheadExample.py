@@ -36,14 +36,15 @@ class WorkerThread(threading.Thread):
                 try:
                     self.callableFunction()
                 except Exception as e:
-                    import sys
-                    print(sys.exc_info(),file=sys.stderr)
+                    import traceback
+                    traceback.print_exc()
             else:
                 return
 
 
 def threadFunction():
     print("Print from WorkerThread")
+    raise RuntimeError("")
 
 
 def Initialize():
