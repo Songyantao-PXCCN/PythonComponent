@@ -9,13 +9,11 @@
 #include "Arp/System/Commons/Logging.h"
 #include "Arp/System/Commons/Threading/Thread.hpp"
 #include "Arp/System/Acf/IControllerComponent.hpp"
-
 #include "Arp/System/Rsc/ServiceManager.hpp"
 
 #define PY_SSIZE_T_CLEAN
 #include "python3.7m/Python.h"
 #include <memory>
-
 
 #include "PyDataAccessService.hpp"
 #include "PyForceService.hpp"
@@ -33,7 +31,10 @@
 #define __ARP_START_PYTHON__ {PyGILState_STATE _gstate = PyGILState_Ensure();
 #define __ARP_STOP_PYTHON__ PyGILState_Release(_gstate);}
 
+//Exception Log Title
 #define PyArpErrTitle "\n\033[4;31;43m *** Exception From Python *** \033[0m\n"
+
+
 
 namespace PythonArp
 {

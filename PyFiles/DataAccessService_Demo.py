@@ -98,12 +98,11 @@ def TestDataAccessService():
     
 
 
-# Here we only add these two PLC event Function ,it's enough for this test
+# Here we only add these two PLC event's functions ,it's enough for this test
 # The thread will start while PLC have a Cold/Warm/Hot Start, And stop thread while PLC turn to STOP
 def Start():
     print("Start called !")
     GlobalValues.threadInstance = WorkerThread(2,TestDataAccessService)
-
 
 def Stop():
     print("Stop called !")
@@ -121,6 +120,8 @@ if __name__ == "__main__":
         # Execute()
     Stop()
     # Dispose()
+
+
 
 '''
 24.06.20 15:49:53.840 root                                                         INFO  - ********************************************************************************
@@ -144,4 +145,18 @@ if __name__ == "__main__":
 24.06.20 15:49:57.883 root                                                         INFO  - Variable 'Arp.Plc.Eclr/INT001' : 110 , type :Int16
 24.06.20 15:49:57.888 root                                                         INFO  - {'Arp.Plc.Eclr/BOOL001': False, 'Arp.Plc.Eclr/INT001': 110}
 24.06.20 15:49:57.893 root                                                         INFO  - {'BOOL001': False, 'INT001': 110}
+'''
+
+'''
+24.06.20 16:16:02.101 root                                                         INFO  - ********************************************************************************
+24.06.20 16:16:02.102 root                                                         INFO  - Error occur while reading 'Arp.Plc.Eclr/BOOL001' : NotExists
+24.06.20 16:16:02.102 root                                                         INFO  - Error occur while reading 'Arp.Plc.Eclr/INT001' : NotExists
+24.06.20 16:16:02.102 root                                                         INFO  - Error occured while reading 'Arp.Plc.Eclr/BOOL001' : NotExists
+24.06.20 16:16:02.102 root                                                         INFO  - Error occured while reading 'Arp.Plc.Eclr/INT001' : NotExists
+24.06.20 16:16:02.103 root                                                         INFO  - {'Arp.Plc.Eclr/BOOL001': None, 'Arp.Plc.Eclr/INT001': None}
+24.06.20 16:16:02.108 root                                                         INFO  - {'BOOL001': None, 'INT001': None}
+24.06.20 16:16:02.112 root                                                         INFO  - Error occured while writing 'BOOL001' : NotExists
+24.06.20 16:16:02.113 root                                                         INFO  - Error occured while writing 'INT001' : NotExists
+24.06.20 16:16:02.116 root                                                         INFO  - Error occured while writing 'LREAL001' : NotExists
+24.06.20 16:16:02.119 root                                                         INFO  - Error occured while writing 'DINT001' : NotExists
 '''
