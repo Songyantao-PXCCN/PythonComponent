@@ -556,6 +556,7 @@ ArpPyDoc_STRVAR(Subcription_DeleteSubscription__doc__,
 "Method to DeleteSubscription,this method will be called when class dealloc ,user don't need to call this normally");
 static PyObject* Subcription__DeleteSubscription (Subscription_obj *self)
 {
+    if (self->subscription_id ==0)  Py_RETURN_NONE;
     DataAccessError ret = self->p_ISubscriptionService->DeleteSubscription(self->subscription_id);
     self->subscription_id = 0;
     return PyUnicode_FromString(Enum<DataAccessError>(ret).ToString().CStr());
