@@ -701,7 +701,11 @@ static PyObject* Subcription_GetRecordInfos (Subscription_obj *self)
     DataAccessError DAE = DataAccessError::None;
     if (self->GetInfosRequires[2])
     {
-        DAE = _GetRecordInfos(self);
+        if (_GetRecordInfos(self) != DataAccessError::None)
+        {
+            PyErr_SetString(PyExc_RuntimeError,"Can not get RecordInfos !");
+            return NULL;
+        }
         self->GetInfosRequires[2]= false;
     }
 
