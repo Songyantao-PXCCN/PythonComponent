@@ -2,13 +2,13 @@
 
 > <address>songyantao@phoenixcontact.com.cn</address>
 
-本项目是PLCnext PLM工程，用于实现在PLCnext控制器上集成Python代码。
+本项目是PLM工程，用于实现在PLCnext控制器上集成Python代码
 
-This is a PLCnext PLM project , which can realize Python program
+This is a PLM project through which we can execute Python program on PLCnext
 
-Python程序可以作为Task被ESM调用，也可作为后台程序与Task并行执行，这取决于对Python程序的组织方式。
+Python程序可以作为Task被ESM调用，也可作为后台程序与Task并行执行，这取决于对Python程序的组织方式
 
-Python program be embed in Task (Trigged by ESM) ,and also can be a background thread , it depends on how to program Python Code
+Python script can be embedded in Task (triggered by ESM) ,and can also be a background thread , it depends on how to program Python Code
 
 目前支持如下功能：
 
@@ -38,7 +38,7 @@ These Funtion are supported for now :
 Roadmap:
 
 + ForceService
-+ tips about corss-compile Python Module from C ( such as Scipy ,Numpy ,Opencv)
++ tips about cross-compile Python Module from C ( such as Scipy ,Numpy ,Opencv)
 
 
 
