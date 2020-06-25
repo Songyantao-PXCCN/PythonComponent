@@ -160,7 +160,7 @@ int ArpByteArrayParse(PyObject* ByteArray,T &Variable,bool endianConvert )
 }
 
 template<typename T>
-int ArpByteArrayOrBytesParse(PyObject* op,T &Variable,bool endianConvert = false)
+int ArpByteArrayOrBytesParse(PyObject* op,T &Variable,bool endianConvert)
 {
     if (PyBytes_Check(op))
     {

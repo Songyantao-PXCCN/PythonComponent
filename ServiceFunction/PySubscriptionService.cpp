@@ -588,7 +588,11 @@ static PyObject* Subcription_ReadValues (Subscription_obj *self)
 
     if (self->GetInfosRequires[0])
     {
-        _GetVariableInfos(self);
+        if (_GetVariableInfos(self) != DataAccessError::None)
+        {
+            PyErr_SetString(PyExc_RuntimeError,"Can not get VariableInfos !");
+            return NULL;
+        }
         self->GetInfosRequires[0]= false;
     }
 
@@ -631,9 +635,14 @@ static PyObject* Subcription_ReadTimeStampedValues (Subscription_obj *self)
     }
     if (self->GetInfosRequires[1])
     {
-        _GetTimeStampedVariableInfos(self);
+        if (_GetTimeStampedVariableInfos(self) != DataAccessError::None)
+        {
+            PyErr_SetString(PyExc_RuntimeError,"Can not get TimeStampedVariableInfos !");
+            return NULL;
+        }
         self->GetInfosRequires[1]= false;
     }
+
     PyObject* result_dict =  PyDict_New();
     DataAccessError DAE = self->p_ISubscriptionService->ReadTimeStampedValues(self->subscription_id,ISubscriptionService::ReadValuesValuesDelegate::create([&](IRscReadEnumerator<RscVariant<512>>& ReadEnumerator){
         uint count = ReadEnumerator.BeginRead();
@@ -765,13 +774,12 @@ static PyObject* Subcription_ReadRecords (Subscription_obj *self,PyObject* args)
     if (self->GetInfosRequires[2])
     {
         DAE = _GetRecordInfos(self);
+        if (DAE != DataAccessError::None)
+        {
+            PyErr_SetString(PyExc_RuntimeError,"Can not get recordInfos !");
+            return NULL;
+        }
         self->GetInfosRequires[2]= false;
-    }
-
-    if (DAE != DataAccessError::None)
-    {
-        PyErr_SetString(PyExc_RuntimeError,"Can not get recordInfos !");
-        return NULL;
     }
 
     PyObject *tasksTuple = NULL;
