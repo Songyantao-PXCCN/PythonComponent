@@ -4,7 +4,7 @@
     <ProgramIncludes>
       <Include path="Prog_1s_1s/Prog_1s_1s.progmeta" />
       <Include path="Prog_2i_1i/Prog_2i_1i.progmeta" />
-      <Include path="Prog_2xi_2xi/Prog_2xi_2xi.progmeta" />
+      <Include path="Prog_2x1i_2x1i/Prog_2x1i_2x1i.progmeta" />
       <Include path="Prog_2x_1x/Prog_2x_1x.progmeta" />
       <Include path="Prog_NoPort/Prog_NoPort.progmeta" />
     </ProgramIncludes>

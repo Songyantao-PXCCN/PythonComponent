@@ -92,47 +92,33 @@ namespace PythonArp::PyDataAccessService
         case RscType::Void:
             Py_INCREF(Py_None);
             return  Py_None;
-            break;
         case RscType::Bool:
             return PyBool_FromLong(var.GetValue<bool>());
-            break;
         case RscType::Int8:
             return PyLong_FromLong(var.GetValue<Arp::int8>());
-            break;
         case RscType::Int16:
             return PyLong_FromLong(var.GetValue<Arp::int16>());
-            break;
         case RscType::Int32:
             return PyLong_FromLong(var.GetValue<Arp::int32>());
-            break;
         case RscType::Int64:
             return PyLong_FromLongLong(var.GetValue<Arp::int64>());
-            break;
         case RscType::Uint8:
             return PyLong_FromUnsignedLong(var.GetValue<Arp::uint8>());
-            break;
         case RscType::Uint16:
             return PyLong_FromUnsignedLong(var.GetValue<Arp::uint16>());
-            break;
         case RscType::Uint32:
             return PyLong_FromUnsignedLong(var.GetValue<Arp::uint32>());
-            break;
         case RscType::Uint64:
             return PyLong_FromUnsignedLongLong(var.GetValue<Arp::uint64>());
-            break;
         case RscType::Real32:
             return PyFloat_FromDouble(var.GetValue<Arp::float32>());
-            break;
         case RscType::Real64:
             return PyFloat_FromDouble(var.GetValue<Arp::float64>());
-            break;
         case RscType::String:
             return PyUnicode_FromString(var.GetChars());
-            break;
         default:
             Py_INCREF(Py_None);
             return Py_None;
-            break;
         }
     }
     PyObject* ArrayTypeReadHandler(RscArrayReader reader)

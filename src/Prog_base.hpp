@@ -3,6 +3,7 @@
 #include "Arp/Plc/Commons/Esm/ProgramBase.hpp"
 #include "Arp/System/Commons/Logging.h"
 #include "PythonArpComponent.hpp"
+#include "util/arg.hpp"
 
 namespace PythonArp
 {

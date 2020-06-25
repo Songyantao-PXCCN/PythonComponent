@@ -1,7 +1,7 @@
 ﻿#include "PythonArpComponentProgramProvider.hpp"
 #include "Prog_1s_1s.hpp"
 #include "Prog_2i_1i.hpp"
-#include "Prog_2xi_2xi.hpp"
+#include "Prog_2x1i_2x1i.hpp"
 #include "Prog_2x_1x.hpp"
 #include "Prog_NoPort.hpp"
 
@@ -18,9 +18,9 @@ IProgram::Ptr PythonArpComponentProgramProvider::CreateProgramInternal(const Str
     { 
         return std::make_shared<::PythonArp::Prog_2i_1i>(this->pythonArpComponent, programName);
     }
-    if (programType == "Prog_2xi_2xi")
+    if (programType == "Prog_2x1i_2x1i")
     { 
-        return std::make_shared<::PythonArp::Prog_2xi_2xi>(this->pythonArpComponent, programName);
+        return std::make_shared<::PythonArp::Prog_2x1i_2x1i>(this->pythonArpComponent, programName);
     }
     if (programType == "Prog_2x_1x")
     { 

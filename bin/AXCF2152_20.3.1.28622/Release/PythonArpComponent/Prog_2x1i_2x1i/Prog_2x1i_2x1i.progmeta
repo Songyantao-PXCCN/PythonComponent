@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MetaConfigurationDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" schemaVersion="2.0" xmlns="http://www.phoenixcontact.com/schema/metaconfig">
+  <Program type="Prog_2x1i_2x1i">
+    <Ports>
+      <Port name="xReady" type="boolean" attributes="Output" dimensions="" />
+      <Port name="xBool_1_toPy" type="boolean" attributes="Input|Retain" dimensions="" />
+      <Port name="xBool_2_toPy" type="boolean" attributes="Input|Retain" dimensions="" />
+      <Port name="iInt16_1_toPy" type="int16" attributes="Input|Retain" dimensions="" />
+      <Port name="xBool_1_fromPy" type="boolean" attributes="Output" dimensions="" />
+      <Port name="xBool_2_fromPy" type="boolean" attributes="Output" dimensions="" />
+      <Port name="iInt16_1_fromPy" type="int16" attributes="Output" dimensions="" />
+    </Ports>
+  </Program>
+</MetaConfigurationDocument>
