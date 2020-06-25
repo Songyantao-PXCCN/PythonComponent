@@ -12,7 +12,7 @@ Python script can be embedded in Task (triggered by ESM) ,and can also be a back
 
 目前支持如下功能：
 
-These Funtion are supported for now :
+These funtions are supported for now :
 
 + stdout ( print() ) write to '~/logs/Output.log' (INFO)
 
