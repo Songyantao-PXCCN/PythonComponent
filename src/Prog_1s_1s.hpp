@@ -58,7 +58,6 @@ inline void Prog_1s_1s::CallPyExecute()
     {
         if(PyUnicode_Check(ret))
         {
-            // iINT16_1_fromPy=
             Py_ssize_t len;
             const char* s = PyUnicode_AsUTF8AndSize(ret,&len);
             if (len<=80)
@@ -69,10 +68,9 @@ inline void Prog_1s_1s::CallPyExecute()
             {
                 iStr_1_fromPy = "<ERROR: Too large for IEC String>";
             }
-            
         }
-        Py_XDECREF(ret);
     }
+    Py_XDECREF(ret);
     __ARP_STOP_PYTHON__
 }
 

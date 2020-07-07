@@ -81,8 +81,8 @@ inline void Prog_2x1i_2x1i::CallPyExecute()
         {
             PyArg_ParseTuple(ret,"pph",&this->xBool_1_fromPy,&this->xBool_2_fromPy,&this->iInt16_1_fromPy);
         }
-        Py_XDECREF(ret);
     }
+    Py_XDECREF(ret);
     __ARP_STOP_PYTHON__
 }
 

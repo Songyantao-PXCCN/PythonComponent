@@ -1,8 +1,8 @@
-# Install script for directory: /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp
+# Install script for directory: /mnt/d/test/PythonArp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/bin")
+  set(CMAKE_INSTALL_PREFIX "/mnt/d/test/PythonArp/bin")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -44,7 +44,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/AXCF2152_20.3.1.28622/Release/lib/libPythonArp.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/AXCF2152_20.3.1.28622/Release/lib" TYPE SHARED_LIBRARY FILES "/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/libPythonArp.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/AXCF2152_20.3.1.28622/Release/lib" TYPE SHARED_LIBRARY FILES "/mnt/d/test/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/libPythonArp.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/AXCF2152_20.3.1.28622/Release/lib/libPythonArp.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/AXCF2152_20.3.1.28622/Release/lib/libPythonArp.so")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -64,5 +64,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/mnt/d/test/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

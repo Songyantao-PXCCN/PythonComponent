@@ -2,6 +2,7 @@
 <MetaConfigurationDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" schemaVersion="2.0" xmlns="http://www.phoenixcontact.com/schema/metaconfig">
   <Component type="PythonArpComponent">
     <ProgramIncludes>
+      <Include path="Prog_1LWToByteArray/Prog_1LWToByteArray.progmeta" />
       <Include path="Prog_1s_1s/Prog_1s_1s.progmeta" />
       <Include path="Prog_2i_1i/Prog_2i_1i.progmeta" />
       <Include path="Prog_2x1i_2x1i/Prog_2x1i_2x1i.progmeta" />

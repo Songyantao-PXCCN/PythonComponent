@@ -65,8 +65,8 @@ inline void Prog_2i_1i::CallPyExecute()
         {
             iINT16_1_fromPy=PyLong_AsLong(ret);
         }
-        Py_XDECREF(ret);
     }
+    Py_XDECREF(ret);
     __ARP_STOP_PYTHON__
 }
 
