@@ -17,7 +17,23 @@ namespace PythonArp::util::argParse
 
 
 
+    PyObject* createTupleFromArray(const uint64* sourceArray,size_t size);
+    PyObject* createTupleFromArray(const uint32* sourceArray,size_t size);
+    PyObject* createTupleFromArray(const uint16* sourceArray,size_t size);
+    PyObject* createTupleFromArray(const uint8* sourceArray,size_t size);
+    PyObject* createTupleFromArray(const int64* sourceArray,size_t size);
+    PyObject* createTupleFromArray(const int32* sourceArray,size_t size);
+    PyObject* createTupleFromArray(const int16* sourceArray,size_t size);
+    PyObject* createTupleFromArray(const int8* sourceArray,size_t size);
 
+    int parseTupleOrListToArray(PyObject* tupObj,int8* targetArray,const size_t size);
+    int parseTupleOrListToArray(PyObject* tupObj,int16* targetArray,const size_t size);
+    int parseTupleOrListToArray(PyObject* tupObj,int32* targetArray,const size_t size);
+    int parseTupleOrListToArray(PyObject* tupObj,int64* targetArray,const size_t size);
+    int parseTupleOrListToArray(PyObject* tupObj,uint8* targetArray,const size_t size);
+    int parseTupleOrListToArray(PyObject* tupObj,uint16* targetArray,const size_t size);
+    int parseTupleOrListToArray(PyObject* tupObj,uint32* targetArray,const size_t size);
+    int parseTupleOrListToArray(PyObject* tupObj,uint64* targetArray,const size_t size);
 
 
     template<typename T>
@@ -91,6 +107,10 @@ namespace PythonArp::util::argParse
             return -1;
         }
     }
+
+
+
+
 
 
 }
