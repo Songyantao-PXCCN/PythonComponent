@@ -13,6 +13,7 @@ set(OLD_GLOB
   "/mnt/d/test/PythonArp/intermediate/code/PythonArpComponentProgramProvider.hpp"
   "/mnt/d/test/PythonArp/intermediate/code/PythonArpLibrary.hpp"
   "/mnt/d/test/PythonArp/src/Prog_1LWToByteArray.hpp"
+  "/mnt/d/test/PythonArp/src/Prog_1arrINT10_1arrINT10.hpp"
   "/mnt/d/test/PythonArp/src/Prog_1s_1s.hpp"
   "/mnt/d/test/PythonArp/src/Prog_2i_1i.hpp"
   "/mnt/d/test/PythonArp/src/Prog_2x1i_2x1i.hpp"

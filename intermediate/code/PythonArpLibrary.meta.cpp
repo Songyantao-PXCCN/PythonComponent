@@ -1,5 +1,6 @@
 ﻿#include "Arp/System/Core/Arp.h"
 #include "Arp/Plc/Commons/Meta/TypeSystem/TypeSystem.h"
+#include "Prog_1arrINT10_1arrINT10.hpp"
 #include "Prog_1LWToByteArray.hpp"
 #include "Prog_1s_1s.hpp"
 #include "Prog_2i_1i.hpp"
@@ -13,6 +14,9 @@ namespace PythonArp
 
 using namespace Arp::Plc::Commons::Meta;
 
+    static const FieldDefinition PythonArp_Prog_1arrINT10_1arrINT10_PyReady("xReady", offsetof(::PythonArp::Prog_1arrINT10_1arrINT10, PyReady), DataType::Boolean, "", sizeof(boolean), alignof(boolean), {  }, StandardAttribute::Output);
+    static const FieldDefinition PythonArp_Prog_1arrINT10_1arrINT10_arrINT10_toPy("arrINT10_toPy", offsetof(::PythonArp::Prog_1arrINT10_1arrINT10, arrINT10_toPy), DataType::Int16 | DataType::Array, "", sizeof(int16), alignof(int16), { 10 }, StandardAttribute::Input | StandardAttribute::Retain);
+    static const FieldDefinition PythonArp_Prog_1arrINT10_1arrINT10_arrINT10_fromPy("arrINT10_fromPy", offsetof(::PythonArp::Prog_1arrINT10_1arrINT10, arrINT10_fromPy), DataType::Int16 | DataType::Array, "", sizeof(int16), alignof(int16), { 10 }, StandardAttribute::Output);
     static const FieldDefinition PythonArp_Prog_1LWToByteArray_PyReady("xReady", offsetof(::PythonArp::Prog_1LWToByteArray, PyReady), DataType::Boolean, "", sizeof(boolean), alignof(boolean), {  }, StandardAttribute::Output);
     static const FieldDefinition PythonArp_Prog_1LWToByteArray_lw_1_toPy("lw_1_toPy", offsetof(::PythonArp::Prog_1LWToByteArray, lw_1_toPy), DataType::UInt64, "", sizeof(uint64), alignof(uint64), {  }, StandardAttribute::Input | StandardAttribute::Retain);
     static const FieldDefinition PythonArp_Prog_1LWToByteArray_lw_1_fromPy("lw_1_fromPy", offsetof(::PythonArp::Prog_1LWToByteArray, lw_1_fromPy), DataType::UInt64, "", sizeof(uint64), alignof(uint64), {  }, StandardAttribute::Output);
@@ -42,6 +46,15 @@ using namespace Arp::Plc::Commons::Meta;
         (
             // Begin TypeDefinitions
             {
+                {   // ProgramDefinition: PythonArp::Prog_1arrINT10_1arrINT10
+                    DataType::Program, CTN<PythonArp::Prog_1arrINT10_1arrINT10>(), sizeof(::PythonArp::Prog_1arrINT10_1arrINT10), alignof(::PythonArp::Prog_1arrINT10_1arrINT10), StandardAttribute::None,
+                    {
+                        // FieldDefinitions:
+                        PythonArp_Prog_1arrINT10_1arrINT10_PyReady,
+                        PythonArp_Prog_1arrINT10_1arrINT10_arrINT10_toPy,
+                        PythonArp_Prog_1arrINT10_1arrINT10_arrINT10_fromPy,
+                    }
+                },
                 {   // ProgramDefinition: PythonArp::Prog_1LWToByteArray
                     DataType::Program, CTN<PythonArp::Prog_1LWToByteArray>(), sizeof(::PythonArp::Prog_1LWToByteArray), alignof(::PythonArp::Prog_1LWToByteArray), StandardAttribute::None,
                     {
