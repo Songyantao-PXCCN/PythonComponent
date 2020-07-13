@@ -4,6 +4,8 @@
 CMakeFiles/PythonArp.dir/ServiceFunction/PyDataAccessService.cpp.o
  ../../../..//util/arg.hpp
  ../../../..//util/docMacros.hpp
+ ../../../../ServiceFunction/PyDeviceInfoService.hpp
+ ../../../../ServiceFunction/PyDeviceStatusService.hpp
  ../../../../ServiceFunction/PyForceService.hpp
  ../../../../ServiceFunction/PySubscriptionService.hpp
  ../../../../src/PythonArpComponent.hpp
@@ -11,6 +13,426 @@ CMakeFiles/PythonArp.dir/ServiceFunction/PyDataAccessService.cpp.o
  ../../../code/PythonArpLibrary.hpp
  /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyDataAccessService.cpp
  /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyDataAccessService.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/DeviceInfoServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/DeviceStatusServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/IDeviceInfoService.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/IDeviceStatusService.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/DataType.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/DataTypeEnum.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Esm/IProgram.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Esm/IProgramComponent.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Esm/IProgramProvider.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Esm/ProgramComponentBase.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Esm/ProgramProviderBase.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Gds/Bit.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Gds/IecString.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Gds/StaticString.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Gds/StaticStringBase.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/ArrayDimension.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/ArrayDimensions.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/ChangeDataInfoProvider.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/ChildInfo.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/ChildKind.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/ChildTypeInfo.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/CustomAttribute.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/CustomAttributes.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/DataInfo.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/DataInfoProvider.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/DataTag.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/IChangeNavigator.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/IDataInfoProvider.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/IMetaComponent.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/IMetaLibrary.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/ITypeInfoProvider.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/ITypeNavigator.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/MetaLibraryBase.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/StandardAttribute.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/StandardAttributes.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/TypeIdentifier.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/TypeInfo.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/TypeInfoProvider.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/TypeSystem/DataInfoDeduction.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/TypeSystem/DataTagDeduction.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/TypeSystem/DataTypeDeduction.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/TypeSystem/DataTypeDeductionBase.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/TypeSystem/FieldDefinition.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/TypeSystem/TypeDefinition.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/TypeSystem/TypeDomain.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/TypeSystem/TypeIdentifierDeduction.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/PlcTypes.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Gds/Services/DataAccessError.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Gds/Services/DataAccessServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Gds/Services/DataType.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Gds/Services/ForceItem.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Gds/Services/ForceServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Gds/Services/IDataAccessService.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Gds/Services/IForceService.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Gds/Services/ISubscriptionService.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Gds/Services/ReadItem.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Gds/Services/SubscriptionKind.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Gds/Services/SubscriptionServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Gds/Services/VariableInfo.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Gds/Services/WriteItem.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Acf/ComponentBase.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Acf/ComponentCategory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Acf/ComponentFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Acf/IApplication.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Acf/IComponent.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Acf/IComponentFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Acf/IControllerComponent.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Acf/ILibrary.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Acf/LibraryBase.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Configuration/Uuid.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Diagnostics/Logging/Internal/LogAdapter.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Diagnostics/Logging/Log.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Diagnostics/Logging/LogLevel.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Diagnostics/Logging/LogManager.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Diagnostics/Logging/LogStream.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Diagnostics/Logging/Loggable.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Diagnostics/Logging/Logger.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Diagnostics/Logging/LoggerBase.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Diagnostics/Logging/Logging.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/ArgumentException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/ArgumentNullException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/ArgumentOutOfRangeException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/CommonException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/ExceptionTypeId.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/Exceptions.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/IndexOutOfRangeException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/InvalidCastException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/InvalidConfigException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/InvalidDataConnectionException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/InvalidFormatException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/InvalidOperationException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/Io/AccessDeniedException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/Io/AlreadyExistsException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/Io/EndOfStreamException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/Io/InvalidPathException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/Io/IoException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/Io/NotExistException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/Io/OutOfSpaceException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/KeyNotFoundException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/LicenseException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/NotAuthorizedException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/NotImplementedException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/NotSupportedException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/ObjectDisposedException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/OutOfMemoryException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/ParseException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/ThreadInterruptException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/TimeoutException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/XmlException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/XmlValidationException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Logging.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Runtime/StackTrace.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Text/Formatter.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Threading/AutoResetEvent.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Threading/LockGuard.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Threading/Mutex.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Threading/Semaphore.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Threading/Thread.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Threading/ThreadSettings.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Threading/ThreadState.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/AppDomain.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/AppDomainSingleton.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/ArchitectureConfig.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/Arp.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/ArpDefines.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/ArpVersion.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/ArpVersion.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/BasicFormatter.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/BasicString.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/BasicVersion.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/BuildConfig.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/ByteConverter.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/CommonTypeName.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/CxxConfig.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/DateTime.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/DllConfig.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/Enum.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/EnumStrings.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/Enumerator.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/Exception.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/IEnumerator.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/Impl/BasicStringFormatExceptionHandler.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/Impl/ConstMethodFunctor.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/Impl/DelegateFunctorBase.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/Impl/IDelegateFunctor.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/Impl/LambdaFunctor.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/Impl/MethodFunctor.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/Impl/StaticFunctor.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/IsInstanceOfType.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/Library.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/PlatformConfig.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/PrimitiveTypes.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/RuntimeTypeInfo.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/Singleton.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/TypeDeduction.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/TypeName.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/TypeSystem.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/delegate.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/event.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/slim_delegate.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/ServiceManager.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/IRscReadEnumerator.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/IRscSerializable.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/IRscService.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/IRscServiceFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/IRscServiceProxy.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/IRscServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/IRscServiceStub.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/IRscWriteEnumerator.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RemotingReader.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RemotingWriter.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/Rsc.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscArrayReader.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscArrayWriter.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscChannelInfo.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscChannelKind.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscErrors.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscGuid.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscReader.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscServerContext.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscServiceProxyFactoryBase.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscStream.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscString.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscStringEncoding.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscStructReader.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscStructWriter.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscType.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscValue.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscValueAdapter.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscVariant.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscVersion.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscWriter.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/SecureString.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Security/SecurityContext.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Security/SecurityToken.hpp
+CMakeFiles/PythonArp.dir/ServiceFunction/PyDeviceInfoService.cpp.o
+ ../../../..//util/arg.hpp
+ ../../../..//util/docMacros.hpp
+ ../../../../ServiceFunction/PyDataAccessService.hpp
+ ../../../../ServiceFunction/PyDeviceStatusService.hpp
+ ../../../../ServiceFunction/PyForceService.hpp
+ ../../../../ServiceFunction/PySubscriptionService.hpp
+ ../../../../src/PythonArpComponent.hpp
+ ../../../code/PythonArpComponentProgramProvider.hpp
+ ../../../code/PythonArpLibrary.hpp
+ /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyDeviceInfoService.cpp
+ /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyDeviceInfoService.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/DeviceInfoServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/DeviceStatusServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/IDeviceInfoService.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/IDeviceStatusService.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/DataType.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/DataTypeEnum.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Esm/IProgram.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Esm/IProgramComponent.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Esm/IProgramProvider.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Esm/ProgramComponentBase.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Esm/ProgramProviderBase.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Gds/Bit.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Gds/IecString.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Gds/StaticString.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Gds/StaticStringBase.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/ArrayDimension.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/ArrayDimensions.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/ChangeDataInfoProvider.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/ChildInfo.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/ChildKind.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/ChildTypeInfo.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/CustomAttribute.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/CustomAttributes.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/DataInfo.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/DataInfoProvider.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/DataTag.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/IChangeNavigator.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/IDataInfoProvider.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/IMetaComponent.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/IMetaLibrary.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/ITypeInfoProvider.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/ITypeNavigator.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/MetaLibraryBase.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/StandardAttribute.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/StandardAttributes.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/TypeIdentifier.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/TypeInfo.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/TypeInfoProvider.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/TypeSystem/DataInfoDeduction.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/TypeSystem/DataTagDeduction.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/TypeSystem/DataTypeDeduction.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/TypeSystem/DataTypeDeductionBase.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/TypeSystem/FieldDefinition.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/TypeSystem/TypeDefinition.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/TypeSystem/TypeDomain.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Meta/TypeSystem/TypeIdentifierDeduction.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/PlcTypes.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Gds/Services/DataAccessError.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Gds/Services/DataAccessServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Gds/Services/DataType.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Gds/Services/ForceItem.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Gds/Services/ForceServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Gds/Services/IDataAccessService.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Gds/Services/IForceService.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Gds/Services/ISubscriptionService.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Gds/Services/ReadItem.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Gds/Services/SubscriptionKind.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Gds/Services/SubscriptionServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Gds/Services/VariableInfo.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Gds/Services/WriteItem.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Acf/ComponentBase.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Acf/ComponentCategory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Acf/ComponentFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Acf/IApplication.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Acf/IComponent.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Acf/IComponentFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Acf/IControllerComponent.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Acf/ILibrary.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Acf/LibraryBase.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Configuration/Uuid.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Diagnostics/Logging/Internal/LogAdapter.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Diagnostics/Logging/Log.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Diagnostics/Logging/LogLevel.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Diagnostics/Logging/LogManager.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Diagnostics/Logging/LogStream.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Diagnostics/Logging/Loggable.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Diagnostics/Logging/Logger.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Diagnostics/Logging/LoggerBase.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Diagnostics/Logging/Logging.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/ArgumentException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/ArgumentNullException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/ArgumentOutOfRangeException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/CommonException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/ExceptionTypeId.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/Exceptions.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/IndexOutOfRangeException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/InvalidCastException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/InvalidConfigException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/InvalidDataConnectionException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/InvalidFormatException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/InvalidOperationException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/Io/AccessDeniedException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/Io/AlreadyExistsException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/Io/EndOfStreamException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/Io/InvalidPathException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/Io/IoException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/Io/NotExistException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/Io/OutOfSpaceException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/KeyNotFoundException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/LicenseException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/NotAuthorizedException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/NotImplementedException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/NotSupportedException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/ObjectDisposedException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/OutOfMemoryException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/ParseException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/ThreadInterruptException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/TimeoutException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/XmlException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Exceptions/XmlValidationException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Logging.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Runtime/StackTrace.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Text/Formatter.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Threading/AutoResetEvent.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Threading/LockGuard.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Threading/Mutex.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Threading/Semaphore.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Threading/Thread.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Threading/ThreadSettings.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Commons/Threading/ThreadState.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/AppDomain.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/AppDomainSingleton.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/ArchitectureConfig.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/Arp.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/ArpDefines.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/ArpVersion.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/ArpVersion.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/BasicFormatter.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/BasicString.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/BasicVersion.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/BuildConfig.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/ByteConverter.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/CommonTypeName.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/CxxConfig.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/DateTime.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/DllConfig.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/Enum.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/EnumStrings.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/Enumerator.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/Exception.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/IEnumerator.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/Impl/BasicStringFormatExceptionHandler.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/Impl/ConstMethodFunctor.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/Impl/DelegateFunctorBase.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/Impl/IDelegateFunctor.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/Impl/LambdaFunctor.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/Impl/MethodFunctor.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/Impl/StaticFunctor.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/IsInstanceOfType.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/Library.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/PlatformConfig.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/PrimitiveTypes.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/RuntimeTypeInfo.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/Singleton.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/TypeDeduction.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/TypeName.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/TypeSystem.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/delegate.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/event.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Core/slim_delegate.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/ServiceManager.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/IRscReadEnumerator.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/IRscSerializable.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/IRscService.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/IRscServiceFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/IRscServiceProxy.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/IRscServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/IRscServiceStub.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/IRscWriteEnumerator.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RemotingReader.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RemotingWriter.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/Rsc.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscArrayReader.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscArrayWriter.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscChannelInfo.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscChannelKind.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscErrors.h
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscException.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscGuid.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscReader.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscServerContext.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscServiceProxyFactoryBase.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscStream.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscString.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscStringEncoding.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscStructReader.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscStructWriter.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscType.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscValue.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscValueAdapter.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscVariant.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscVersion.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/RscWriter.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Rsc/Services/SecureString.hxx
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Security/SecurityContext.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Security/SecurityToken.hpp
+CMakeFiles/PythonArp.dir/ServiceFunction/PyDeviceStatusService.cpp.o
+ ../../../..//util/arg.hpp
+ ../../../..//util/docMacros.hpp
+ ../../../../ServiceFunction/PyDataAccessService.hpp
+ ../../../../ServiceFunction/PyDeviceInfoService.hpp
+ ../../../../ServiceFunction/PyForceService.hpp
+ ../../../../ServiceFunction/PySubscriptionService.hpp
+ ../../../../src/PythonArpComponent.hpp
+ ../../../code/PythonArpComponentProgramProvider.hpp
+ ../../../code/PythonArpLibrary.hpp
+ /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyDeviceStatusService.cpp
+ /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyDeviceStatusService.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/DeviceInfoServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/DeviceStatusServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/IDeviceInfoService.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/IDeviceStatusService.hpp
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/DataType.hpp
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/DataTypeEnum.hpp
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Esm/IProgram.hpp
@@ -290,6 +712,8 @@ CMakeFiles/PythonArp.dir/ServiceFunction/PyForceService.cpp.o
 CMakeFiles/PythonArp.dir/ServiceFunction/PySubscriptionService.cpp.o
  ../../../..//util/arg.hpp
  ../../../..//util/docMacros.hpp
+ ../../../../ServiceFunction/PyDeviceInfoService.hpp
+ ../../../../ServiceFunction/PyDeviceStatusService.hpp
  ../../../../ServiceFunction/PyForceService.hpp
  ../../../../src/PythonArpComponent.hpp
  ../../../code/PythonArpComponentProgramProvider.hpp
@@ -297,6 +721,10 @@ CMakeFiles/PythonArp.dir/ServiceFunction/PySubscriptionService.cpp.o
  /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyDataAccessService.hpp
  /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PySubscriptionService.cpp
  /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PySubscriptionService.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/DeviceInfoServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/DeviceStatusServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/IDeviceInfoService.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/IDeviceStatusService.hpp
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/DataType.hpp
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/DataTypeEnum.hpp
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Esm/IProgram.hpp
@@ -491,12 +919,18 @@ CMakeFiles/PythonArp.dir/ServiceFunction/PySubscriptionService.cpp.o
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Security/SecurityToken.hpp
 CMakeFiles/PythonArp.dir/intermediate/code/PythonArpComponent.meta.cpp.o
  ../../../../ServiceFunction/PyDataAccessService.hpp
+ ../../../../ServiceFunction/PyDeviceInfoService.hpp
+ ../../../../ServiceFunction/PyDeviceStatusService.hpp
  ../../../../ServiceFunction/PyForceService.hpp
  ../../../../ServiceFunction/PySubscriptionService.hpp
  ../../../../src/PythonArpComponent.hpp
  ../../../code/PythonArpComponentProgramProvider.hpp
  ../../../code/PythonArpLibrary.hpp
  /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/code/PythonArpComponent.meta.cpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/DeviceInfoServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/DeviceStatusServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/IDeviceInfoService.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/IDeviceStatusService.hpp
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/DataType.hpp
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/DataTypeEnum.hpp
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Esm/IProgram.hpp
@@ -692,6 +1126,8 @@ CMakeFiles/PythonArp.dir/intermediate/code/PythonArpComponent.meta.cpp.o
 CMakeFiles/PythonArp.dir/intermediate/code/PythonArpComponentProgramProvider.cpp.o
  ../../../..//util/arg.hpp
  ../../../../ServiceFunction/PyDataAccessService.hpp
+ ../../../../ServiceFunction/PyDeviceInfoService.hpp
+ ../../../../ServiceFunction/PyDeviceStatusService.hpp
  ../../../../ServiceFunction/PyForceService.hpp
  ../../../../ServiceFunction/PySubscriptionService.hpp
  ../../../../src/Prog_1LWToByteArray.hpp
@@ -709,6 +1145,10 @@ CMakeFiles/PythonArp.dir/intermediate/code/PythonArpComponentProgramProvider.cpp
  ../../../code/PythonArpLibrary.hpp
  /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/code/PythonArpComponentProgramProvider.cpp
  /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/code/PythonArpComponentProgramProvider.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/DeviceInfoServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/DeviceStatusServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/IDeviceInfoService.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/IDeviceStatusService.hpp
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/DataType.hpp
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/DataTypeEnum.hpp
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Esm/IProgram.hpp
@@ -904,12 +1344,18 @@ CMakeFiles/PythonArp.dir/intermediate/code/PythonArpComponentProgramProvider.cpp
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Security/SecurityToken.hpp
 CMakeFiles/PythonArp.dir/intermediate/code/PythonArpLibrary.cpp.o
  ../../../../ServiceFunction/PyDataAccessService.hpp
+ ../../../../ServiceFunction/PyDeviceInfoService.hpp
+ ../../../../ServiceFunction/PyDeviceStatusService.hpp
  ../../../../ServiceFunction/PyForceService.hpp
  ../../../../ServiceFunction/PySubscriptionService.hpp
  ../../../../src/PythonArpComponent.hpp
  ../../../code/PythonArpComponentProgramProvider.hpp
  /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/code/PythonArpLibrary.cpp
  /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/code/PythonArpLibrary.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/DeviceInfoServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/DeviceStatusServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/IDeviceInfoService.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/IDeviceStatusService.hpp
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/DataType.hpp
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/DataTypeEnum.hpp
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Esm/IProgram.hpp
@@ -1106,6 +1552,8 @@ CMakeFiles/PythonArp.dir/intermediate/code/PythonArpLibrary.cpp.o
 CMakeFiles/PythonArp.dir/intermediate/code/PythonArpLibrary.meta.cpp.o
  ../../../..//util/arg.hpp
  ../../../../ServiceFunction/PyDataAccessService.hpp
+ ../../../../ServiceFunction/PyDeviceInfoService.hpp
+ ../../../../ServiceFunction/PyDeviceStatusService.hpp
  ../../../../ServiceFunction/PyForceService.hpp
  ../../../../ServiceFunction/PySubscriptionService.hpp
  ../../../../src/Prog_1LWToByteArray.hpp
@@ -1123,6 +1571,10 @@ CMakeFiles/PythonArp.dir/intermediate/code/PythonArpLibrary.meta.cpp.o
  ../../../code/PythonArpComponentProgramProvider.hpp
  /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/code/PythonArpLibrary.hpp
  /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/code/PythonArpLibrary.meta.cpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/DeviceInfoServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/DeviceStatusServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/IDeviceInfoService.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/IDeviceStatusService.hpp
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/DataType.hpp
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/DataTypeEnum.hpp
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Esm/IProgram.hpp
@@ -1320,6 +1772,8 @@ CMakeFiles/PythonArp.dir/intermediate/code/PythonArpLibrary.meta.cpp.o
 CMakeFiles/PythonArp.dir/src/Prog_base.cpp.o
  ../../../..//util/arg.hpp
  ../../../../ServiceFunction/PyDataAccessService.hpp
+ ../../../../ServiceFunction/PyDeviceInfoService.hpp
+ ../../../../ServiceFunction/PyDeviceStatusService.hpp
  ../../../../ServiceFunction/PyForceService.hpp
  ../../../../ServiceFunction/PySubscriptionService.hpp
  ../../../code/PythonArpComponentProgramProvider.hpp
@@ -1327,6 +1781,10 @@ CMakeFiles/PythonArp.dir/src/Prog_base.cpp.o
  /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/src/Prog_base.cpp
  /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/src/Prog_base.hpp
  /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/src/PythonArpComponent.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/DeviceInfoServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/DeviceStatusServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/IDeviceInfoService.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/IDeviceStatusService.hpp
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/DataType.hpp
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/DataTypeEnum.hpp
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Esm/IProgram.hpp
@@ -1523,6 +1981,8 @@ CMakeFiles/PythonArp.dir/src/Prog_base.cpp.o
 CMakeFiles/PythonArp.dir/src/PythonArpComponent.cpp.o
  ../../../..//util/arg.hpp
  ../../../../ServiceFunction/PyDataAccessService.hpp
+ ../../../../ServiceFunction/PyDeviceInfoService.hpp
+ ../../../../ServiceFunction/PyDeviceStatusService.hpp
  ../../../../ServiceFunction/PyForceService.hpp
  ../../../../ServiceFunction/PySubscriptionService.hpp
  ../../../code/PythonArpComponentProgramProvider.hpp
@@ -1530,6 +1990,10 @@ CMakeFiles/PythonArp.dir/src/PythonArpComponent.cpp.o
  /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/src/Prog_base.hpp
  /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/src/PythonArpComponent.cpp
  /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/src/PythonArpComponent.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/DeviceInfoServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/DeviceStatusServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/IDeviceInfoService.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/IDeviceStatusService.hpp
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/DataType.hpp
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/DataTypeEnum.hpp
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Esm/IProgram.hpp
@@ -1725,6 +2189,8 @@ CMakeFiles/PythonArp.dir/src/PythonArpComponent.cpp.o
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/System/Security/SecurityToken.hpp
 CMakeFiles/PythonArp.dir/util/arg.cpp.o
  ../../../../ServiceFunction/PyDataAccessService.hpp
+ ../../../../ServiceFunction/PyDeviceInfoService.hpp
+ ../../../../ServiceFunction/PyDeviceStatusService.hpp
  ../../../../ServiceFunction/PyForceService.hpp
  ../../../../ServiceFunction/PySubscriptionService.hpp
  ../../../../src/PythonArpComponent.hpp
@@ -1732,6 +2198,10 @@ CMakeFiles/PythonArp.dir/util/arg.cpp.o
  ../../../code/PythonArpLibrary.hpp
  /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/util/arg.cpp
  /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/util/arg.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/DeviceInfoServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/DeviceStatusServiceProxyFactory.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/IDeviceInfoService.hpp
+ /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Device/Interface/Services/IDeviceStatusService.hpp
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/DataType.hpp
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/DataTypeEnum.hpp
  /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/include/plcnext/Arp/Plc/Commons/Esm/IProgram.hpp

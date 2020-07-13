@@ -18,6 +18,8 @@
 #include "PyDataAccessService.hpp"
 #include "PyForceService.hpp"
 #include "PySubscriptionService.hpp"
+#include "PyDeviceInfoService.hpp"
+#include "PyDeviceStatusService.hpp"
 
 //Macro for Doc generate
 #define Arp_WITH_DOC_STRINGS
@@ -25,7 +27,8 @@
 //switch of Service add-in
 #define ENABLE_DATAACCESSSERVICE
 #define ENABLE_SUBSCRIPTIONSERVICE
-
+#define ENABLE_DEVICESTATUSSERVICE
+#define ENABLE_DEVICEINFOSERVICE
 
 //get GIL and release
 #define __ARP_START_PYTHON__ {PyGILState_STATE _gstate = PyGILState_Ensure();
@@ -44,6 +47,7 @@ using namespace Arp::Plc::Commons::Esm;
 using namespace Arp::Plc::Commons::Meta;
 using namespace Arp::Plc::Gds::Services;
 using namespace Arp::System::Rsc;
+using namespace Arp::Device::Interface::Services;
 
 
 
@@ -131,6 +135,9 @@ public:
     IDataAccessService::Ptr p_IDataAccessService = nullptr;
     IForceService::Ptr p_IForceService = nullptr;
     ISubscriptionService::Ptr p_ISubscriptionService = nullptr;
+    IDeviceStatusService::Ptr p_IDeviceStatusService = nullptr;
+    IDeviceInfoService::Ptr p_IDeviceInfoService = nullptr;
+
 };
 
 ///////////////////////////////////////////////////////////////////////////////

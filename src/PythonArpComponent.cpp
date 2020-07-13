@@ -35,6 +35,12 @@ namespace PythonArp
             this->p_IForceService=ServiceManager::GetService<IForceService>();
         if(!p_ISubscriptionService)
             this->p_ISubscriptionService=ServiceManager::GetService<ISubscriptionService>();
+        if(!p_IDeviceStatusService)
+            this->p_IDeviceStatusService=ServiceManager::GetService<IDeviceStatusService>();
+        if(!p_IDeviceInfoService)
+            this->p_IDeviceInfoService=ServiceManager::GetService<IDeviceInfoService>();
+
+
 
 
         this->isPyStarter = false;
@@ -73,6 +79,15 @@ namespace PythonArp
         PythonArp::PySubscriptionService::AddObject(builtins);
         #endif
 
+        #ifdef ENABLE_DEVICESTATUSSERVICE
+        PythonArp::PyDeviceStatusService::AddObject(builtins);
+        #endif
+
+        #ifdef ENABLE_DEVICEINFOSERVICE
+        PythonArp::PyDeviceInfoService::AddObject(builtins);
+        #endif
+
+        
         PyRun_SimpleString("import sys");
         PyRun_SimpleString("import ArpConsoleSupport");
         PyRun_SimpleString("import ArpConsoleSupport_err");

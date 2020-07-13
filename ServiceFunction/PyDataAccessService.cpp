@@ -451,11 +451,11 @@ namespace PythonArp::PyDataAccessService
             return NULL;
         }
 
-        int nameOffset =0;
-        if(prefix)
-        {
-            nameOffset = strlen(prefix);
-        }
+        // int nameOffset =0;
+        // if(prefix)
+        // {
+        //     nameOffset = strlen(prefix);
+        // }
 
         PyObject *retValues;
         PyObject *retFaultReason;

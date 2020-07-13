@@ -8,6 +8,8 @@
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/*.hpp")
 set(OLD_GLOB
   "/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyDataAccessService.hpp"
+  "/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyDeviceInfoService.hpp"
+  "/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyDeviceStatusService.hpp"
   "/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyForceService.hpp"
   "/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PySubscriptionService.hpp"
   "/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/code/PythonArpComponentProgramProvider.hpp"
@@ -49,6 +51,8 @@ endif()
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/*.cpp")
 set(OLD_GLOB
   "/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyDataAccessService.cpp"
+  "/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyDeviceInfoService.cpp"
+  "/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyDeviceStatusService.cpp"
   "/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyForceService.cpp"
   "/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PySubscriptionService.cpp"
   )

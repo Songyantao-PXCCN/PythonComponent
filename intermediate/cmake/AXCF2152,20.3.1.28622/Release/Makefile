@@ -197,6 +197,60 @@ ServiceFunction/PyDataAccessService.cpp.s:
 	$(MAKE) -f CMakeFiles/PythonArp.dir/build.make CMakeFiles/PythonArp.dir/ServiceFunction/PyDataAccessService.cpp.s
 .PHONY : ServiceFunction/PyDataAccessService.cpp.s
 
+ServiceFunction/PyDeviceInfoService.o: ServiceFunction/PyDeviceInfoService.cpp.o
+
+.PHONY : ServiceFunction/PyDeviceInfoService.o
+
+# target to build an object file
+ServiceFunction/PyDeviceInfoService.cpp.o:
+	$(MAKE) -f CMakeFiles/PythonArp.dir/build.make CMakeFiles/PythonArp.dir/ServiceFunction/PyDeviceInfoService.cpp.o
+.PHONY : ServiceFunction/PyDeviceInfoService.cpp.o
+
+ServiceFunction/PyDeviceInfoService.i: ServiceFunction/PyDeviceInfoService.cpp.i
+
+.PHONY : ServiceFunction/PyDeviceInfoService.i
+
+# target to preprocess a source file
+ServiceFunction/PyDeviceInfoService.cpp.i:
+	$(MAKE) -f CMakeFiles/PythonArp.dir/build.make CMakeFiles/PythonArp.dir/ServiceFunction/PyDeviceInfoService.cpp.i
+.PHONY : ServiceFunction/PyDeviceInfoService.cpp.i
+
+ServiceFunction/PyDeviceInfoService.s: ServiceFunction/PyDeviceInfoService.cpp.s
+
+.PHONY : ServiceFunction/PyDeviceInfoService.s
+
+# target to generate assembly for a file
+ServiceFunction/PyDeviceInfoService.cpp.s:
+	$(MAKE) -f CMakeFiles/PythonArp.dir/build.make CMakeFiles/PythonArp.dir/ServiceFunction/PyDeviceInfoService.cpp.s
+.PHONY : ServiceFunction/PyDeviceInfoService.cpp.s
+
+ServiceFunction/PyDeviceStatusService.o: ServiceFunction/PyDeviceStatusService.cpp.o
+
+.PHONY : ServiceFunction/PyDeviceStatusService.o
+
+# target to build an object file
+ServiceFunction/PyDeviceStatusService.cpp.o:
+	$(MAKE) -f CMakeFiles/PythonArp.dir/build.make CMakeFiles/PythonArp.dir/ServiceFunction/PyDeviceStatusService.cpp.o
+.PHONY : ServiceFunction/PyDeviceStatusService.cpp.o
+
+ServiceFunction/PyDeviceStatusService.i: ServiceFunction/PyDeviceStatusService.cpp.i
+
+.PHONY : ServiceFunction/PyDeviceStatusService.i
+
+# target to preprocess a source file
+ServiceFunction/PyDeviceStatusService.cpp.i:
+	$(MAKE) -f CMakeFiles/PythonArp.dir/build.make CMakeFiles/PythonArp.dir/ServiceFunction/PyDeviceStatusService.cpp.i
+.PHONY : ServiceFunction/PyDeviceStatusService.cpp.i
+
+ServiceFunction/PyDeviceStatusService.s: ServiceFunction/PyDeviceStatusService.cpp.s
+
+.PHONY : ServiceFunction/PyDeviceStatusService.s
+
+# target to generate assembly for a file
+ServiceFunction/PyDeviceStatusService.cpp.s:
+	$(MAKE) -f CMakeFiles/PythonArp.dir/build.make CMakeFiles/PythonArp.dir/ServiceFunction/PyDeviceStatusService.cpp.s
+.PHONY : ServiceFunction/PyDeviceStatusService.cpp.s
+
 ServiceFunction/PyForceService.o: ServiceFunction/PyForceService.cpp.o
 
 .PHONY : ServiceFunction/PyForceService.o
@@ -456,6 +510,12 @@ help:
 	@echo "... ServiceFunction/PyDataAccessService.o"
 	@echo "... ServiceFunction/PyDataAccessService.i"
 	@echo "... ServiceFunction/PyDataAccessService.s"
+	@echo "... ServiceFunction/PyDeviceInfoService.o"
+	@echo "... ServiceFunction/PyDeviceInfoService.i"
+	@echo "... ServiceFunction/PyDeviceInfoService.s"
+	@echo "... ServiceFunction/PyDeviceStatusService.o"
+	@echo "... ServiceFunction/PyDeviceStatusService.i"
+	@echo "... ServiceFunction/PyDeviceStatusService.s"
 	@echo "... ServiceFunction/PyForceService.o"
 	@echo "... ServiceFunction/PyForceService.i"
 	@echo "... ServiceFunction/PyForceService.s"
