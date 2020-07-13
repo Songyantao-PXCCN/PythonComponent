@@ -71,36 +71,36 @@ def Execute(udtIN_1_val,udtIN_2_val):
 13.07.20 16:32:53.026 root   INFO  - ------------- iArray10:(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
 
-    udtIN_1_t : Prog_TestStruct1
+    udtIN_1_t : STRUCT
         xBOOL   : BOOL;
         iINT    :  INT;
         dwDWORD : DWORD;
         sSTRING : STRING;
-    END_Prog_TestStruct1
+    END_STRUCT
     
-    udtSub_t : Prog_TestStruct1
+    udtSub_t : STRUCT
         xBOOL   : BOOL;
         iArray10: ARRAY[0..9] OF INT;
-    END_Prog_TestStruct1
+    END_STRUCT
     
-    udtIN_2_t : Prog_TestStruct1
+    udtIN_2_t : STRUCT
         iArray5 : ARRAY[0..4] OF INT;
         rArray10: ARRAY[0..9] OF REAL;
         dwArray3: ARRAY[0..2] OF DWORD;
         stSub   : udtSub_t;
-    END_Prog_TestStruct1
+    END_STRUCT
     
-    udtOUT_1_t : Prog_TestStruct1
+    udtOUT_1_t : STRUCT
         sSTRING : STRING;
         xBOOL   : BOOL;
         iINT    : INT;
-    END_Prog_TestStruct1
+    END_STRUCT
     
-    udtOUT_2_t : Prog_TestStruct1
+    udtOUT_2_t : STRUCT
         arrLWORD3: ARRAY[0..2] OF LWORD;
         arrWORD3 : ARRAY[0..2] OF WORD;
         stSub3   : ARRAY[0..2] OF udtSub_t;
-    END_Prog_TestStruct1
+    END_STRUCT
 
     
 

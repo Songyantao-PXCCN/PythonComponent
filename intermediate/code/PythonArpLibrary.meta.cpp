@@ -109,10 +109,10 @@ using namespace Arp::Plc::Commons::Meta;
     static const FieldDefinition PythonArp_Prog_TestPrimitive_STRING_toPy("STRING_toPy", offsetof(::PythonArp::Prog_TestPrimitive, STRING_toPy), DataType::StaticString, "", sizeof(StaticString<80>), alignof(StaticString<80>), {  }, StandardAttribute::Input | StandardAttribute::Retain);
     static const FieldDefinition PythonArp_Prog_TestPrimitive_STRING_fromPy("STRING_fromPy", offsetof(::PythonArp::Prog_TestPrimitive, STRING_fromPy), DataType::StaticString, "", sizeof(StaticString<80>), alignof(StaticString<80>), {  }, StandardAttribute::Output);
     static const FieldDefinition PythonArp_Prog_TestStruct1_PyReady("xReady", offsetof(::PythonArp::Prog_TestStruct1, PyReady), DataType::Boolean, "", sizeof(boolean), alignof(boolean), {  }, StandardAttribute::Output);
-    static const FieldDefinition PythonArp_Prog_TestStruct1_Prog_TestStruct1_1_toPy("Prog_TestStruct1_1_toPy", offsetof(::PythonArp::Prog_TestStruct1, Prog_TestStruct1_1_toPy), DataType::Struct, CTN<PythonArp::Prog_TestStruct1::udtIN_1>(), sizeof(PythonArp::Prog_TestStruct1::udtIN_1), alignof(PythonArp::Prog_TestStruct1::udtIN_1), {  }, StandardAttribute::Input | StandardAttribute::Retain);
-    static const FieldDefinition PythonArp_Prog_TestStruct1_Prog_TestStruct1_2_toPy("Prog_TestStruct1_2_toPy", offsetof(::PythonArp::Prog_TestStruct1, Prog_TestStruct1_2_toPy), DataType::Struct, CTN<PythonArp::Prog_TestStruct1::udtIN_2>(), sizeof(PythonArp::Prog_TestStruct1::udtIN_2), alignof(PythonArp::Prog_TestStruct1::udtIN_2), {  }, StandardAttribute::Input | StandardAttribute::Retain);
-    static const FieldDefinition PythonArp_Prog_TestStruct1_Prog_TestStruct1_1_fromPy("Prog_TestStruct1_1_fromPy", offsetof(::PythonArp::Prog_TestStruct1, Prog_TestStruct1_1_fromPy), DataType::Struct, CTN<PythonArp::Prog_TestStruct1::udtOUT_1>(), sizeof(PythonArp::Prog_TestStruct1::udtOUT_1), alignof(PythonArp::Prog_TestStruct1::udtOUT_1), {  }, StandardAttribute::Output);
-    static const FieldDefinition PythonArp_Prog_TestStruct1_Prog_TestStruct1_2_fromPy("Prog_TestStruct1_2_fromPy", offsetof(::PythonArp::Prog_TestStruct1, Prog_TestStruct1_2_fromPy), DataType::Struct, CTN<PythonArp::Prog_TestStruct1::udtOUT_2>(), sizeof(PythonArp::Prog_TestStruct1::udtOUT_2), alignof(PythonArp::Prog_TestStruct1::udtOUT_2), {  }, StandardAttribute::Output);
+    static const FieldDefinition PythonArp_Prog_TestStruct1_STRUCT_1_toPy("STRUCT_1_toPy", offsetof(::PythonArp::Prog_TestStruct1, STRUCT_1_toPy), DataType::Struct, CTN<PythonArp::Prog_TestStruct1::udtIN_1>(), sizeof(PythonArp::Prog_TestStruct1::udtIN_1), alignof(PythonArp::Prog_TestStruct1::udtIN_1), {  }, StandardAttribute::Input | StandardAttribute::Retain);
+    static const FieldDefinition PythonArp_Prog_TestStruct1_STRUCT_2_toPy("STRUCT_2_toPy", offsetof(::PythonArp::Prog_TestStruct1, STRUCT_2_toPy), DataType::Struct, CTN<PythonArp::Prog_TestStruct1::udtIN_2>(), sizeof(PythonArp::Prog_TestStruct1::udtIN_2), alignof(PythonArp::Prog_TestStruct1::udtIN_2), {  }, StandardAttribute::Input | StandardAttribute::Retain);
+    static const FieldDefinition PythonArp_Prog_TestStruct1_STRUCT_1_fromPy("STRUCT_1_fromPy", offsetof(::PythonArp::Prog_TestStruct1, STRUCT_1_fromPy), DataType::Struct, CTN<PythonArp::Prog_TestStruct1::udtOUT_1>(), sizeof(PythonArp::Prog_TestStruct1::udtOUT_1), alignof(PythonArp::Prog_TestStruct1::udtOUT_1), {  }, StandardAttribute::Output);
+    static const FieldDefinition PythonArp_Prog_TestStruct1_STRUCT_2_fromPy("STRUCT_2_fromPy", offsetof(::PythonArp::Prog_TestStruct1, STRUCT_2_fromPy), DataType::Struct, CTN<PythonArp::Prog_TestStruct1::udtOUT_2>(), sizeof(PythonArp::Prog_TestStruct1::udtOUT_2), alignof(PythonArp::Prog_TestStruct1::udtOUT_2), {  }, StandardAttribute::Output);
     
     void PythonArpLibrary::InitializeTypeDomain()
     {
@@ -300,10 +300,10 @@ using namespace Arp::Plc::Commons::Meta;
                     {
                         // FieldDefinitions:
                         PythonArp_Prog_TestStruct1_PyReady,
-                        PythonArp_Prog_TestStruct1_Prog_TestStruct1_1_toPy,
-                        PythonArp_Prog_TestStruct1_Prog_TestStruct1_2_toPy,
-                        PythonArp_Prog_TestStruct1_Prog_TestStruct1_1_fromPy,
-                        PythonArp_Prog_TestStruct1_Prog_TestStruct1_2_fromPy,
+                        PythonArp_Prog_TestStruct1_STRUCT_1_toPy,
+                        PythonArp_Prog_TestStruct1_STRUCT_2_toPy,
+                        PythonArp_Prog_TestStruct1_STRUCT_1_fromPy,
+                        PythonArp_Prog_TestStruct1_STRUCT_2_fromPy,
                     }
                 },
             }
