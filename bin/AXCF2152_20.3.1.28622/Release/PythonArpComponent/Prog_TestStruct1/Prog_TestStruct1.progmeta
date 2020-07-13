@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MetaConfigurationDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" schemaVersion="2.0" xmlns="http://www.phoenixcontact.com/schema/metaconfig">
+  <Program type="Prog_TestStruct1">
+    <Ports>
+      <Port name="xReady" type="boolean" attributes="Output" dimensions="" />
+      <Port name="Prog_TestStruct1_1_toPy" type="udtIN_1" attributes="Input|Retain" dimensions="" />
+      <Port name="Prog_TestStruct1_2_toPy" type="udtIN_2" attributes="Input|Retain" dimensions="" />
+      <Port name="Prog_TestStruct1_1_fromPy" type="udtOUT_1" attributes="Output" dimensions="" />
+      <Port name="Prog_TestStruct1_2_fromPy" type="udtOUT_2" attributes="Output" dimensions="" />
+    </Ports>
+  </Program>
+</MetaConfigurationDocument>

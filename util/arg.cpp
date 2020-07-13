@@ -4,10 +4,8 @@
 // #include <ctype.h>
 // #include <float.h>
 
-namespace PythonArp::util::argParse
+namespace PythonArp::util::arg
 {
-
-
 int _Py_hasNoKeywords(PyObject *kwargs)
 {
     if (kwargs == NULL) {
@@ -20,7 +18,6 @@ int _Py_hasNoKeywords(PyObject *kwargs)
     if (PyDict_GET_SIZE(kwargs) == 0) {
         return 1;
     }
-
     return 0;
 }
 
@@ -96,136 +93,357 @@ int variablesParse(PyObject* PyO_variables, const char* prefix,std::vector<Strin
     return 0;
 }
 
-template<typename T>
-PyObject* _PyLong_createTupleFromArray_impl(const T s,size_t c,bool isSigned,bool isLongLong)
+
+
+const char* _ToIecChar(const char* source)
 {
-    PyObject* ret = PyTuple_New(c);
-    for(size_t i=0;i<c;i++)
+    int size = strlen(source);
+    if (size <=80){return source;}
+    else{return "<ERROR: Too large for IEC String>";}
+}
+
+
+/* -------------------------- PyObject_ToIECString -------------------------- */
+const char* PyObject_ToIECString(PyObject* PythonObject)
+{
+    if (PythonObject && PyUnicode_Check(PythonObject))
     {
-        if (isSigned)
-        {
-            if(isLongLong)
-            {
-                PyTuple_SetItem(ret,i,PyLong_FromLongLong(s[i]));
-            }
-            else
-            {
-                PyTuple_SetItem(ret,i,PyLong_FromLong(s[i]));
-            }
-        }
-        else
-        {
-            if(isLongLong)
-            {
-                PyTuple_SetItem(ret,i,PyLong_FromUnsignedLongLong(s[i]));
-            }
-            else
-            {
-                PyTuple_SetItem(ret,i,PyLong_FromUnsignedLong(s[i]));
-            }
-        }
+        return _ToIecChar(PyUnicode_AsUTF8(PythonObject));
     }
-    return ret;
-}
-
-
-PyObject* createTupleFromArray(const int8* sourceArray,size_t size){
-    return _PyLong_createTupleFromArray_impl(sourceArray,size,true,false);
-}
-PyObject* createTupleFromArray(const int16* sourceArray,size_t size){
-    return _PyLong_createTupleFromArray_impl(sourceArray,size,true,false);
-}
-PyObject* createTupleFromArray(const int32* sourceArray,size_t size){
-    return _PyLong_createTupleFromArray_impl(sourceArray,size,true,false);
-}
-PyObject* createTupleFromArray(const int64* sourceArray,size_t size){
-    return _PyLong_createTupleFromArray_impl(sourceArray,size,true,true);
-}
-PyObject* createTupleFromArray(const uint8* sourceArray,size_t size){
-    return _PyLong_createTupleFromArray_impl(sourceArray,size,false,false);
-}
-PyObject* createTupleFromArray(const uint16* sourceArray,size_t size){
-    return _PyLong_createTupleFromArray_impl(sourceArray,size,false,false);
-}
-PyObject* createTupleFromArray(const uint32* sourceArray,size_t size){
-    return _PyLong_createTupleFromArray_impl(sourceArray,size,false,false);
-}
-PyObject* createTupleFromArray(const uint64* sourceArray,size_t size){
-    return _PyLong_createTupleFromArray_impl(sourceArray,size,false,true);
-}
-
-
-template<typename T>
-int _PyLong_parseTupleOrListToArray_impl(PyObject* tupObj,T targetArray,const size_t size,bool isSigned,bool isLongLong)
-{
-    PyObject *t_seq, *t_item;
-    size_t tmpIndex = 0;
-    if (PyTuple_Check(tupObj) or PyList_Check(tupObj))
+    else if (PythonObject && PyByteArray_Check(PythonObject))
     {
-        if(PyObject_Size(tupObj)!=size) 
-            return -1;
-
-        t_seq = PyObject_GetIter(tupObj);
-        while ((t_item = PyIter_Next(t_seq)))
-        {
-            if(isSigned)
-            {
-                if(isLongLong)
-                {
-                    targetArray[tmpIndex++]= PyLong_AsLongLong(t_item);
-                }
-                else
-                {
-                    targetArray[tmpIndex++]= PyLong_AsLong(t_item);
-                }
-                
-            }
-            else
-            {
-                if (isLongLong)
-                {
-                    targetArray[tmpIndex++]= PyLong_AsUnsignedLongLong(t_item);
-                }
-                else
-                {
-                    targetArray[tmpIndex++]= PyLong_AsUnsignedLong(t_item);
-                }
-            }
-            Py_XDECREF(t_item);
-        }
-        Py_XDECREF(t_seq);
-        return 0;
+        return _ToIecChar(PyByteArray_AS_STRING(PythonObject));
     }
-    return -1;
+    else if (PythonObject && PyBytes_Check(PythonObject))
+    {
+        return _ToIecChar(PyBytes_AS_STRING(PythonObject));
+    }
+    else
+    {
+        return "<ERROR: Type can not convert to String>";
+    }
 }
 
 
 
-int parseTupleOrListToArray(PyObject* tupObj,int8* targetArray,const size_t size){
-    return _PyLong_parseTupleOrListToArray_impl(tupObj,targetArray,size,true,false);
-}
-int parseTupleOrListToArray(PyObject* tupObj,int16* targetArray,const size_t size){
-    return _PyLong_parseTupleOrListToArray_impl(tupObj,targetArray,size,true,false);
-}
-int parseTupleOrListToArray(PyObject* tupObj,int32* targetArray,const size_t size){
-    return _PyLong_parseTupleOrListToArray_impl(tupObj,targetArray,size,true,false);
-}
-int parseTupleOrListToArray(PyObject* tupObj,int64* targetArray,const size_t size){
-    return _PyLong_parseTupleOrListToArray_impl(tupObj,targetArray,size,true,true);
-}
-int parseTupleOrListToArray(PyObject* tupObj,uint64* targetArray,const size_t size)
-{
-    return _PyLong_parseTupleOrListToArray_impl(tupObj,targetArray,size,false,true);
-}
-int parseTupleOrListToArray(PyObject* tupObj,uint32* targetArray,const size_t size){
-    return _PyLong_parseTupleOrListToArray_impl(tupObj,targetArray,size,false,false);
-}
-int parseTupleOrListToArray(PyObject* tupObj,uint16* targetArray,const size_t size){
-return _PyLong_parseTupleOrListToArray_impl(tupObj,targetArray,size,false,false);
-}
-int parseTupleOrListToArray(PyObject* tupObj,uint8* targetArray,const size_t size){
-    return _PyLong_parseTupleOrListToArray_impl(tupObj,targetArray,size,false,false);
-}
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+// template<typename T>
+// PyObject* _PyLong_createTupleFromArray_impl(const T s,size_t c,bool isSigned,bool isLongLong,bool isFloat,bool ByteArray,bool isBool)
+// {
+//     PyObject* ret = PyTuple_New(c);
+//     for(size_t i=0;i<c;i++)
+//     {
+//         if (ByteArray)
+//         {
+//             PyTuple_SetItem(ret,i,ArpByteArrayBuild(s[i]));   
+//         }
+//         else
+//         {
+//             if (isFloat)
+//             {
+//                 PyTuple_SetItem(ret,i,PyFloat_FromDouble(s[i]));   
+//             }
+//             else if (isBool)
+//             {
+//                 PyTuple_SetItem(ret,i,PyBool_FromLong(s[i]));   
+//             }
+//             else
+//             {
+//                 if (isSigned)
+//                 {
+//                     if(isLongLong)
+//                     {
+//                         PyTuple_SetItem(ret,i,PyLong_FromLongLong(s[i]));
+//                     }
+//                     else
+//                     {
+//                         PyTuple_SetItem(ret,i,PyLong_FromLong(s[i]));
+//                     }
+//                 }
+//                 else
+//                 {
+//                     if(isLongLong)
+//                     {
+//                         PyTuple_SetItem(ret,i,PyLong_FromUnsignedLongLong(s[i]));
+//                     }
+//                     else
+//                     {
+//                         PyTuple_SetItem(ret,i,PyLong_FromUnsignedLong(s[i]));
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     return ret;
+// }
+
+
+// PyObject* createTupleFromArray(const int8* sourceArray,size_t size,bool ByteArray){
+//     return _PyLong_createTupleFromArray_impl(sourceArray,size,true,false,false,ByteArray,false);
+// }
+// PyObject* createTupleFromArray(const int16* sourceArray,size_t size,bool ByteArray){
+//     return _PyLong_createTupleFromArray_impl(sourceArray,size,true,false,false,ByteArray,false);
+// }
+// PyObject* createTupleFromArray(const int32* sourceArray,size_t size,bool ByteArray){
+//     return _PyLong_createTupleFromArray_impl(sourceArray,size,true,false,false,ByteArray,false);
+// }
+// PyObject* createTupleFromArray(const int64* sourceArray,size_t size,bool ByteArray){
+//     return _PyLong_createTupleFromArray_impl(sourceArray,size,true,true,false,ByteArray,false);
+// }
+// PyObject* createTupleFromArray(const uint8* sourceArray,size_t size,bool ByteArray){
+//     return _PyLong_createTupleFromArray_impl(sourceArray,size,false,false,false,ByteArray,false);
+// }
+// PyObject* createTupleFromArray(const uint16* sourceArray,size_t size,bool ByteArray){
+//     return _PyLong_createTupleFromArray_impl(sourceArray,size,false,false,false,ByteArray,false);
+// }
+// PyObject* createTupleFromArray(const uint32* sourceArray,size_t size,bool ByteArray){
+//     return _PyLong_createTupleFromArray_impl(sourceArray,size,false,false,false,ByteArray,false);
+// }
+// PyObject* createTupleFromArray(const uint64* sourceArray,size_t size,bool ByteArray){
+//     return _PyLong_createTupleFromArray_impl(sourceArray,size,false,true,false,ByteArray,false);
+// }
+// PyObject* createTupleFromArray(const float32* sourceArray,size_t size,bool ByteArray){
+//     return _PyLong_createTupleFromArray_impl(sourceArray,size,false,false,true,ByteArray,false);
+// }
+// PyObject* createTupleFromArray(const float64* sourceArray,size_t size,bool ByteArray){
+//     return _PyLong_createTupleFromArray_impl(sourceArray,size,false,true,true,ByteArray,false);
+// }
+// PyObject* createTupleFromArray(const boolean* sourceArray,size_t size,bool ByteArray){
+//     return _PyLong_createTupleFromArray_impl(sourceArray,size,false,false,false,ByteArray,true);
+// }
+
+
+
+
+
+
+
+
+
+
+
+// template<typename T>
+// int _PyLong_parseTupleOrListToArray_impl(PyObject* tupObj,T targetArray,const size_t size,bool isSigned,bool isLongLong,bool isFloat,bool isBool)
+// {
+//     PyObject *t_seq, *t_item;
+//     size_t tmpIndex = 0;
+//     if (PyTuple_Check(tupObj) or PyList_Check(tupObj))
+//     {
+//         if(PyObject_Size(tupObj)!=size) 
+//             return -1;
+
+//         t_seq = PyObject_GetIter(tupObj);
+//         while ((t_item = PyIter_Next(t_seq)))
+//         {
+//             if (PyByteArray_Check(t_item) || PyBytes_Check(t_item))
+//             {
+//                 ArpByteArrayOrBytesParse(t_item,targetArray[tmpIndex++],false);
+//             }
+//             else
+//             {
+//                 if (isFloat)
+//                 {
+//                     if (PyFloat_Check(t_item)) 
+//                     {
+//                         targetArray[tmpIndex++]= PyFloat_AS_DOUBLE(t_item);
+//                     }
+//                 }
+//                 else if (isBool)
+//                 {
+//                     if (PyBool_Check(t_item))
+//                     {
+//                         targetArray[tmpIndex++] = PyObject_IsTrue(t_item);
+//                     }
+//                 }
+//                 else
+//                 {
+//                     if (PyLong_Check(t_item))
+//                     {
+//                         if(isSigned)
+//                         {
+//                             if(isLongLong)
+//                             {
+//                                 targetArray[tmpIndex++]= PyLong_AsLongLong(t_item);
+//                             }
+//                             else
+//                             {
+//                                 targetArray[tmpIndex++]= PyLong_AsLong(t_item);
+//                             }
+                            
+//                         }
+//                         else
+//                         {
+//                             if (isLongLong)
+//                             {
+//                                 targetArray[tmpIndex++]= PyLong_AsUnsignedLongLong(t_item);
+//                             }
+//                             else
+//                             {
+//                                 targetArray[tmpIndex++]= PyLong_AsUnsignedLong(t_item);
+//                             }
+//                         }
+//                     }
+//                 }
+//             }
+//             Py_XDECREF(t_item);
+//         }
+//         Py_XDECREF(t_seq);
+//         return 0;
+//     }
+//     return -1;
+// }
+
+
+
+
+
+// template<typename T>
+// int _PyLong_parseTupleOrListToArray_impl(PyObject* tupObj,T targetArray,const size_t size,uint Mode)
+// {
+//     PyObject *t_seq, *t_item;
+//     size_t tmpIndex = 0;
+//     if (PyTuple_Check(tupObj) or PyList_Check(tupObj))
+//     {
+//         if(PyObject_Size(tupObj)!=size) 
+//             return -1;
+
+//         t_seq = PyObject_GetIter(tupObj);
+//         while ((t_item = PyIter_Next(t_seq)))
+//         {
+//             if (PyByteArray_Check(t_item) || PyBytes_Check(t_item))
+//             {
+//                 ArpByteArrayOrBytesParse(t_item,targetArray[tmpIndex++],false);
+//             }
+//             else
+//             {
+//                 if (isFloat)
+//                 {
+//                     if (PyFloat_Check(t_item)) 
+//                     {
+//                         targetArray[tmpIndex++]= PyFloat_AS_DOUBLE(t_item);
+//                     }
+//                 }
+//                 else if (isBool)
+//                 {
+//                     if (PyBool_Check(t_item))
+//                     {
+//                         targetArray[tmpIndex++] = PyObject_IsTrue(t_item);
+//                     }
+//                 }
+//                 else
+//                 {
+//                     if (PyLong_Check(t_item))
+//                     {
+//                         if(isSigned)
+//                         {
+//                             if(isLongLong)
+//                             {
+//                                 targetArray[tmpIndex++]= PyLong_AsLongLong(t_item);
+//                             }
+//                             else
+//                             {
+//                                 targetArray[tmpIndex++]= PyLong_AsLong(t_item);
+//                             }
+                            
+//                         }
+//                         else
+//                         {
+//                             if (isLongLong)
+//                             {
+//                                 targetArray[tmpIndex++]= PyLong_AsUnsignedLongLong(t_item);
+//                             }
+//                             else
+//                             {
+//                                 targetArray[tmpIndex++]= PyLong_AsUnsignedLong(t_item);
+//                             }
+//                         }
+//                     }
+//                 }
+//             }
+//             Py_XDECREF(t_item);
+//         }
+//         Py_XDECREF(t_seq);
+//         return 0;
+//     }
+//     return -1;
+// }
+
+
+
+
+// int parseTupleOrListToArray(PyObject* tupObj,int8* targetArray,const size_t size){
+//     return _PyLong_parseTupleOrListToArray_impl(tupObj,targetArray,size,true,false,false,false);
+// }
+// int parseTupleOrListToArray(PyObject* tupObj,int16* targetArray,const size_t size){
+//     return _PyLong_parseTupleOrListToArray_impl(tupObj,targetArray,size,true,false,false,false);
+// }
+// int parseTupleOrListToArray(PyObject* tupObj,int32* targetArray,const size_t size){
+//     return _PyLong_parseTupleOrListToArray_impl(tupObj,targetArray,size,true,false,false,false);
+// }
+// int parseTupleOrListToArray(PyObject* tupObj,int64* targetArray,const size_t size){
+//     return _PyLong_parseTupleOrListToArray_impl(tupObj,targetArray,size,true,true,false,false);
+// }
+// int parseTupleOrListToArray(PyObject* tupObj,uint64* targetArray,const size_t size)
+// {
+//     return _PyLong_parseTupleOrListToArray_impl(tupObj,targetArray,size,false,true,false,false);
+// }
+// int parseTupleOrListToArray(PyObject* tupObj,uint32* targetArray,const size_t size){
+//     return _PyLong_parseTupleOrListToArray_impl(tupObj,targetArray,size,false,false,false,false);
+// }
+// int parseTupleOrListToArray(PyObject* tupObj,uint16* targetArray,const size_t size){
+//     return _PyLong_parseTupleOrListToArray_impl(tupObj,targetArray,size,false,false,false,false);
+// }
+// int parseTupleOrListToArray(PyObject* tupObj,uint8* targetArray,const size_t size){
+//     return _PyLong_parseTupleOrListToArray_impl(tupObj,targetArray,size,false,false,false,false);
+// }
+// int parseTupleOrListToArray(PyObject* tupObj,float32* targetArray,const size_t size){
+//     return _PyLong_parseTupleOrListToArray_impl(tupObj,targetArray,size,false,false,true,false);
+// }
+// int parseTupleOrListToArray(PyObject* tupObj,float64* targetArray,const size_t size){
+//     return _PyLong_parseTupleOrListToArray_impl(tupObj,targetArray,size,false,true,true,false);
+// }
+// int parseTupleOrListToArray(PyObject* tupObj,boolean* targetArray,const size_t size){
+//     return _PyLong_parseTupleOrListToArray_impl(tupObj,targetArray,size,false,false,false,true);
+// }
+
+
+
+
+// const char* PyUnicode_ToIECString(PyObject* PyUnicodeObj)
+// {
+//     if (PyUnicodeObj && PyUnicode_Check(PyUnicodeObj))
+//     {
+//         Py_ssize_t len;
+//         const char* s = PyUnicode_AsUTF8AndSize(PyUnicodeObj,&len);
+//         if (len<=80)
+//         {
+//             return s;
+//         }
+//         else
+//         {
+//             return "<ERROR: Too large for IEC String>";
+//         }
+//     }
+//     return "<ERROR: Parameter is not PyUnicode_Type>";
+// }
+
+
+
+
 
 // template<typename T>
 // static T EndianConvert(const T& Variable)

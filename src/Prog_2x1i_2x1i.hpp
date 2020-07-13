@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include "Prog_base.hpp"
-
+#include "util/arg.hpp"
 
 namespace PythonArp
 {
@@ -70,7 +70,10 @@ inline void Prog_2x1i_2x1i::CallPyExecute()
     if (this->PYO_Execute == NULL)
         return;
     __ARP_START_PYTHON__
-    PyObject * ret = PyObject_CallFunction(this->PYO_Execute,"NNN",PyBool_FromLong(this->xBool_1_toPy),PyBool_FromLong(this->xBool_2_toPy),PyLong_FromLong(this->iInt16_1_toPy));
+    PyObject * ret = PyObject_CallFunction(this->PYO_Execute,"(NNN)",   util::arg::PrimitivePortVar_ToPyObject(xBool_2_toPy),
+                                                                        util::arg::PrimitivePortVar_ToPyObject(xBool_2_toPy),
+                                                                        util::arg::PrimitivePortVar_ToPyObject(iInt16_1_toPy)
+                                                                        );
     if (PyErr_Occurred())
     {
         PyErr_Print();
@@ -79,9 +82,16 @@ inline void Prog_2x1i_2x1i::CallPyExecute()
     {
         if(PyTuple_Check(ret))
         {
-            PyArg_ParseTuple(ret,"pph",&this->xBool_1_fromPy,&this->xBool_2_fromPy,&this->iInt16_1_fromPy);
+            PyObject *ret_0 = NULL,*ret_1 = NULL,*ret_2 = NULL;
+            if(PyArg_ParseTuple(ret,"OOO",&ret_0,&ret_1,&ret_2))
+            {
+                util::arg::PyObject_ToPrimitivePortVar(ret_0,xBool_1_fromPy);
+                util::arg::PyObject_ToPrimitivePortVar(ret_1,xBool_2_fromPy);
+                util::arg::PyObject_ToPrimitivePortVar(ret_2,iInt16_1_fromPy);
+            }
         }
     }
+    if (PyErr_Occurred()){PyErr_Print();}
     Py_XDECREF(ret);
     __ARP_STOP_PYTHON__
 }

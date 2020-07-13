@@ -146,7 +146,7 @@ static int _SubscriptionService___init__ (Subscription_obj *self,PyObject* args,
 {
     self->p_ISubscriptionService = ServiceManager::GetService<ISubscriptionService>();
     self->VariablesAdd = new std::list<String>();
-    if((!PythonArp::util::argParse::_Py_hadNoPositional(args)) or (!PythonArp::util::argParse::_Py_hasNoKeywords(kw)))
+    if((!PythonArp::util::arg::_Py_hadNoPositional(args)) or (!PythonArp::util::arg::_Py_hasNoKeywords(kw)))
     {
         Subcription_CreateSubscription(self,args,kw);
         if(PyErr_Occurred())
@@ -318,7 +318,7 @@ static PyObject* Subcription_AddVariable (Subscription_obj *self,PyObject* args,
 
     std::vector<String> varNames;
     int offset=0;
-    if(PythonArp::util::argParse::variablesParse(PyO_variables,prefix,varNames,offset))
+    if(PythonArp::util::arg::variablesParse(PyO_variables,prefix,varNames,offset))
     {
         return NULL;
     }
@@ -391,7 +391,7 @@ static PyObject* Subcription_RemoveVariable (Subscription_obj *self,PyObject* ar
 
     std::vector<String> varNames;
     int offset = 0;
-    if(PythonArp::util::argParse::variablesParse(PyO_variables,prefix,varNames,offset))
+    if(PythonArp::util::arg::variablesParse(PyO_variables,prefix,varNames,offset))
     {
         return NULL;
     }
@@ -503,7 +503,7 @@ static PyObject* Subcription_Resubscribe (Subscription_obj *self,PyObject* args)
         return NULL;
     }
     DataAccessError ret = DataAccessError::None;
-    if(PythonArp::util::argParse::_Py_hadNoPositional(args))
+    if(PythonArp::util::arg::_Py_hadNoPositional(args))
     {
         ret = self->p_ISubscriptionService->Resubscribe(self->subscription_id,self->sampleRate);
     }
@@ -662,8 +662,8 @@ static PyObject* Subcription_ReadTimeStampedValues (Subscription_obj *self)
             else
             {
                 PyObject* currentTuple = PyTuple_New(2);
-                PyTuple_SetItem(currentTuple,0,PythonArp::PyDataAccessService::AutoTypeReadHandler(current));
-                PyTuple_SetItem(currentTuple,1,PyLong_FromLongLong(timestamp));
+                PyTuple_SET_ITEM(currentTuple,0,PythonArp::PyDataAccessService::AutoTypeReadHandler(current));
+                PyTuple_SET_ITEM(currentTuple,1,PyLong_FromLongLong(timestamp));
                 PyDict_SetItemString(result_dict,iter_info->Name.CStr(),currentTuple);
                 Py_XDECREF(currentTuple);
             }
@@ -719,10 +719,10 @@ static PyObject* Subcription_GetRecordInfos (Subscription_obj *self)
         {
             if (strcmp(item.Name.CStr(),"timestamp")==0)continue;
             
-            PyTuple_SetItem(PYO_ITEM,index_item,PyUnicode_FromString(item.Name.CStr()));
+            PyTuple_SET_ITEM(PYO_ITEM,index_item,PyUnicode_FromString(item.Name.CStr()));
             index_item++;
         }
-        PyTuple_SetItem(ret,index_task,PYO_ITEM);
+        PyTuple_SET_ITEM(ret,index_task,PYO_ITEM);
         index_task++;
     }
 
@@ -832,31 +832,31 @@ static PyObject* Subcription_ReadRecords (Subscription_obj *self,PyObject* args)
                                 else
                                 {
                                     PyObject* currentValueTuple = PyTuple_New(2);
-                                    PyTuple_SetItem(currentValueTuple,0,PythonArp::PyDataAccessService::AutoTypeReadHandler(currentData));
-                                    PyTuple_SetItem(currentValueTuple,1,PyLong_FromLongLong(timestamp));
+                                    PyTuple_SET_ITEM(currentValueTuple,0,PythonArp::PyDataAccessService::AutoTypeReadHandler(currentData));
+                                    PyTuple_SET_ITEM(currentValueTuple,1,PyLong_FromLongLong(timestamp));
                                     PyDict_SetItemString(currentCycleDict,iter_info->Name.CStr(),currentValueTuple);
                                     Py_XDECREF(currentValueTuple);
                                 }
                             }
-                            PyTuple_SetItem(currentTaskRecordsTuple,TaskRecord_index,currentCycleDict);
+                            PyTuple_SET_ITEM(currentTaskRecordsTuple,TaskRecord_index,currentCycleDict);
                         }
                         break;
                     default:
                         Log::Error("Unhanded cycle Type :{}",currentCycle.GetType());
                         Py_INCREF(Py_None);
-                        PyTuple_SetItem(currentTaskRecordsTuple,TaskRecord_index,Py_None);
+                        PyTuple_SET_ITEM(currentTaskRecordsTuple,TaskRecord_index,Py_None);
                         break;
                     }
                 }
 
-                PyTuple_SetItem(tasksTuple,task_index,currentTaskRecordsTuple);
+                PyTuple_SET_ITEM(tasksTuple,task_index,currentTaskRecordsTuple);
                 break;
             }
             default:
             {
                 Log::Error("Unhanded task Type :{}",currentTask.GetType());
                 Py_INCREF(Py_None);
-                PyTuple_SetItem(tasksTuple,task_index,Py_None);
+                PyTuple_SET_ITEM(tasksTuple,task_index,Py_None);
                 break;
             }
             }

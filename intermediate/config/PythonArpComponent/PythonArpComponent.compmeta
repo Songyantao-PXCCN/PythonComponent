@@ -9,6 +9,9 @@
       <Include path="Prog_2x1i_2x1i/Prog_2x1i_2x1i.progmeta" />
       <Include path="Prog_2x_1x/Prog_2x_1x.progmeta" />
       <Include path="Prog_NoPort/Prog_NoPort.progmeta" />
+      <Include path="Prog_TestArray/Prog_TestArray.progmeta" />
+      <Include path="Prog_TestPrimitive/Prog_TestPrimitive.progmeta" />
+      <Include path="Prog_TestStruct1/Prog_TestStruct1.progmeta" />
     </ProgramIncludes>
     <Ports>
     </Ports>

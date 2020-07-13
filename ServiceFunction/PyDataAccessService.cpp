@@ -131,7 +131,7 @@ namespace PythonArp::PyDataAccessService
             {
                 RscVariant<512> tmp;
                 reader.ReadNext(tmp);
-                PyTuple_SetItem(TupObj,i,PrimitiveTypeReadHandler(tmp));
+                PyTuple_SET_ITEM(TupObj,i,PrimitiveTypeReadHandler(tmp));
             }
             return TupObj;
         }
@@ -140,7 +140,7 @@ namespace PythonArp::PyDataAccessService
             PyObject* TupObj = PyTuple_New(count);
             for (int i=0;i<count;i++)
             {
-                PyTuple_SetItem(TupObj,i,ArrayTypeReadHandler(reader.ReadNextArray()));
+                PyTuple_SET_ITEM(TupObj,i,ArrayTypeReadHandler(reader.ReadNextArray()));
             }
             return TupObj;
         }
@@ -149,7 +149,7 @@ namespace PythonArp::PyDataAccessService
             PyObject* TupObj = PyTuple_New(count);
             for (int i=0;i<count;i++)
             {
-                PyTuple_SetItem(TupObj,i,StructTypeReadHandler(reader.ReadNextStruct<512>()));
+                PyTuple_SET_ITEM(TupObj,i,StructTypeReadHandler(reader.ReadNextStruct<512>()));
             }
             return TupObj;
         }
@@ -169,22 +169,22 @@ namespace PythonArp::PyDataAccessService
             reader.ReadNextField(tmp);
             if(IsPrimitiveRscType(tmp.GetType()))
             {
-                PyTuple_SetItem(TupObj,i,PrimitiveTypeReadHandler(tmp));
+                PyTuple_SET_ITEM(TupObj,i,PrimitiveTypeReadHandler(tmp));
             }
             else if (tmp.GetType() == RscType::Array)
             {
                 RscArrayReader reader_arr(tmp);
-                PyTuple_SetItem(TupObj,i,ArrayTypeReadHandler(reader_arr));
+                PyTuple_SET_ITEM(TupObj,i,ArrayTypeReadHandler(reader_arr));
             }
             else if (tmp.GetType() == RscType::Struct)
             {
                 RscStructReader<512> reader_struct(tmp);
-                PyTuple_SetItem(TupObj,i,StructTypeReadHandler(reader_struct));
+                PyTuple_SET_ITEM(TupObj,i,StructTypeReadHandler(reader_struct));
             }
             else
             {
                 Py_INCREF(Py_None);
-                PyTuple_SetItem(TupObj,i,Py_None);
+                PyTuple_SET_ITEM(TupObj,i,Py_None);
             }
             
         }
@@ -290,7 +290,7 @@ namespace PythonArp::PyDataAccessService
 //                     Py_XDECREF(tmp);
 //                 }
 //                 else
-//                     PyTuple_SetItem(retDataType, index, tmp);
+//                     PyTuple_SET_ITEM(retDataType, index, tmp);
 //                 //Py_XDECREF(tmp);
 //             }
 //             if (_RETURN_FAULTREASON)
@@ -302,7 +302,7 @@ namespace PythonArp::PyDataAccessService
 //                     Py_XDECREF(tmp);
 //                 }
 //                 else
-//                     PyTuple_SetItem(retFaultReason, index, tmp);
+//                     PyTuple_SET_ITEM(retFaultReason, index, tmp);
 //                 //Py_XDECREF(tmp);
 //             }
 
@@ -382,11 +382,11 @@ namespace PythonArp::PyDataAccessService
 //                 {
 //                     if (O_value)
 //                     {
-//                         PyTuple_SetItem(retValues, index,O_value);
+//                         PyTuple_SET_ITEM(retValues, index,O_value);
 //                     }else
 //                     {
 //                         Py_INCREF(Py_None);
-//                         PyTuple_SetItem(retValues, index, Py_None);
+//                         PyTuple_SET_ITEM(retValues, index, Py_None);
 //                     }
 //                 }
 //             }
@@ -446,7 +446,7 @@ namespace PythonArp::PyDataAccessService
 
         std::vector<String> varNames;
         int offset =0;
-        if(PythonArp::util::argParse::variablesParse(PyO_variables,prefix,varNames,offset))
+        if(PythonArp::util::arg::variablesParse(PyO_variables,prefix,varNames,offset))
         {
             return NULL;
         }
@@ -505,7 +505,7 @@ namespace PythonArp::PyDataAccessService
                                 Py_XDECREF(tmp);
                             }
                             else
-                                PyTuple_SetItem(retDataType, i, tmp);
+                                PyTuple_SET_ITEM(retDataType, i, tmp);
                         }
                         if (_RETURN_FAULTREASON)
                         {
@@ -516,7 +516,7 @@ namespace PythonArp::PyDataAccessService
                                 Py_XDECREF(tmp);
                             }
                             else
-                                PyTuple_SetItem(retFaultReason, i, tmp);
+                                PyTuple_SET_ITEM(retFaultReason, i, tmp);
                         }
                         if (_RETURN_VALUES)
                         {
@@ -538,7 +538,7 @@ namespace PythonArp::PyDataAccessService
                             }
                             else 
                             {
-                                PyTuple_SetItem(retValues, i,O_value);
+                                PyTuple_SET_ITEM(retValues, i,O_value);
                             }
                         }
                     }

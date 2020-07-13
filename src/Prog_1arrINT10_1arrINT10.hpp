@@ -49,15 +49,18 @@ inline void Prog_1arrINT10_1arrINT10::CallPyExecute()
     if (this->PYO_Execute == NULL)
         return;
     __ARP_START_PYTHON__
-    PyObject * ret = PyObject_CallFunction(this->PYO_Execute,"(N)",util::argParse::createTupleFromArray(arrINT10_toPy,10));
+
+    PyObject * ret = PyObject_CallFunction(this->PYO_Execute,"(N)",util::arg::ArrayPortVar_ToPyTuple(arrINT10_toPy));
+
     if (PyErr_Occurred())
     {
         PyErr_Print();
     }
     if (ret != NULL)
     {
-        util::argParse::parseTupleOrListToArray(ret,arrINT10_fromPy,10);
+        util::arg::PyTupleOrList_ToArrayPortVar(ret,arrINT10_fromPy);
     }
+    if (PyErr_Occurred()){PyErr_Print();}
     Py_XDECREF(ret);
     __ARP_STOP_PYTHON__
 }

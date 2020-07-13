@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include "Prog_base.hpp"
-
+#include "util/arg.hpp"
 
 namespace PythonArp
 {
@@ -55,18 +55,18 @@ inline void Prog_2x_1x::CallPyExecute()
     if (this->PYO_Execute == NULL)
         return;
     __ARP_START_PYTHON__
-    PyObject * ret = PyObject_CallFunction(this->PYO_Execute,"NN",PyBool_FromLong(this->xBool_1_toPy),PyBool_FromLong(this->xBool_2_toPy));
+    PyObject * ret = PyObject_CallFunction(this->PYO_Execute,"(NN)",util::arg::PrimitivePortVar_ToPyObject(xBool_1_toPy,true),
+                                                                    util::arg::PrimitivePortVar_ToPyObject(xBool_2_toPy,true)
+                                                                    );
     if (PyErr_Occurred())
     {
         PyErr_Print();
     }
     if (ret != NULL)
     {
-        if(PyBool_Check(ret))
-        {
-            PyArg_Parse(ret,"p",&this->xBool_1_fromPy);
-        }
+        util::arg::PyObject_ToPrimitivePortVar(ret,xBool_1_fromPy);
     }
+    if (PyErr_Occurred()){PyErr_Print();}
     Py_XDECREF(ret);
     __ARP_STOP_PYTHON__
 }

@@ -6,6 +6,9 @@
 #include "Prog_2x1i_2x1i.hpp"
 #include "Prog_2x_1x.hpp"
 #include "Prog_NoPort.hpp"
+#include "Prog_TestArray.hpp"
+#include "Prog_TestPrimitive.hpp"
+#include "Prog_TestStruct1.hpp"
 
 namespace PythonArp
 {
@@ -39,6 +42,18 @@ IProgram::Ptr PythonArpComponentProgramProvider::CreateProgramInternal(const Str
     if (programType == "Prog_NoPort")
     { 
         return std::make_shared<::PythonArp::Prog_NoPort>(this->pythonArpComponent, programName);
+    }
+    if (programType == "Prog_TestArray")
+    { 
+        return std::make_shared<::PythonArp::Prog_TestArray>(this->pythonArpComponent, programName);
+    }
+    if (programType == "Prog_TestPrimitive")
+    { 
+        return std::make_shared<::PythonArp::Prog_TestPrimitive>(this->pythonArpComponent, programName);
+    }
+    if (programType == "Prog_TestStruct1")
+    { 
+        return std::make_shared<::PythonArp::Prog_TestStruct1>(this->pythonArpComponent, programName);
     }
 
     // else unknown program

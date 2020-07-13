@@ -48,18 +48,16 @@ inline void Prog_1LWToByteArray::CallPyExecute()
     if (this->PYO_Execute == NULL)
         return;
     __ARP_START_PYTHON__
-    PyObject * ret = PyObject_CallFunction(this->PYO_Execute,"N",PythonArp::util::argParse::ArpByteArrayBuild(lw_1_toPy,true));
+    PyObject * ret = PyObject_CallFunction(this->PYO_Execute,"(N)",util::arg::PrimitivePortVar_ToPyObject(lw_1_toPy,true));//As ByteArray
     if (PyErr_Occurred())
     {
         PyErr_Print();
     }
     if (ret != NULL)
     {
-        if(PyByteArray_Check(ret))
-        {
-            util::argParse::ArpByteArrayOrBytesParse(ret,lw_1_fromPy,true);
-        }
+        util::arg::PyObject_ToPrimitivePortVar(ret,lw_1_fromPy);
     }
+    if (PyErr_Occurred()){PyErr_Print();}
     Py_XDECREF(ret);
     __ARP_STOP_PYTHON__
 }

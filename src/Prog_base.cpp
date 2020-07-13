@@ -50,7 +50,7 @@ void Prog_base::PythonArpProgramConstruction()
         }
     __ARP_STOP_PYTHON__
     if (PYO_Module !=NULL)
-    {
+    { 
         this->CallPyInitialize();
         this->_PyReady = true;
     }
@@ -73,6 +73,7 @@ Prog_base::~Prog_base()
 
 void Prog_base::CallPyStart()
 {
+    
     if (this->PYO_Start == NULL)
         return;
     __ARP_START_PYTHON__
