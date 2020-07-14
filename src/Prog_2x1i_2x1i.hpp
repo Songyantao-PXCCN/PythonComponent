@@ -66,13 +66,13 @@ inline Prog_2x1i_2x1i::Prog_2x1i_2x1i(PythonArp::PythonArpComponent& pythonArpCo
 // for more information : https://docs.python.org/3/c-api/arg.html and  https://docs.python.org/3/c-api/object.html
 inline void Prog_2x1i_2x1i::CallPyExecute()
 {
-    PyReady = this->_PyReady;
+    PyReady = this->LoadScriptSuccess;
     if (this->PYO_Execute == NULL)
         return;
     __ARP_START_PYTHON__
-    PyObject * ret = PyObject_CallFunction(this->PYO_Execute,"(NNN)",   util::arg::PrimitivePortVar_ToPyObject(xBool_2_toPy),
-                                                                        util::arg::PrimitivePortVar_ToPyObject(xBool_2_toPy),
-                                                                        util::arg::PrimitivePortVar_ToPyObject(iInt16_1_toPy)
+    PyObject * ret = PyObject_CallFunction(this->PYO_Execute,"(NNN)",   util::arg::PortVar_AsPyObject(xBool_2_toPy),
+                                                                        util::arg::PortVar_AsPyObject(xBool_2_toPy),
+                                                                        util::arg::PortVar_AsPyObject(iInt16_1_toPy)
                                                                         );
     if (PyErr_Occurred())
     {
@@ -85,9 +85,9 @@ inline void Prog_2x1i_2x1i::CallPyExecute()
             PyObject *ret_0 = NULL,*ret_1 = NULL,*ret_2 = NULL;
             if(PyArg_ParseTuple(ret,"OOO",&ret_0,&ret_1,&ret_2))
             {
-                util::arg::PyObject_ToPrimitivePortVar(ret_0,xBool_1_fromPy);
-                util::arg::PyObject_ToPrimitivePortVar(ret_1,xBool_2_fromPy);
-                util::arg::PyObject_ToPrimitivePortVar(ret_2,iInt16_1_fromPy);
+                util::arg::PortVar_FromPyObject(ret_0,xBool_1_fromPy);
+                util::arg::PortVar_FromPyObject(ret_1,xBool_2_fromPy);
+                util::arg::PortVar_FromPyObject(ret_2,iInt16_1_fromPy);
             }
         }
     }

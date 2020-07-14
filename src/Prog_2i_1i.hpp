@@ -50,12 +50,12 @@ inline Prog_2i_1i::Prog_2i_1i(PythonArp::PythonArpComponent& pythonArpComponentA
 // for more information : https://docs.python.org/3/c-api/arg.html and  https://docs.python.org/3/c-api/object.html
 inline void Prog_2i_1i::CallPyExecute()
 {
-    PyReady = this->_PyReady;
+    PyReady = this->LoadScriptSuccess;
     if (this->PYO_Execute == NULL)
         return;
     __ARP_START_PYTHON__
-    PyObject * ret = PyObject_CallFunction(this->PYO_Execute,"(NN)",    util::arg::PrimitivePortVar_ToPyObject(iINT16_1_toPy),
-                                                                        util::arg::PrimitivePortVar_ToPyObject(iINT16_2_toPy)
+    PyObject * ret = PyObject_CallFunction(this->PYO_Execute,"(NN)",    util::arg::PortVar_AsPyObject(iINT16_1_toPy),
+                                                                        util::arg::PortVar_AsPyObject(iINT16_2_toPy)
                                                                     );
     if (PyErr_Occurred())
     {
@@ -63,7 +63,7 @@ inline void Prog_2i_1i::CallPyExecute()
     }
     if (ret != NULL)
     {
-        util::arg::PyObject_ToPrimitivePortVar(ret,iINT16_1_fromPy);
+        util::arg::PortVar_FromPyObject(ret,iINT16_1_fromPy);
     }
     if (PyErr_Occurred()){PyErr_Print();}
     Py_XDECREF(ret);

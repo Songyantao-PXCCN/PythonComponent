@@ -154,7 +154,7 @@
 // // for more information : https://docs.python.org/3/c-api/arg.html and  https://docs.python.org/3/c-api/object.html
 // inline void Prog_TestStruct::CallPyExecute()
 // {
-//     PyReady = this->_PyReady;
+//     PyReady = this->LoadScriptSuccess;
 //     if (this->PYO_Execute == NULL)
 //         return;
 //     __ARP_START_PYTHON__

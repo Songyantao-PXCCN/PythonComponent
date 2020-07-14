@@ -31,7 +31,7 @@ private: // fields
     
 
 public:
-    bool _PyReady;
+    bool LoadScriptSuccess;
     PyObject *PYO_Module;
     PyObject *PYO_Start;
     PyObject *PYO_Stop;

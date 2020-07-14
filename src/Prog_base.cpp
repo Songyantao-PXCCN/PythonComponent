@@ -13,7 +13,7 @@ void Prog_base::Execute()
 
 void Prog_base::PythonArpProgramConstruction()
 {
-    this->_PyReady = false;
+    this->LoadScriptSuccess = false;
     this->PYO_Module = NULL;
     this->PYO_Execute = NULL;
     this->PYO_Start = NULL;
@@ -52,7 +52,7 @@ void Prog_base::PythonArpProgramConstruction()
     if (PYO_Module !=NULL)
     { 
         this->CallPyInitialize();
-        this->_PyReady = true;
+        this->LoadScriptSuccess = true;
     }
 }
 

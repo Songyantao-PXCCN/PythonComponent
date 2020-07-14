@@ -154,23 +154,23 @@ inline Prog_TestArray::Prog_TestArray(PythonArp::PythonArpComponent& pythonArpCo
 // for more information : https://docs.python.org/3/c-api/arg.html and  https://docs.python.org/3/c-api/object.html
 inline void Prog_TestArray::CallPyExecute()
 {
-    PyReady = this->_PyReady;
+    PyReady = this->LoadScriptSuccess;
     if (this->PYO_Execute == NULL)
         return;
     __ARP_START_PYTHON__
     PyObject * ret = PyObject_CallFunction(this->PYO_Execute,"((NN)(NN)(NN)(NN)(NN)(NN)(NN)(NN)(NN)(NN)(NN)(NN))",
-                                                                    util::arg::ArrayPortVar_ToPyTuple(Bool_toPy),util::arg::ArrayPortVar_ToPyTuple(Bool_toPy,true),
-                                                                    util::arg::ArrayPortVar_ToPyTuple(int8_toPy),util::arg::ArrayPortVar_ToPyTuple(int8_toPy,true),
-                                                                    util::arg::ArrayPortVar_ToPyTuple(int16_toPy),util::arg::ArrayPortVar_ToPyTuple(int16_toPy,true),
-                                                                    util::arg::ArrayPortVar_ToPyTuple(int32_toPy),util::arg::ArrayPortVar_ToPyTuple(int32_toPy,true),
-                                                                    util::arg::ArrayPortVar_ToPyTuple(int64_toPy),util::arg::ArrayPortVar_ToPyTuple(int64_toPy,true),
-                                                                    util::arg::ArrayPortVar_ToPyTuple(uint8_toPy),util::arg::ArrayPortVar_ToPyTuple(uint8_toPy,true),
-                                                                    util::arg::ArrayPortVar_ToPyTuple(uint16_toPy),util::arg::ArrayPortVar_ToPyTuple(uint16_toPy,true),
-                                                                    util::arg::ArrayPortVar_ToPyTuple(uint32_toPy),util::arg::ArrayPortVar_ToPyTuple(uint32_toPy,true),
-                                                                    util::arg::ArrayPortVar_ToPyTuple(uint64_toPy),util::arg::ArrayPortVar_ToPyTuple(uint64_toPy,true),
-                                                                    util::arg::ArrayPortVar_ToPyTuple(float32_toPy),util::arg::ArrayPortVar_ToPyTuple(float32_toPy,true),
-                                                                    util::arg::ArrayPortVar_ToPyTuple(float64_toPy),util::arg::ArrayPortVar_ToPyTuple(float64_toPy,true),
-                                                                    util::arg::ArrayPortVar_ToPyTuple(STRING_toPy),util::arg::ArrayPortVar_ToPyTuple(STRING_toPy,true)
+                                                                    util::arg::PortVar_AsPyObject(Bool_toPy),util::arg::PortVar_AsPyObject(Bool_toPy,true),
+                                                                    util::arg::PortVar_AsPyObject(int8_toPy),util::arg::PortVar_AsPyObject(int8_toPy,true),
+                                                                    util::arg::PortVar_AsPyObject(int16_toPy),util::arg::PortVar_AsPyObject(int16_toPy,true),
+                                                                    util::arg::PortVar_AsPyObject(int32_toPy),util::arg::PortVar_AsPyObject(int32_toPy,true),
+                                                                    util::arg::PortVar_AsPyObject(int64_toPy),util::arg::PortVar_AsPyObject(int64_toPy,true),
+                                                                    util::arg::PortVar_AsPyObject(uint8_toPy),util::arg::PortVar_AsPyObject(uint8_toPy,true),
+                                                                    util::arg::PortVar_AsPyObject(uint16_toPy),util::arg::PortVar_AsPyObject(uint16_toPy,true),
+                                                                    util::arg::PortVar_AsPyObject(uint32_toPy),util::arg::PortVar_AsPyObject(uint32_toPy,true),
+                                                                    util::arg::PortVar_AsPyObject(uint64_toPy),util::arg::PortVar_AsPyObject(uint64_toPy,true),
+                                                                    util::arg::PortVar_AsPyObject(float32_toPy),util::arg::PortVar_AsPyObject(float32_toPy,true),
+                                                                    util::arg::PortVar_AsPyObject(float64_toPy),util::arg::PortVar_AsPyObject(float64_toPy,true),
+                                                                    util::arg::PortVar_AsPyObject(STRING_toPy),util::arg::PortVar_AsPyObject(STRING_toPy,true)
                                                                     );
     if (PyErr_Occurred())
     {
@@ -181,18 +181,18 @@ inline void Prog_TestArray::CallPyExecute()
         PyObject *r1 = NULL,*r2 = NULL,*r3 = NULL,*r4 = NULL,*r5 = NULL,*r6 = NULL,*r7 = NULL,*r8 = NULL,*r9 = NULL,*r10 = NULL,*r11 = NULL,*r12 = NULL;
         if(PyArg_ParseTuple(ret,"OOOOOOOOOOOO",&r1,&r2,&r3,&r4,&r5,&r6,&r7,&r8,&r9,&r10,&r11,&r12))
             {
-                util::arg::PyTupleOrList_ToArrayPortVar(r1,Bool_fromPy);
-                util::arg::PyTupleOrList_ToArrayPortVar(r2,int8_fromPy);
-                util::arg::PyTupleOrList_ToArrayPortVar(r3,int16_fromPy);
-                util::arg::PyTupleOrList_ToArrayPortVar(r4,int32_fromPy);
-                util::arg::PyTupleOrList_ToArrayPortVar(r5,int64_fromPy);
-                util::arg::PyTupleOrList_ToArrayPortVar(r6,uint8_fromPy);
-                util::arg::PyTupleOrList_ToArrayPortVar(r7,uint16_fromPy);
-                util::arg::PyTupleOrList_ToArrayPortVar(r8,uint32_fromPy);
-                util::arg::PyTupleOrList_ToArrayPortVar(r9,uint64_fromPy);
-                util::arg::PyTupleOrList_ToArrayPortVar(r10,float32_fromPy);
-                util::arg::PyTupleOrList_ToArrayPortVar(r11,float64_fromPy);
-                util::arg::PyTupleOrList_ToArrayPortVar(r12,STRING_fromPy);
+                util::arg::PortVar_FromPyObject(r1,Bool_fromPy);
+                util::arg::PortVar_FromPyObject(r2,int8_fromPy);
+                util::arg::PortVar_FromPyObject(r3,int16_fromPy);
+                util::arg::PortVar_FromPyObject(r4,int32_fromPy);
+                util::arg::PortVar_FromPyObject(r5,int64_fromPy);
+                util::arg::PortVar_FromPyObject(r6,uint8_fromPy);
+                util::arg::PortVar_FromPyObject(r7,uint16_fromPy);
+                util::arg::PortVar_FromPyObject(r8,uint32_fromPy);
+                util::arg::PortVar_FromPyObject(r9,uint64_fromPy);
+                util::arg::PortVar_FromPyObject(r10,float32_fromPy);
+                util::arg::PortVar_FromPyObject(r11,float64_fromPy);
+                util::arg::PortVar_FromPyObject(r12,STRING_fromPy);
             }
     }
     if (PyErr_Occurred()){PyErr_Print();}

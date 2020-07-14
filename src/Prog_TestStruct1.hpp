@@ -201,7 +201,7 @@ inline Prog_TestStruct1::~Prog_TestStruct1()
 // for more information : https://docs.python.org/3/c-api/arg.html and  https://docs.python.org/3/c-api/object.html
 inline void Prog_TestStruct1::CallPyExecute()
 {
-    PyReady = this->_PyReady;
+    PyReady = this->LoadScriptSuccess;
     if (this->PYO_Execute == NULL)
         return;
     __ARP_START_PYTHON__
@@ -241,19 +241,19 @@ inline void Prog_TestStruct1::CallPyExecute()
 inline void Prog_TestStruct1::buildArgs(PyObject** udtIN_1_Obj,PyObject** udtIN_2_Obj)
 {
     *udtIN_1_Obj = PyStructSequence_New(&Struct_udtIN_1_Type);
-    PyStructSequence_SetItem(*udtIN_1_Obj,0,util::arg::PrimitivePortVar_ToPyObject(STRUCT_1_toPy.xBOOL));
-    PyStructSequence_SetItem(*udtIN_1_Obj,1,util::arg::PrimitivePortVar_ToPyObject(STRUCT_1_toPy.iINT));
-    PyStructSequence_SetItem(*udtIN_1_Obj,2,util::arg::PrimitivePortVar_ToPyObject(STRUCT_1_toPy.dwDWORD,true));//as ByteArray
-    PyStructSequence_SetItem(*udtIN_1_Obj,3,util::arg::PrimitivePortVar_ToPyObject(STRUCT_1_toPy.sSTRING));
+    PyStructSequence_SetItem(*udtIN_1_Obj,0,util::arg::PortVar_AsPyObject(STRUCT_1_toPy.xBOOL));
+    PyStructSequence_SetItem(*udtIN_1_Obj,1,util::arg::PortVar_AsPyObject(STRUCT_1_toPy.iINT));
+    PyStructSequence_SetItem(*udtIN_1_Obj,2,util::arg::PortVar_AsPyObject(STRUCT_1_toPy.dwDWORD,true));//as ByteArray
+    PyStructSequence_SetItem(*udtIN_1_Obj,3,util::arg::PortVar_AsPyObject(STRUCT_1_toPy.sSTRING));
 
     PyObject* udtSub_Obj = PyStructSequence_New(&Struct_udtSub_Type);
-    PyStructSequence_SetItem(udtSub_Obj,0,util::arg::PrimitivePortVar_ToPyObject(STRUCT_2_toPy.stSub.xBOOL));
-    PyStructSequence_SetItem(udtSub_Obj,1,util::arg::ArrayPortVar_ToPyTuple(STRUCT_2_toPy.stSub.iArray10));
+    PyStructSequence_SetItem(udtSub_Obj,0,util::arg::PortVar_AsPyObject(STRUCT_2_toPy.stSub.xBOOL));
+    PyStructSequence_SetItem(udtSub_Obj,1,util::arg::PortVar_AsPyObject(STRUCT_2_toPy.stSub.iArray10));
 
     *udtIN_2_Obj = PyStructSequence_New(&Struct_udtIN_2_Type);
-    PyStructSequence_SetItem(*udtIN_2_Obj,0,util::arg::ArrayPortVar_ToPyTuple(STRUCT_2_toPy.iArray5));
-    PyStructSequence_SetItem(*udtIN_2_Obj,1,util::arg::ArrayPortVar_ToPyTuple(STRUCT_2_toPy.rArray10));
-    PyStructSequence_SetItem(*udtIN_2_Obj,2,util::arg::ArrayPortVar_ToPyTuple(STRUCT_2_toPy.dwArray3,true));//Element as ByteArray
+    PyStructSequence_SetItem(*udtIN_2_Obj,0,util::arg::PortVar_AsPyObject(STRUCT_2_toPy.iArray5));
+    PyStructSequence_SetItem(*udtIN_2_Obj,1,util::arg::PortVar_AsPyObject(STRUCT_2_toPy.rArray10));
+    PyStructSequence_SetItem(*udtIN_2_Obj,2,util::arg::PortVar_AsPyObject(STRUCT_2_toPy.dwArray3,true));//Element as ByteArray
     PyStructSequence_SetItem(*udtIN_2_Obj,3,udtSub_Obj);
 }
 
@@ -263,9 +263,9 @@ inline void Prog_TestStruct1::parseObject_udtOUT_1(PyObject* udtOUT_1_obj)
     PyObject* udtOUT_1_xBOOL_obj = PyObject_GetAttrString(udtOUT_1_obj,"xBOOL");
     PyObject* udtOUT_1_iINT_obj = PyObject_GetAttrString(udtOUT_1_obj,"iINT");
     
-    util::arg::PyObject_ToPrimitivePortVar(udtOUT_1_sSTRING_obj,STRUCT_1_fromPy.sSTRING);
-    util::arg::PyObject_ToPrimitivePortVar(udtOUT_1_xBOOL_obj,STRUCT_1_fromPy.xBOOL);
-    util::arg::PyObject_ToPrimitivePortVar(udtOUT_1_iINT_obj,STRUCT_1_fromPy.iINT);
+    util::arg::PortVar_FromPyObject(udtOUT_1_sSTRING_obj,STRUCT_1_fromPy.sSTRING);
+    util::arg::PortVar_FromPyObject(udtOUT_1_xBOOL_obj,STRUCT_1_fromPy.xBOOL);
+    util::arg::PortVar_FromPyObject(udtOUT_1_iINT_obj,STRUCT_1_fromPy.iINT);
  
 
     if (PyErr_Occurred()){PyErr_Clear();}
@@ -281,8 +281,8 @@ inline void Prog_TestStruct1::parseObject_udtOUT_2(PyObject* udtOUT_2_obj)
     PyObject* udtOUT_2_stSub3_obj = PyObject_GetAttrString(udtOUT_2_obj,"stSub3");
 
 
-    util::arg::PyTupleOrList_ToArrayPortVar(udtOUT_2_arrLWORD3_obj,STRUCT_2_fromPy.arrLWORD3);
-    util::arg::PyTupleOrList_ToArrayPortVar(udtOUT_2_arrWORD3_obj,STRUCT_2_fromPy.arrWORD3);
+    util::arg::PortVar_FromPyObject(udtOUT_2_arrLWORD3_obj,STRUCT_2_fromPy.arrLWORD3);
+    util::arg::PortVar_FromPyObject(udtOUT_2_arrWORD3_obj,STRUCT_2_fromPy.arrWORD3);
     parse_stSub3(udtOUT_2_stSub3_obj);
     
 
@@ -305,8 +305,8 @@ inline void Prog_TestStruct1::parse_stSub3(PyObject *udtOUT_2_stSub3_obj)
             PyObject* current_udtOUT_2_stSub3_xBOOL_obj = PyObject_GetAttrString(t_item,"xBOOL");
             PyObject* current_udtOUT_2_stSub3_iArray10_obj = PyObject_GetAttrString(t_item,"iArray10");
 
-            util::arg::PyObject_ToPrimitivePortVar(current_udtOUT_2_stSub3_xBOOL_obj,STRUCT_2_fromPy.stSub3[tmpIndex].xBOOL);
-            util::arg::PyTupleOrList_ToArrayPortVar(current_udtOUT_2_stSub3_iArray10_obj , STRUCT_2_fromPy.stSub3[tmpIndex].iArray10);
+            util::arg::PortVar_FromPyObject(current_udtOUT_2_stSub3_xBOOL_obj,STRUCT_2_fromPy.stSub3[tmpIndex].xBOOL);
+            util::arg::PortVar_FromPyObject(current_udtOUT_2_stSub3_iArray10_obj , STRUCT_2_fromPy.stSub3[tmpIndex].iArray10);
             
             if (PyErr_Occurred()){PyErr_Clear();}
             Py_XDECREF(current_udtOUT_2_stSub3_xBOOL_obj);
