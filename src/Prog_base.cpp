@@ -26,7 +26,9 @@ void Prog_base::PythonArpProgramConstruction()
     progName = progName.Substr(progName.Find("/") + 1);
 
     __ARP_START_PYTHON__
+        log.Info("0000000");
         this->PYO_Module = PyImport_ImportModule(progName.CStr());
+        log.Info("1111111");
         if (PYO_Module == NULL)
         {
             log.Error("Can not load Python Module : \'{}\'", progName.CStr());

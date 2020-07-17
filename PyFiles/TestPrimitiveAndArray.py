@@ -1,9 +1,10 @@
 # Loopback Test
+# Prog_TestPrimitive
+# Prog_TestArray
 
-# mode = False =>   ByteArray Object Mode
-# mode = True =>    Normal Object Mode
-
-mode = False
+# mode = 0 #=>normal object mode
+mode = 1 #=>bytearray object mode
+# mode = 2 #=>bytearray object of array element mode (for Prog_TestArray)
 
 def Execute(*args):
     '''
@@ -12,7 +13,8 @@ def Execute(*args):
     :return:  Output to Program (usually is Out-Port)
     '''
     global mode
-    ret = tuple([arg[0 if mode else 1] for arg in args])
-    print(ret)
+    ret = tuple([arg[mode] for arg in args])
+    for t in ret:
+        print(t)
     return ret
 
