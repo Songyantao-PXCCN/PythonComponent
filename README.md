@@ -14,6 +14,11 @@ Python script can be embedded in Task (triggered by ESM) ,and can also be a back
 
 These funtions are supported for now :
 
++ ArpLog
+	+ ArpLog_Info(message : str )
+	+ ArpLog_Error(message : str )
+	+ ArpLog_Fatal(message : str )
+
 + stdout ( print() ) write to '~/logs/Output.log' (INFO)
 
 + stderr  ( exception ) write to '~/logs/Output.log' (ERROR)
@@ -35,6 +40,14 @@ These funtions are supported for now :
 
   + Class SubscriptionService()
 
++ DeviceInfoService
+
+	+ DeviceInfo(id,prefix = None)
+
++ DeviceStatusService
+
+	+ DeviceStatus(id,prefix = None)
+
 Roadmap:
 
 + ForceService
@@ -54,6 +67,27 @@ The Python script's path is `/opt/plcnext/PLCnextPyTest.py`
 
 then the instance's name of '`Prog_NoPort`' should be '`PLCnextPyTest` in 'Tasks and Events' of Engineer.
 
+
+## ArpLog
+
+```python
+def Execute(*args):
+    ArpLog_Info('This is Info log ')
+    ArpLog_Error('This is Error log ')
+	ArpLog_Fatal('This is Fatal log ')
+	# note : different with 'print', 'ArpLog_XXX' can only accept Str type !
+	print("PLCnext Arp Component ")
+	print(123)
+	ArpLog_Info(str(123))
+```
+```
+19.07.20 04:44:03.213 root   INFO  - This is Info log
+19.07.20 04:44:03.213 root   ERROR - This is Error log
+19.07.20 04:44:03.213 root   FATAL - This is Fatal log
+19.07.20 04:44:03.213 root   INFO  - PLCnext Arp Component
+19.07.20 04:44:03.213 root   INFO  - 123
+19.07.20 04:44:03.213 root   INFO  - 123
+```
 
 ## DataAccessService
 
@@ -103,6 +137,7 @@ def Execute(*args):
 
 '''
 ```
+
 ## CAUTION
 1. Never use `exit()` in Python script! otherwise PLCnext will crash and then reboot .
 
