@@ -114,6 +114,9 @@ namespace PythonArp
     {
         // never remove next line
         ProgramComponentBase::ResetConfig();
+
+
+#ifndef RELOAD_MODE
         // implement this inverse to SetupConfig() and LoadConfig()
         if(!this->isPyStarter)
             return;
@@ -123,8 +126,10 @@ namespace PythonArp
         {
             Py_Finalize();
         }
+#endif
+
     }
-//
+
     void PythonArpComponent::Start()
     {
         auto Progs = this->programProvider.GetPrograms();

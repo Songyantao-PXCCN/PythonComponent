@@ -40,6 +40,9 @@
 #define PyArpErrTitle "\n\033[4;31;43m *** Exception From Python *** \033[0m\n"
 
 
+#define RELOAD_MODE
+
+
 
 namespace PythonArp
 {

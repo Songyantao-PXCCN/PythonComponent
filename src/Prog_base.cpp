@@ -26,27 +26,38 @@ void Prog_base::PythonArpProgramConstruction()
     progName = progName.Substr(progName.Find("/") + 1);
 
     __ARP_START_PYTHON__
+        if (PyErr_Occurred()){PyErr_Print();PyErr_Clear();}
         this->PYO_Module = PyImport_ImportModule(progName.CStr());
         if (PYO_Module == NULL)
         {
             log.Error("Can not load Python Module : \'{}\'", progName.CStr());
-            if (PyErr_Occurred())
-            {
-                PyErr_Print();
-            }
+            if (PyErr_Occurred()){PyErr_Print();}
         }
         else
         {
-            log.Info("Success load Python Module : \'{}\'", progName.CStr());
-            this->PYO_Dispose = PyObject_GetAttrString(PYO_Module,"Dispose");
-            this->PYO_Initialize = PyObject_GetAttrString(PYO_Module,"Initialize");
-            this->PYO_Start = PyObject_GetAttrString(PYO_Module, "Start");
-            this->PYO_Stop = PyObject_GetAttrString(PYO_Module, "Stop");
-            this->PYO_Execute = PyObject_GetAttrString(PYO_Module, "Execute");
-            if (PyErr_Occurred())
+
+#ifdef RELOAD_MODE
+            this->PYO_Module = PyImport_ReloadModule(PYO_Module); // force to reload it for refresh!
+            if(PYO_Module == NULL || PyErr_Occurred() )
             {
-                PyErr_Clear();
+                log.Error("Can not load Python Module : \'{}\'", progName.CStr());
+                PyErr_Print();
             }
+            else
+            {
+                Py_XDECREF(PYO_Module);
+#endif
+                log.Info("Success load Python Module : \'{}\'", progName.CStr());
+                this->PYO_Dispose = PyObject_GetAttrString(PYO_Module,"Dispose");
+                this->PYO_Initialize = PyObject_GetAttrString(PYO_Module,"Initialize");
+                this->PYO_Start = PyObject_GetAttrString(PYO_Module, "Start");
+                this->PYO_Stop = PyObject_GetAttrString(PYO_Module, "Stop");
+                this->PYO_Execute = PyObject_GetAttrString(PYO_Module, "Execute");
+                if (PyErr_Occurred()){PyErr_Clear();
+                }
+#ifdef RELOAD_MODE
+            }
+#endif
         }
     __ARP_STOP_PYTHON__
     if (PYO_Module !=NULL)
