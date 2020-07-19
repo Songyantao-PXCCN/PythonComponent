@@ -87,6 +87,10 @@ namespace PythonArp
         PythonArp::PyDeviceInfoService::AddObject(builtins);
         #endif
 
+        #ifdef ENABLE_ARPLOG
+        PythonArp::PyArpLog::AddObject(builtins);
+        #endif
+
         
         PyRun_SimpleString("import sys");
         PyRun_SimpleString("import ArpConsoleSupport");

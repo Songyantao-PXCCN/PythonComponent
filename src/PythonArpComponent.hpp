@@ -20,6 +20,7 @@
 #include "PySubscriptionService.hpp"
 #include "PyDeviceInfoService.hpp"
 #include "PyDeviceStatusService.hpp"
+#include "PyArpLog.hpp"
 
 //Macro for Doc generate
 #define Arp_WITH_DOC_STRINGS
@@ -29,6 +30,7 @@
 #define ENABLE_SUBSCRIPTIONSERVICE
 #define ENABLE_DEVICESTATUSSERVICE
 #define ENABLE_DEVICEINFOSERVICE
+#define ENABLE_ARPLOG
 
 //get GIL and release
 #define __ARP_START_PYTHON__ {PyGILState_STATE _gstate = PyGILState_Ensure();

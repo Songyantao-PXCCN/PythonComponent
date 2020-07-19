@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /mnt/d/WSL/extract/cmake/bin/cmake
+CMAKE_COMMAND = /home/syt/extract/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /mnt/d/WSL/extract/cmake/bin/cmake -E remove -f
+RM = /home/syt/extract/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,37 +59,37 @@ CMAKE_BINARY_DIR = /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/int
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/mnt/d/WSL/extract/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/home/syt/extract/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/mnt/d/WSL/extract/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/home/syt/extract/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/mnt/d/WSL/extract/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/home/syt/extract/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/mnt/d/WSL/extract/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/home/syt/extract/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/mnt/d/WSL/extract/cmake/bin/cmake -P cmake_install.cmake
+	/home/syt/extract/cmake/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/mnt/d/WSL/extract/cmake/bin/cmake -P cmake_install.cmake
+	/home/syt/extract/cmake/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target edit_cache
@@ -106,7 +106,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/mnt/d/WSL/extract/cmake/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/syt/extract/cmake/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -169,6 +169,33 @@ PythonArp: cmake_check_build_system
 PythonArp/fast:
 	$(MAKE) -f CMakeFiles/PythonArp.dir/build.make CMakeFiles/PythonArp.dir/build
 .PHONY : PythonArp/fast
+
+ServiceFunction/PyArpLog.o: ServiceFunction/PyArpLog.cpp.o
+
+.PHONY : ServiceFunction/PyArpLog.o
+
+# target to build an object file
+ServiceFunction/PyArpLog.cpp.o:
+	$(MAKE) -f CMakeFiles/PythonArp.dir/build.make CMakeFiles/PythonArp.dir/ServiceFunction/PyArpLog.cpp.o
+.PHONY : ServiceFunction/PyArpLog.cpp.o
+
+ServiceFunction/PyArpLog.i: ServiceFunction/PyArpLog.cpp.i
+
+.PHONY : ServiceFunction/PyArpLog.i
+
+# target to preprocess a source file
+ServiceFunction/PyArpLog.cpp.i:
+	$(MAKE) -f CMakeFiles/PythonArp.dir/build.make CMakeFiles/PythonArp.dir/ServiceFunction/PyArpLog.cpp.i
+.PHONY : ServiceFunction/PyArpLog.cpp.i
+
+ServiceFunction/PyArpLog.s: ServiceFunction/PyArpLog.cpp.s
+
+.PHONY : ServiceFunction/PyArpLog.s
+
+# target to generate assembly for a file
+ServiceFunction/PyArpLog.cpp.s:
+	$(MAKE) -f CMakeFiles/PythonArp.dir/build.make CMakeFiles/PythonArp.dir/ServiceFunction/PyArpLog.cpp.s
+.PHONY : ServiceFunction/PyArpLog.cpp.s
 
 ServiceFunction/PyDataAccessService.o: ServiceFunction/PyDataAccessService.cpp.o
 
@@ -507,6 +534,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... list_install_components"
+	@echo "... ServiceFunction/PyArpLog.o"
+	@echo "... ServiceFunction/PyArpLog.i"
+	@echo "... ServiceFunction/PyArpLog.s"
 	@echo "... ServiceFunction/PyDataAccessService.o"
 	@echo "... ServiceFunction/PyDataAccessService.i"
 	@echo "... ServiceFunction/PyDataAccessService.s"

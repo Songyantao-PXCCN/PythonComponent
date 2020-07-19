@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/PythonArp.dir/ServiceFunction/PyArpLog.cpp.o"
   "CMakeFiles/PythonArp.dir/ServiceFunction/PyDataAccessService.cpp.o"
   "CMakeFiles/PythonArp.dir/ServiceFunction/PyDeviceInfoService.cpp.o"
   "CMakeFiles/PythonArp.dir/ServiceFunction/PyDeviceStatusService.cpp.o"

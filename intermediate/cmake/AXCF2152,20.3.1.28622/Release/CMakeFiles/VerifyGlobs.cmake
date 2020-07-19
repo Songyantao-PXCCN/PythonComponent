@@ -7,6 +7,7 @@
 # Headers at CMakeLists.txt:14 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/*.hpp")
 set(OLD_GLOB
+  "/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyArpLog.hpp"
   "/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyDataAccessService.hpp"
   "/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyDeviceInfoService.hpp"
   "/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyDeviceStatusService.hpp"
@@ -50,6 +51,7 @@ endif()
 # Sources at CMakeLists.txt:15 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/*.cpp")
 set(OLD_GLOB
+  "/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyArpLog.cpp"
   "/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyDataAccessService.cpp"
   "/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyDeviceInfoService.cpp"
   "/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyDeviceStatusService.cpp"

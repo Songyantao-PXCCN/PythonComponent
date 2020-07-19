@@ -34,10 +34,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /mnt/d/WSL/extract/cmake/bin/cmake
+CMAKE_COMMAND = /home/syt/extract/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /mnt/d/WSL/extract/cmake/bin/cmake -E remove -f
+RM = /home/syt/extract/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -57,9 +57,22 @@ include CMakeFiles/PythonArp.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/PythonArp.dir/flags.make
 
+CMakeFiles/PythonArp.dir/ServiceFunction/PyArpLog.cpp.o: CMakeFiles/PythonArp.dir/flags.make
+CMakeFiles/PythonArp.dir/ServiceFunction/PyArpLog.cpp.o: ../../../../ServiceFunction/PyArpLog.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PythonArp.dir/ServiceFunction/PyArpLog.cpp.o"
+	/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-g++ --sysroot=/opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PythonArp.dir/ServiceFunction/PyArpLog.cpp.o -c /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyArpLog.cpp
+
+CMakeFiles/PythonArp.dir/ServiceFunction/PyArpLog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PythonArp.dir/ServiceFunction/PyArpLog.cpp.i"
+	/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-g++ --sysroot=/opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyArpLog.cpp > CMakeFiles/PythonArp.dir/ServiceFunction/PyArpLog.cpp.i
+
+CMakeFiles/PythonArp.dir/ServiceFunction/PyArpLog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PythonArp.dir/ServiceFunction/PyArpLog.cpp.s"
+	/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-g++ --sysroot=/opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyArpLog.cpp -o CMakeFiles/PythonArp.dir/ServiceFunction/PyArpLog.cpp.s
+
 CMakeFiles/PythonArp.dir/ServiceFunction/PyDataAccessService.cpp.o: CMakeFiles/PythonArp.dir/flags.make
 CMakeFiles/PythonArp.dir/ServiceFunction/PyDataAccessService.cpp.o: ../../../../ServiceFunction/PyDataAccessService.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PythonArp.dir/ServiceFunction/PyDataAccessService.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PythonArp.dir/ServiceFunction/PyDataAccessService.cpp.o"
 	/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-g++ --sysroot=/opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PythonArp.dir/ServiceFunction/PyDataAccessService.cpp.o -c /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyDataAccessService.cpp
 
 CMakeFiles/PythonArp.dir/ServiceFunction/PyDataAccessService.cpp.i: cmake_force
@@ -72,7 +85,7 @@ CMakeFiles/PythonArp.dir/ServiceFunction/PyDataAccessService.cpp.s: cmake_force
 
 CMakeFiles/PythonArp.dir/ServiceFunction/PyDeviceInfoService.cpp.o: CMakeFiles/PythonArp.dir/flags.make
 CMakeFiles/PythonArp.dir/ServiceFunction/PyDeviceInfoService.cpp.o: ../../../../ServiceFunction/PyDeviceInfoService.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PythonArp.dir/ServiceFunction/PyDeviceInfoService.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/PythonArp.dir/ServiceFunction/PyDeviceInfoService.cpp.o"
 	/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-g++ --sysroot=/opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PythonArp.dir/ServiceFunction/PyDeviceInfoService.cpp.o -c /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyDeviceInfoService.cpp
 
 CMakeFiles/PythonArp.dir/ServiceFunction/PyDeviceInfoService.cpp.i: cmake_force
@@ -85,7 +98,7 @@ CMakeFiles/PythonArp.dir/ServiceFunction/PyDeviceInfoService.cpp.s: cmake_force
 
 CMakeFiles/PythonArp.dir/ServiceFunction/PyDeviceStatusService.cpp.o: CMakeFiles/PythonArp.dir/flags.make
 CMakeFiles/PythonArp.dir/ServiceFunction/PyDeviceStatusService.cpp.o: ../../../../ServiceFunction/PyDeviceStatusService.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/PythonArp.dir/ServiceFunction/PyDeviceStatusService.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/PythonArp.dir/ServiceFunction/PyDeviceStatusService.cpp.o"
 	/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-g++ --sysroot=/opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PythonArp.dir/ServiceFunction/PyDeviceStatusService.cpp.o -c /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyDeviceStatusService.cpp
 
 CMakeFiles/PythonArp.dir/ServiceFunction/PyDeviceStatusService.cpp.i: cmake_force
@@ -98,7 +111,7 @@ CMakeFiles/PythonArp.dir/ServiceFunction/PyDeviceStatusService.cpp.s: cmake_forc
 
 CMakeFiles/PythonArp.dir/ServiceFunction/PyForceService.cpp.o: CMakeFiles/PythonArp.dir/flags.make
 CMakeFiles/PythonArp.dir/ServiceFunction/PyForceService.cpp.o: ../../../../ServiceFunction/PyForceService.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/PythonArp.dir/ServiceFunction/PyForceService.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/PythonArp.dir/ServiceFunction/PyForceService.cpp.o"
 	/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-g++ --sysroot=/opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PythonArp.dir/ServiceFunction/PyForceService.cpp.o -c /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PyForceService.cpp
 
 CMakeFiles/PythonArp.dir/ServiceFunction/PyForceService.cpp.i: cmake_force
@@ -111,7 +124,7 @@ CMakeFiles/PythonArp.dir/ServiceFunction/PyForceService.cpp.s: cmake_force
 
 CMakeFiles/PythonArp.dir/ServiceFunction/PySubscriptionService.cpp.o: CMakeFiles/PythonArp.dir/flags.make
 CMakeFiles/PythonArp.dir/ServiceFunction/PySubscriptionService.cpp.o: ../../../../ServiceFunction/PySubscriptionService.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/PythonArp.dir/ServiceFunction/PySubscriptionService.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/PythonArp.dir/ServiceFunction/PySubscriptionService.cpp.o"
 	/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-g++ --sysroot=/opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PythonArp.dir/ServiceFunction/PySubscriptionService.cpp.o -c /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/ServiceFunction/PySubscriptionService.cpp
 
 CMakeFiles/PythonArp.dir/ServiceFunction/PySubscriptionService.cpp.i: cmake_force
@@ -124,7 +137,7 @@ CMakeFiles/PythonArp.dir/ServiceFunction/PySubscriptionService.cpp.s: cmake_forc
 
 CMakeFiles/PythonArp.dir/intermediate/code/PythonArpComponent.meta.cpp.o: CMakeFiles/PythonArp.dir/flags.make
 CMakeFiles/PythonArp.dir/intermediate/code/PythonArpComponent.meta.cpp.o: ../../../code/PythonArpComponent.meta.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/PythonArp.dir/intermediate/code/PythonArpComponent.meta.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/PythonArp.dir/intermediate/code/PythonArpComponent.meta.cpp.o"
 	/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-g++ --sysroot=/opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PythonArp.dir/intermediate/code/PythonArpComponent.meta.cpp.o -c /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/code/PythonArpComponent.meta.cpp
 
 CMakeFiles/PythonArp.dir/intermediate/code/PythonArpComponent.meta.cpp.i: cmake_force
@@ -137,7 +150,7 @@ CMakeFiles/PythonArp.dir/intermediate/code/PythonArpComponent.meta.cpp.s: cmake_
 
 CMakeFiles/PythonArp.dir/intermediate/code/PythonArpComponentProgramProvider.cpp.o: CMakeFiles/PythonArp.dir/flags.make
 CMakeFiles/PythonArp.dir/intermediate/code/PythonArpComponentProgramProvider.cpp.o: ../../../code/PythonArpComponentProgramProvider.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/PythonArp.dir/intermediate/code/PythonArpComponentProgramProvider.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/PythonArp.dir/intermediate/code/PythonArpComponentProgramProvider.cpp.o"
 	/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-g++ --sysroot=/opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PythonArp.dir/intermediate/code/PythonArpComponentProgramProvider.cpp.o -c /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/code/PythonArpComponentProgramProvider.cpp
 
 CMakeFiles/PythonArp.dir/intermediate/code/PythonArpComponentProgramProvider.cpp.i: cmake_force
@@ -150,7 +163,7 @@ CMakeFiles/PythonArp.dir/intermediate/code/PythonArpComponentProgramProvider.cpp
 
 CMakeFiles/PythonArp.dir/intermediate/code/PythonArpLibrary.cpp.o: CMakeFiles/PythonArp.dir/flags.make
 CMakeFiles/PythonArp.dir/intermediate/code/PythonArpLibrary.cpp.o: ../../../code/PythonArpLibrary.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/PythonArp.dir/intermediate/code/PythonArpLibrary.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/PythonArp.dir/intermediate/code/PythonArpLibrary.cpp.o"
 	/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-g++ --sysroot=/opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PythonArp.dir/intermediate/code/PythonArpLibrary.cpp.o -c /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/code/PythonArpLibrary.cpp
 
 CMakeFiles/PythonArp.dir/intermediate/code/PythonArpLibrary.cpp.i: cmake_force
@@ -163,7 +176,7 @@ CMakeFiles/PythonArp.dir/intermediate/code/PythonArpLibrary.cpp.s: cmake_force
 
 CMakeFiles/PythonArp.dir/intermediate/code/PythonArpLibrary.meta.cpp.o: CMakeFiles/PythonArp.dir/flags.make
 CMakeFiles/PythonArp.dir/intermediate/code/PythonArpLibrary.meta.cpp.o: ../../../code/PythonArpLibrary.meta.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/PythonArp.dir/intermediate/code/PythonArpLibrary.meta.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/PythonArp.dir/intermediate/code/PythonArpLibrary.meta.cpp.o"
 	/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-g++ --sysroot=/opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PythonArp.dir/intermediate/code/PythonArpLibrary.meta.cpp.o -c /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/code/PythonArpLibrary.meta.cpp
 
 CMakeFiles/PythonArp.dir/intermediate/code/PythonArpLibrary.meta.cpp.i: cmake_force
@@ -176,7 +189,7 @@ CMakeFiles/PythonArp.dir/intermediate/code/PythonArpLibrary.meta.cpp.s: cmake_fo
 
 CMakeFiles/PythonArp.dir/src/Prog_base.cpp.o: CMakeFiles/PythonArp.dir/flags.make
 CMakeFiles/PythonArp.dir/src/Prog_base.cpp.o: ../../../../src/Prog_base.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/PythonArp.dir/src/Prog_base.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/PythonArp.dir/src/Prog_base.cpp.o"
 	/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-g++ --sysroot=/opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PythonArp.dir/src/Prog_base.cpp.o -c /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/src/Prog_base.cpp
 
 CMakeFiles/PythonArp.dir/src/Prog_base.cpp.i: cmake_force
@@ -189,7 +202,7 @@ CMakeFiles/PythonArp.dir/src/Prog_base.cpp.s: cmake_force
 
 CMakeFiles/PythonArp.dir/src/PythonArpComponent.cpp.o: CMakeFiles/PythonArp.dir/flags.make
 CMakeFiles/PythonArp.dir/src/PythonArpComponent.cpp.o: ../../../../src/PythonArpComponent.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/PythonArp.dir/src/PythonArpComponent.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/PythonArp.dir/src/PythonArpComponent.cpp.o"
 	/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-g++ --sysroot=/opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PythonArp.dir/src/PythonArpComponent.cpp.o -c /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/src/PythonArpComponent.cpp
 
 CMakeFiles/PythonArp.dir/src/PythonArpComponent.cpp.i: cmake_force
@@ -202,7 +215,7 @@ CMakeFiles/PythonArp.dir/src/PythonArpComponent.cpp.s: cmake_force
 
 CMakeFiles/PythonArp.dir/util/arg.cpp.o: CMakeFiles/PythonArp.dir/flags.make
 CMakeFiles/PythonArp.dir/util/arg.cpp.o: ../../../../util/arg.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/PythonArp.dir/util/arg.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/PythonArp.dir/util/arg.cpp.o"
 	/opt/sdk/AXCF2152/2020.3/sysroots/x86_64-pokysdk-linux/usr/bin/arm-pxc-linux-gnueabi/arm-pxc-linux-gnueabi-g++ --sysroot=/opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PythonArp.dir/util/arg.cpp.o -c /mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/util/arg.cpp
 
 CMakeFiles/PythonArp.dir/util/arg.cpp.i: cmake_force
@@ -215,6 +228,7 @@ CMakeFiles/PythonArp.dir/util/arg.cpp.s: cmake_force
 
 # Object files for target PythonArp
 PythonArp_OBJECTS = \
+"CMakeFiles/PythonArp.dir/ServiceFunction/PyArpLog.cpp.o" \
 "CMakeFiles/PythonArp.dir/ServiceFunction/PyDataAccessService.cpp.o" \
 "CMakeFiles/PythonArp.dir/ServiceFunction/PyDeviceInfoService.cpp.o" \
 "CMakeFiles/PythonArp.dir/ServiceFunction/PyDeviceStatusService.cpp.o" \
@@ -231,6 +245,7 @@ PythonArp_OBJECTS = \
 # External object files for target PythonArp
 PythonArp_EXTERNAL_OBJECTS =
 
+libPythonArp.so: CMakeFiles/PythonArp.dir/ServiceFunction/PyArpLog.cpp.o
 libPythonArp.so: CMakeFiles/PythonArp.dir/ServiceFunction/PyDataAccessService.cpp.o
 libPythonArp.so: CMakeFiles/PythonArp.dir/ServiceFunction/PyDeviceInfoService.cpp.o
 libPythonArp.so: CMakeFiles/PythonArp.dir/ServiceFunction/PyDeviceStatusService.cpp.o
@@ -270,7 +285,7 @@ libPythonArp.so: /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-g
 libPythonArp.so: /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/lib/libArp.Io.Interbus.so
 libPythonArp.so: /opt/sdk/AXCF2152/2020.3/sysroots/cortexa9t2hf-neon-pxc-linux-gnueabi/usr/lib/libArp.Io.ProfinetStack.so
 libPythonArp.so: CMakeFiles/PythonArp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX shared library libPythonArp.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX shared library libPythonArp.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/PythonArp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
