@@ -53,7 +53,7 @@ inline void Prog_2i_1i::CallPyExecute()
     PyReady = this->LoadScriptSuccess;
     if (this->PYO_Execute == NULL)
         return;
-    __ARP_START_PYTHON__
+    __ARP_GET_GIL___
     PyObject * ret = PyObject_CallFunction(this->PYO_Execute,"(NN)",    util::arg::PortVar_AsPyObject(iINT16_1_toPy),
                                                                         util::arg::PortVar_AsPyObject(iINT16_2_toPy)
                                                                     );
@@ -67,7 +67,7 @@ inline void Prog_2i_1i::CallPyExecute()
     }
     if (PyErr_Occurred()){PyErr_Print();}
     Py_XDECREF(ret);
-    __ARP_STOP_PYTHON__
+    __ARP_RELEASE_GIL___
 }
 
 } // end of namespace PythonArp

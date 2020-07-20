@@ -37,13 +37,13 @@ inline void Prog_NoPort::CallPyExecute()
     PyReady = this->LoadScriptSuccess;
     if (this->PYO_Execute == NULL)
         return;
-    __ARP_START_PYTHON__
+    __ARP_GET_GIL___
     Py_XDECREF(PyObject_CallObject(this->PYO_Execute, NULL));
     if (PyErr_Occurred())
     {
         PyErr_Print();
     }
-    __ARP_STOP_PYTHON__
+    __ARP_RELEASE_GIL___
 }
 
 } // end of namespace PythonArp

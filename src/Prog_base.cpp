@@ -25,7 +25,7 @@ void Prog_base::PythonArpProgramConstruction()
     Arp::String progName = this->GetFullName();
     progName = progName.Substr(progName.Find("/") + 1);
 
-    __ARP_START_PYTHON__
+    __ARP_GET_GIL___
         if (PyErr_Occurred()){PyErr_Print();PyErr_Clear();}
         this->PYO_Module = PyImport_ImportModule(progName.CStr());
         if (PYO_Module == NULL)
@@ -59,7 +59,7 @@ void Prog_base::PythonArpProgramConstruction()
             }
 #endif
         }
-    __ARP_STOP_PYTHON__
+    __ARP_RELEASE_GIL___
     if (PYO_Module !=NULL)
     { 
         this->CallPyInitialize();
@@ -71,14 +71,14 @@ Prog_base::~Prog_base()
 {
     if (!Py_IsInitialized()) return;
     this->CallPyDispose();
-    __ARP_START_PYTHON__
+    __ARP_GET_GIL___
         Py_CLEAR(PYO_Execute);
         Py_CLEAR(PYO_Stop);
         Py_CLEAR(PYO_Start);
         Py_CLEAR(PYO_Initialize);
         Py_CLEAR(PYO_Dispose);
         Py_CLEAR(PYO_Module);
-    __ARP_STOP_PYTHON__
+    __ARP_RELEASE_GIL___
 }
 
 
@@ -87,51 +87,51 @@ void Prog_base::CallPyStart()
     
     if (this->PYO_Start == NULL)
         return;
-    __ARP_START_PYTHON__
+    __ARP_GET_GIL___
     Py_XDECREF(PyObject_CallObject(this->PYO_Start, NULL));
     if (PyErr_Occurred())
     {
         PyErr_Print();
     }
-    __ARP_STOP_PYTHON__
+    __ARP_RELEASE_GIL___
 }
 
 void Prog_base::CallPyStop()
 {
     if (this->PYO_Stop == NULL)
         return;
-    __ARP_START_PYTHON__
+    __ARP_GET_GIL___
     Py_XDECREF(PyObject_CallObject(this->PYO_Stop, NULL));
     if (PyErr_Occurred())
     {
         PyErr_Print();
     }
-    __ARP_STOP_PYTHON__
+    __ARP_RELEASE_GIL___
 }
 void Prog_base::CallPyDispose()
 {
     if (this->PYO_Dispose == NULL)
         return;
-    __ARP_START_PYTHON__
+    __ARP_GET_GIL___
     Py_XDECREF(PyObject_CallObject(this->PYO_Dispose, NULL));
     if (PyErr_Occurred())
     {
         PyErr_Print();
     }
-    __ARP_STOP_PYTHON__
+    __ARP_RELEASE_GIL___
 }
 
 void Prog_base::CallPyInitialize()
 {
     if (this->PYO_Initialize == NULL)
         return;
-    __ARP_START_PYTHON__
+    __ARP_GET_GIL___
     Py_XDECREF(PyObject_CallObject(this->PYO_Initialize, NULL));
     if (PyErr_Occurred())
     {
         PyErr_Print();
     }
-    __ARP_STOP_PYTHON__
+    __ARP_RELEASE_GIL___
 }
 
 } // end of namespace PythonArp

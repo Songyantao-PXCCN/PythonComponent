@@ -178,7 +178,7 @@ static PyTypeObject Struct_udtSub_Type;
 //Here we create the Types in Constructor
 inline Prog_TestStruct1::Prog_TestStruct1(PythonArp::PythonArpComponent& pythonArpComponentArg, const String& name): Prog_base(pythonArpComponentArg,name)
 {
-    __ARP_START_PYTHON__
+    __ARP_GET_GIL___
     //create Types
     if (not isInited)//prevent other instance execute 'PyStructSequence_InitType' again.
     {
@@ -190,7 +190,7 @@ inline Prog_TestStruct1::Prog_TestStruct1(PythonArp::PythonArpComponent& pythonA
         Py_INCREF((PyObject *) &Struct_udtSub_Type);
         isInited = true;
     }
-    __ARP_STOP_PYTHON__
+    __ARP_RELEASE_GIL___
 }
 
 inline Prog_TestStruct1::~Prog_TestStruct1()
@@ -204,7 +204,7 @@ inline void Prog_TestStruct1::CallPyExecute()
     PyReady = this->LoadScriptSuccess;
     if (this->PYO_Execute == NULL)
         return;
-    __ARP_START_PYTHON__
+    __ARP_GET_GIL___
 
     //Create Objects which represent the Struct Port from Cpp to Python
     PyObject* udtIN_1_Obj = NULL;
@@ -233,7 +233,7 @@ inline void Prog_TestStruct1::CallPyExecute()
     }
     if (PyErr_Occurred()){PyErr_Print();}
     Py_XDECREF(ret);
-    __ARP_STOP_PYTHON__
+    __ARP_RELEASE_GIL___
 }
 
 

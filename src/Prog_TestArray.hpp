@@ -186,7 +186,7 @@ inline void Prog_TestArray::CallPyExecute()
     PyReady = this->LoadScriptSuccess;
     if (this->PYO_Execute == NULL)
         return;
-    __ARP_START_PYTHON__
+    __ARP_GET_GIL___
     PyObject * ret = PyObject_CallFunction(this->PYO_Execute,"((NNN)(NNN)(NNN)(NNN)(NNN)(NNN)(NNN)(NNN)(NNN)(NNN)(NNN)(NNN))",
                                                                     /*        relative  Object                      convert array RAW buffer to bytearray                convert each element to bytearray        */
                                                                     util::arg::PortVar_AsPyObject(Bool_toPy)    ,util::arg::PortVar_AsPyObject(Bool_toPy,true)     ,util::arg::PortVar_AsPyObject(Bool_toPy,false,true),
@@ -238,7 +238,7 @@ inline void Prog_TestArray::CallPyExecute()
     }
     if (PyErr_Occurred()){PyErr_Print();}
     Py_XDECREF(ret);
-    __ARP_STOP_PYTHON__
+    __ARP_RELEASE_GIL___
 }
 
 } // end of namespace PythonArp

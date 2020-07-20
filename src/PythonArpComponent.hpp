@@ -67,8 +67,8 @@
 /* -------------------------------------------------------------------------- */
 
 //get GIL and release
-#define __ARP_START_PYTHON__ {PyGILState_STATE _gstate = PyGILState_Ensure();
-#define __ARP_STOP_PYTHON__ PyGILState_Release(_gstate);}
+#define __ARP_GET_GIL___ {PyGILState_STATE _gstate = PyGILState_Ensure();
+#define __ARP_RELEASE_GIL___ PyGILState_Release(_gstate);}
 
 
 namespace PythonArp
@@ -140,7 +140,7 @@ public:
            The #name comment defines the GDS name of an individual port element. If omitted, the member variable name is used as the GDS name.
            The members of the struct can be declared with any of the attributes allowed for a Program port.
         */
-       
+
 public:
     bool isPyStarter = false;
     //PyThreadState *tstate;

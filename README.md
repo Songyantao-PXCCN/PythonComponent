@@ -18,6 +18,7 @@ These funtions are supported for now :
 	+ ArpLog_Info(message : str )
 	+ ArpLog_Error(message : str )
 	+ ArpLog_Fatal(message : str )
+	+ ArpLog(str_able_object ,level)
 
 + stdout ( print() ) write to '~/logs/Output.log' (INFO)
 
@@ -79,6 +80,9 @@ def Execute(*args):
 	print("PLCnext Arp Component ")
 	print(123)
 	ArpLog_Info(str(123))
+	
+	Arp_Log(123,Arp_FATAL)
+
 ```
 ```
 19.07.20 04:44:03.213 root   INFO  - This is Info log
@@ -87,6 +91,7 @@ def Execute(*args):
 19.07.20 04:44:03.213 root   INFO  - PLCnext Arp Component
 19.07.20 04:44:03.213 root   INFO  - 123
 19.07.20 04:44:03.213 root   INFO  - 123
+19.07.20 04:44:03.213 root   FATAL - 123
 ```
 
 ## DataAccessService
