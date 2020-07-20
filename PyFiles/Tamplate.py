@@ -41,6 +41,11 @@ def Stop():
 
 
 def Execute(*arg):
+    '''
+    the Execute() function is called by the ESM task
+    :param args: Input of Program (usually is In-Port)
+    :return:  Output to Program (usually is Out-Port)
+    '''
     # print(arg)
     pass
 

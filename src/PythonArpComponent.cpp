@@ -55,10 +55,8 @@ namespace PythonArp
         PyImport_AppendInittab("ArpConsoleSupport", &PyInit_ArpConsoleSupport);
         PyImport_AppendInittab("ArpConsoleSupport_err", &PyInit_ArpConsoleSupport_err);
 
-        
         //!it is danger to call sometime if a new other C++ component is added!!
         Py_Initialize();
-
 
         if (!Py_IsInitialized())
         {
@@ -71,6 +69,7 @@ namespace PythonArp
         PyObject *builtins = PyImport_AddModule("builtins");
 
 
+        //Register Python Functions here
         #ifdef ENABLE_DATAACCESSSERVICE
         PythonArp::PyDataAccessService::AddObject(builtins);
         #endif
@@ -115,7 +114,7 @@ namespace PythonArp
         // never remove next line
         ProgramComponentBase::ResetConfig();
 
-
+//if use 'RELOAD_MODE' ,then the interpreter's life
 #ifndef RELOAD_MODE
         // implement this inverse to SetupConfig() and LoadConfig()
         if(!this->isPyStarter)
@@ -127,7 +126,6 @@ namespace PythonArp
             Py_Finalize();
         }
 #endif
-
     }
 
     void PythonArpComponent::Start()
