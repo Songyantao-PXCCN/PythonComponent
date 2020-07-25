@@ -3,7 +3,33 @@
 
 #include "Prog_base.hpp"
 
-
+static void wait_for_thread_shutdown(void)
+{
+    __ARP_GET_GIL___
+    _Py_IDENTIFIER(threading);
+    _Py_IDENTIFIER(_shutdown);
+    PyObject *result;
+    PyObject *threading = _PyImport_GetModuleId(&PyId_threading);
+    if (threading == NULL) {
+        if (PyErr_Occurred()) {
+            PyErr_WriteUnraisable(NULL);
+        }
+        /* else: threading not imported */
+        return;
+    }
+    result = _PyObject_CallMethodId(threading, &PyId__shutdown, NULL);
+    if (result == NULL) {
+        PyErr_WriteUnraisable(threading);
+    }
+    else {
+        Py_DECREF(result);
+    }
+    //Reload 'threading' module
+    threading = PyImport_ReloadModule(threading);
+    Py_DECREF(threading);
+    Py_DECREF(threading);
+    __ARP_RELEASE_GIL___
+}
 
 namespace PythonArp
 {
@@ -114,8 +140,13 @@ namespace PythonArp
         // never remove next line
         ProgramComponentBase::ResetConfig();
 
-//if use 'RELOAD_MODE' ,then the interpreter's life
-#ifndef RELOAD_MODE
+
+//if use 'RELOAD_MODE' ,then the interpreter's life will always same with Arp
+#ifdef RELOAD_MODE
+
+        //wait_for_thread_shutdown();
+
+#else
         // implement this inverse to SetupConfig() and LoadConfig()
         if(!this->isPyStarter)
             return;

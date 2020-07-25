@@ -74,6 +74,8 @@ static PyObject *Wrap_ArpLog(PyObject *, PyObject *args ,PyObject *kwargs)
 
     _PYO_Message = PyObject_Str(PYO_Message);
 
+    PyObject* callTuple = PyTuple_Pack(1,_PYO_Message);
+
     if (_PYO_Message == NULL or PyErr_Occurred())
     {
         PyErr_Print();
@@ -83,21 +85,24 @@ static PyObject *Wrap_ArpLog(PyObject *, PyObject *args ,PyObject *kwargs)
         switch (level)
         {
         case Arp_INFO:
-                Py_XDECREF(Wrap_ArpLog_Info(NULL,_PYO_Message));
+                Py_XDECREF(Wrap_ArpLog_Info(NULL,callTuple));
             break;
 
         case Arp_ERROR:
-                Py_XDECREF(Wrap_ArpLog_Error(NULL,_PYO_Message));
+                Py_XDECREF(Wrap_ArpLog_Error(NULL,callTuple));
             break;
 
         case Arp_FATAL:
-                Py_XDECREF(Wrap_ArpLog_Fatal(NULL,_PYO_Message));
+                Py_XDECREF(Wrap_ArpLog_Fatal(NULL,callTuple));
             break;
 
         default:
             break;
         }
+        Py_XDECREF(callTuple);
         Py_XDECREF(_PYO_Message);
+
+
     }
     
     Py_RETURN_NONE;
