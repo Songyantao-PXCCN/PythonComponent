@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MetaConfigurationDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" schemaVersion="2.0" xmlns="http://www.phoenixcontact.com/schema/metaconfig">
+  <Program type="Prog_TestPrimitive">
+    <Ports>
+      <Port name="xReady" type="boolean" attributes="Output" dimensions="" />
+      <Port name="xBool_toPy" type="boolean" attributes="Input|Retain" dimensions="" />
+      <Port name="xBool_fromPy" type="boolean" attributes="Output" dimensions="" />
+      <Port name="int8_toPy" type="int8" attributes="Input|Retain" dimensions="" />
+      <Port name="int8_fromPy" type="int8" attributes="Output" dimensions="" />
+      <Port name="int16_toPy" type="int16" attributes="Input|Retain" dimensions="" />
+      <Port name="int16_fromPy" type="int16" attributes="Output" dimensions="" />
+      <Port name="int32_toPy" type="int32" attributes="Input|Retain" dimensions="" />
+      <Port name="int32_fromPy" type="int32" attributes="Output" dimensions="" />
+      <Port name="int64_toPy" type="int64" attributes="Input|Retain" dimensions="" />
+      <Port name="int64_fromPy" type="int64" attributes="Output" dimensions="" />
+      <Port name="uint8_toPy" type="uint8" attributes="Input|Retain" dimensions="" />
+      <Port name="uint8_fromPy" type="uint8" attributes="Output" dimensions="" />
+      <Port name="uint16_toPy" type="uint16" attributes="Input|Retain" dimensions="" />
+      <Port name="uint16_fromPy" type="uint16" attributes="Output" dimensions="" />
+      <Port name="uint32_toPy" type="uint32" attributes="Input|Retain" dimensions="" />
+      <Port name="uint32_fromPy" type="uint32" attributes="Output" dimensions="" />
+      <Port name="uint64_toPy" type="uint64" attributes="Input|Retain" dimensions="" />
+      <Port name="uint64_fromPy" type="uint64" attributes="Output" dimensions="" />
+      <Port name="float32_toPy" type="float32" attributes="Input|Retain" dimensions="" />
+      <Port name="float32_fromPy" type="float32" attributes="Output" dimensions="" />
+      <Port name="float64_toPy" type="float64" attributes="Input|Retain" dimensions="" />
+      <Port name="float64_fromPy" type="float64" attributes="Output" dimensions="" />
+      <Port name="STRING_toPy" type="StaticString" attributes="Input|Retain" dimensions="" />
+      <Port name="STRING_fromPy" type="StaticString" attributes="Output" dimensions="" />
+    </Ports>
+  </Program>
+</MetaConfigurationDocument>

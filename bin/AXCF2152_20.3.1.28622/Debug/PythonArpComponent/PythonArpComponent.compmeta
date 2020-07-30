@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MetaConfigurationDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" schemaVersion="2.0" xmlns="http://www.phoenixcontact.com/schema/metaconfig">
+  <Component type="PythonArpComponent">
+    <ProgramIncludes>
+      <Include path="Prog_1arrINT10_1arrINT10/Prog_1arrINT10_1arrINT10.progmeta" />
+      <Include path="Prog_1LWToByteArray/Prog_1LWToByteArray.progmeta" />
+      <Include path="Prog_1s_1s/Prog_1s_1s.progmeta" />
+      <Include path="Prog_2i_1i/Prog_2i_1i.progmeta" />
+      <Include path="Prog_2x1i_2x1i/Prog_2x1i_2x1i.progmeta" />
+      <Include path="Prog_2x_1x/Prog_2x_1x.progmeta" />
+      <Include path="Prog_NoPort/Prog_NoPort.progmeta" />
+      <Include path="Prog_TestArray/Prog_TestArray.progmeta" />
+      <Include path="Prog_TestPrimitive/Prog_TestPrimitive.progmeta" />
+      <Include path="Prog_TestStruct1/Prog_TestStruct1.progmeta" />
+    </ProgramIncludes>
+    <Ports>
+    </Ports>
+  </Component>
+</MetaConfigurationDocument>

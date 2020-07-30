@@ -164,7 +164,8 @@ public:
     void errOutFlushThread(void *);
     std::unique_ptr<Arp::String> errOutBuff = std::make_unique<String>(PyArpErrTitle) ;
 
-    
+    bool newLifeCycle = true;
+
     //services
     IDataAccessService::Ptr p_IDataAccessService = nullptr;
     IForceService::Ptr p_IForceService = nullptr;

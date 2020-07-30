@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MetaConfigurationDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" schemaVersion="2.0" xmlns="http://www.phoenixcontact.com/schema/metaconfig">
+  <Program type="Prog_1arrINT10_1arrINT10">
+    <Ports>
+      <Port name="xReady" type="boolean" attributes="Output" dimensions="" />
+      <Port name="arrINT10_toPy" type="int16" attributes="Input|Retain" dimensions="10" />
+      <Port name="arrINT10_fromPy" type="int16" attributes="Output" dimensions="10" />
+    </Ports>
+  </Program>
+</MetaConfigurationDocument>

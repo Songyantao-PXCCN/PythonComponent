@@ -134,7 +134,11 @@ static void _Subscription_dealloc(Subscription_obj* self)
     {
         delete self->RecordInfos;
     }
-    Subcription__DeleteSubscription(self);
+
+    if (self->subscription_id !=0)
+    {
+        Subcription__DeleteSubscription(self);
+    }
     self->p_ISubscriptionService.reset();
     Py_TYPE(self)->tp_free(self);
 }

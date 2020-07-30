@@ -49,6 +49,7 @@ namespace PythonArp
     {
         // never remove next line
         ProgramComponentBase::Initialize();
+        newLifeCycle = true;
         // subscribe events from the event system (Nm) here
     }
 
@@ -57,8 +58,8 @@ namespace PythonArp
         // load project config here
         if (!p_IDataAccessService)
             this->p_IDataAccessService = ServiceManager::GetService<IDataAccessService>();
-        if(!p_IForceService)
-            this->p_IForceService=ServiceManager::GetService<IForceService>();
+        //if(!p_IForceService)
+        //   this->p_IForceService=ServiceManager::GetService<IForceService>();
         if(!p_ISubscriptionService)
             this->p_ISubscriptionService=ServiceManager::GetService<ISubscriptionService>();
         if(!p_IDeviceStatusService)
@@ -73,6 +74,10 @@ namespace PythonArp
         if (Py_IsInitialized())
         {
             log.Warning("Python already initialized !");
+            if (newLifeCycle)
+            {
+                goto ADD_MODULES;
+            }
             return;
         }
         //this->tstate = NULL;
@@ -92,8 +97,16 @@ namespace PythonArp
 
         this->isPyStarter = true;//means that this component started the Py interpreter ,so this component must finalize it.
 
-        PyObject *builtins = PyImport_AddModule("builtins");
+        PyEval_ReleaseThread(PyThreadState_GET()); 
 
+ADD_MODULES:
+
+        log.Info("Adding Modules into current interpreter");
+
+
+        __ARP_GET_GIL___
+
+        PyObject *builtins = PyImport_AddModule("builtins");
 
         //Register Python Functions here
         #ifdef ENABLE_DATAACCESSSERVICE
@@ -124,10 +137,11 @@ namespace PythonArp
         PyRun_SimpleString("sys.stderr = ArpConsoleSupport_err");
         PyRun_SimpleString("sys.path.append('/opt/plcnext/')");//define where to find extern module
 
-        //this->tstate = PyEval_SaveThread();
-        //release the GIL , then Py can be running thread in background.
-        PyEval_ReleaseThread(PyThreadState_GET());
+        __ARP_RELEASE_GIL___
+
+        newLifeCycle = false;
     }
+
 
     void PythonArpComponent::SetupConfig()
     {
