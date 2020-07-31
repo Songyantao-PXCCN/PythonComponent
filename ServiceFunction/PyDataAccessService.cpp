@@ -414,6 +414,7 @@ namespace PythonArp::PyDataAccessService
     
 
 
+
 /* ----------------- DataAccessService->Read(array & struct) ---------------- */
     //this function can read any kind of RscVariant , but more test is needed
     //key-word arguments crash in this function need to be fixed
@@ -567,6 +568,48 @@ namespace PythonArp::PyDataAccessService
             return NULL;
     }
 
+/*
+#define GDS_TYPE_INT8 1
+#define GDS_TYPE_INT16 2
+#define GDS_TYPE_INT32 3
+#define GDS_TYPE_INT64 4
+#define GDS_TYPE_UINT8 5
+#define GDS_TYPE_UINT16 6
+#define GDS_TYPE_UINT32 7
+#define GDS_TYPE_UINT64 8
+#define GDS_TYPE_FLOAT32 9
+#define GDS_TYPE_FLOAT64 10
+*/
+
+static int parseForceTypeToMacro(PyObject * op)
+{
+    if (PyLong_CheckExact(op))
+    {
+        return PyLong_AsLong(op);
+    }
+    else if(PyUnicode_CheckExact(op))
+    {
+        const char* s = PyUnicode_AsUTF8(op);
+             if (strcmp(s,"None")==0)  {return -1;}
+        else if (strcmp(s,"Int8")==0){return GDS_TYPE_INT8;}
+        else if (strcmp(s,"Int16")==0){return GDS_TYPE_INT16;}
+        else if (strcmp(s,"Int32")==0){return GDS_TYPE_INT32;}
+        else if (strcmp(s,"Int64")==0){return GDS_TYPE_INT64;}
+        else if (strcmp(s,"Uint8")==0){return GDS_TYPE_UINT8;}
+        else if (strcmp(s,"Uint16")==0){return GDS_TYPE_UINT16;}
+        else if (strcmp(s,"Uint32")==0){return GDS_TYPE_UINT32;}
+        else if (strcmp(s,"Uint64")==0){return GDS_TYPE_UINT64;}
+        else if (strcmp(s,"Real32")==0){return GDS_TYPE_FLOAT32;}
+        else if (strcmp(s,"Real64")==0){return GDS_TYPE_FLOAT64;}
+        else {return -1;}
+    }
+    else
+    {
+        return -1;
+    }
+    
+}
+
 
 
 /* ------------------------ DataAccessService->Write ------------------------ */
@@ -580,25 +623,12 @@ namespace PythonArp::PyDataAccessService
         PyObject *PyO_variables, *PyO_forceType = NULL, *t_seq, *t_item;
         const char *prefix = NULL;
 
-        if (!PyArg_ParseTupleAndKeywords(args, kwargs, "O|sO", (char **)kwList, &PyO_variables, &prefix, &PyO_forceType))
+        if (!PyArg_ParseTupleAndKeywords(args, kwargs, "O!|sO!", (char **)kwList,&PyDict_Type,&PyO_variables, &prefix,&PyDict_Type, &PyO_forceType))
         {
             return NULL;
         }
 
-        if (!PyDict_Check(PyO_variables))
-        {
-            PyErr_BadArgument();
-            return NULL;
-        }
 
-        if (PyO_forceType != NULL)
-        {
-            if (!PyDict_Check(PyO_forceType))
-            {
-                PyErr_BadArgument();
-                return NULL;
-            }
-        }
 
         int count = PyDict_GET_SIZE(PyO_variables);
         PyObject *varNames = PyDict_Keys(PyO_variables);
@@ -627,9 +657,9 @@ namespace PythonArp::PyDataAccessService
                 if (PyO_forceType != NULL)
                 {
                     PyObject *type = PyDict_GetItem(PyO_forceType, O_varName);
-                    if (type != NULL && PyLong_Check(type))
+                    if (type != NULL )
                     {
-                        switch ((int)PyLong_AsLong(type))
+                        switch (parseForceTypeToMacro(type))
                         {
                         case GDS_TYPE_INT8:
                             current.Value = (Arp::int8)PyLong_AsLong(PyO_value);
@@ -680,9 +710,9 @@ namespace PythonArp::PyDataAccessService
                 if (PyO_forceType != NULL)
                 {
                     PyObject *type = PyDict_GetItem(PyO_forceType, O_varName);
-                    if (type != NULL && PyLong_Check(type))
+                    if (type != NULL)
                     {
-                        switch ((int)PyLong_AsLong(type))
+                        switch (parseForceTypeToMacro(type))
                         {
                         case GDS_TYPE_FLOAT32:
                             current.Value = (Arp::float32)PyFloat_AsDouble(PyO_value);
