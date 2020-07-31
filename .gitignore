@@ -1,0 +1,22 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+
+# Compiled Dynamic libraries
+*.so
+*.so.*
+*.dylib
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.a.*
+
+
+#/.vscode
+/build
+/bin/AXCF*
+
+/intermediate
