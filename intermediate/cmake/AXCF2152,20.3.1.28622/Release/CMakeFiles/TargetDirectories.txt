@@ -1,7 +1,0 @@
-/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles/install/strip.dir
-/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles/install/local.dir
-/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles/PythonArp.dir
-/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles/install.dir
-/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles/edit_cache.dir
-/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/L5RSJ9/Desktop/tutor/pyH/beta/v1_0/PythonArp/intermediate/cmake/AXCF2152,20.3.1.28622/Release/CMakeFiles/list_install_components.dir
